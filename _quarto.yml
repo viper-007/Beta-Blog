@@ -17,3 +17,7 @@ format:
 
 editor: visual
 
+comments:
+  giscus:
+    repo: viper-007/Beta-Blog
+    

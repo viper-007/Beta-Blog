@@ -3,21 +3,43 @@ project:
 
 website:
   title: "Beta Blog"
+  favicon: images/beta_blog_icon.png
+  site-url: https://beta-blog66.netlify.app/
+  description: 'Blog about cyber security and risk management.'
+  repo-url: https://github.com/viper-007/Beta-Blog
+#  repo-actions: [edit, issue]
+
+  page-footer:
+    left: "Made with [Quarto](https://quarto.org/) by Johannes Buck. License: [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/)."
+
   navbar:
     right:
       - about.qmd
       - icon: github
         href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+      - icon: linkedin
+        href: https://www.linkedin.com/in/j-buck59/
+      - icon: envelope
+        href: mailto:johannes.buck59@gmail.com     
+  
 format:
   html:
+    smooth-scroll: true
     theme: cerulean
     css: styles.css
+#    ink-external-icon: false
+#    link-external-newwindow: true
+#    link-external-filter: '^(?:http:|https:)\/\/www\.beta-blog66.netlify\.app\/**'
+#    citations-hover: true
+#    footnotes-hover: true
+    toc: true
+    code-link: true
 
 editor: visual
 
 comments:
   giscus:
     repo: viper-007/Beta-Blog
-    
+
+execute:
+  freeze: true  # never re-render during project render

@@ -7,7 +7,6 @@ image: images/saling_boat_close-up.jpg
 knitr::include_graphics("images/jb business portrait.jpg")
 ```
 
-
 This blog is about cyber security and risk management. Blog posts will be published in a loose series.
 
 The following tools were used to create this blog:
@@ -35,4 +34,4 @@ The entire content of this website is licensed under a Creative Commons Attribut
 
 ### Privacy Policy
 
-By visiting this website, information about the access (date, time, page views) may be stored on the server. Personal data may be provided voluntarily (e.g. by comments).
+This website does not use any cookies. By visiting this website, information about the access (date, time, page views) may be stored on the server. Personal data may be provided voluntarily (e.g. by comments).

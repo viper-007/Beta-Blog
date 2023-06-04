@@ -2,17 +2,17 @@ project:
   type: website
 
 website:
-  title: "Beta Blog"
+  title: "β Blog"
   favicon: images/beta_blog_icon.png
   site-url: https://beta-blog66.netlify.app/
   description: 'Blog about cyber security and risk management.'
   repo-url: https://github.com/viper-007/Beta-Blog
-#  repo-actions: [edit, issue]
 
   page-footer:
     left: "Made with [Quarto](https://quarto.org/) by Johannes Buck. License: [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/)."
 
   navbar:
+    background: dark
     right:
       - about.qmd
       - icon: github
@@ -27,11 +27,6 @@ format:
     smooth-scroll: true
     theme: cerulean
     css: styles.css
-#    ink-external-icon: false
-#    link-external-newwindow: true
-#    link-external-filter: '^(?:http:|https:)\/\/www\.beta-blog66.netlify\.app\/**'
-#    citations-hover: true
-#    footnotes-hover: true
     toc: true
     code-link: true
 

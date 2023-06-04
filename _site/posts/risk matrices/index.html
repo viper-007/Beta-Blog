@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Johannes Buck">
-<meta name="dcterms.date" content="2023-06-02">
+<meta name="dcterms.date" content="2023-06-04">
 
-<title>β Blog - Welcome To My Blog</title>
+<title>β Blog - Risk Matrices – Why they don’t work</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -114,9 +114,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Welcome To My Blog</h1>
+      <h1 class="title">Risk Matrices – Why they don’t work</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">news</div>
+                <div class="quarto-category">cyber security</div>
+                <div class="quarto-category">risk management</div>
               </div>
                   </div>
   </div>
@@ -134,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">June 2, 2023</p>
+        <p class="date">June 4, 2023</p>
       </div>
     </div>
     
@@ -146,7 +147,21 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#risk-matrices" id="toc-risk-matrices" class="nav-link active" data-scroll-target="#risk-matrices">Risk matrices</a></li>
+  <li><a href="#risk-basics" id="toc-risk-basics" class="nav-link" data-scroll-target="#risk-basics">Risk basics</a></li>
+  <li><a href="#selective-representation-of-individual-risks" id="toc-selective-representation-of-individual-risks" class="nav-link" data-scroll-target="#selective-representation-of-individual-risks">Selective representation of individual risks</a></li>
+  <li><a href="#poor-resolution" id="toc-poor-resolution" class="nav-link" data-scroll-target="#poor-resolution">Poor resolution</a></li>
+  <li><a href="#ambiguous-inputs-and-outputs" id="toc-ambiguous-inputs-and-outputs" class="nav-link" data-scroll-target="#ambiguous-inputs-and-outputs">Ambiguous inputs and outputs</a></li>
+  <li><a href="#misleading-risk-representation" id="toc-misleading-risk-representation" class="nav-link" data-scroll-target="#misleading-risk-representation">Misleading risk representation</a></li>
+  <li><a href="#false-assumption" id="toc-false-assumption" class="nav-link" data-scroll-target="#false-assumption">False assumption</a></li>
+  <li><a href="#risk-appetite" id="toc-risk-appetite" class="nav-link" data-scroll-target="#risk-appetite">Risk appetite</a></li>
+  <li><a href="#bottom-line" id="toc-bottom-line" class="nav-link" data-scroll-target="#bottom-line">Bottom line</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -154,13 +169,117 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>This is my first post in the <code>β Blog</code>. Welcome!</p>
-<p><img src="typewriter-2653187_640.jpg" class="img-fluid"></p>
-<p><em>Picture from Rudy and Peter Skitterian on Pixaby</em></p>
-<p>Professionally, I work in cyber security and risk management. As far as my time allows, I will publish blogs on these topics. The blogs will be based on my many years of experience and will focus on what has worked in practice. There will also be blogs on more theoretical topics that are of particular interest to me.</p>
-<p>The blogs reflect my personal view and do not claim to be general. Different views are possible on any topic. I consider critical discussion to be especially important and valuable. The blog is published under the CC BY-SA 2.0 license. Knowledge should be shared freely and without restrictions.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Classic 5x5 risk matrix with linear scales.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Do we use risk matrices even though we know the limitations and shortcomings of this popular risk assessment tool? This post provides some insights that can help you use risk matrices more effectively. It adapted from an article I published on my website, <a href="https://b-advisory.ch">B Advisory</a>, on April 1, 2019.</p>
+<section id="risk-matrices" class="level1">
+<h1>Risk matrices</h1>
+<p>Risk matrices are used in risk assessments to define the level of risk by considering the likelihood of occurrence and impact. It is a simple mechanism for visualizing risk and supporting management decision making. Risk matrices are mentioned in several standards such as ISO and NIST. However, risk matrices have several shortcomings.</p>
+</section>
+<section id="risk-basics" class="level1">
+<h1>Risk basics</h1>
+<p>Risk is expressed as a combination of the likelihood of an event occurring and the impact on the business expressed in the equation:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Risk equation.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption"><em>Figure 1: Risk Equation</em></figcaption>
+</figure>
+</div>
+</section>
+<section id="selective-representation-of-individual-risks" class="level1">
+<h1>Selective representation of individual risks</h1>
+<p>The risk matrix is a presentation of individual risks, often arbitrarily selected. Dependencies, interactions and dynamics between individual risks are ignored.</p>
+<p>Risk matrices, by their nature, are not suitable for risk aggregation or risk portfolio presentation. Risks cannot simply be added up. Risk aggregation requires risk quantification based on probability distributions or stochastic processes. Monte Carlo simulation is one method used for risk aggregation.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Aggregation scheme.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p><em>Figure 2: Aggregation scheme for a distribution-based determination of the overall risk</em></p>
+</section>
+<section id="poor-resolution" class="level1">
+<h1>Poor resolution</h1>
+<p>A 5x5 risk matrix is often used for risk assessment.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Classic 5x5 risk matrix with linear scales.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p><em>Figure 3: classic 5x5 risk matrix with linear scales</em>*</p>
+<p>Most security risks do not have a linear risk distribution where five categories (rare, unlikely, possible, likely, certain) or (negligible, minor, moderate, critical, catastrophic) would be appropriate. A logarithmic representation for both likelihood and impact provides a much better resolution with a wider spread. A risk matrix with a double-logarithmic scale allows to illustrate even so-called tail risks with extremely low probability and very high impact to be represented.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Risk matrix with logarithmic scales.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p><em>Figure 4: risk matrix with logarithmic scales</em></p>
+</section>
+<section id="ambiguous-inputs-and-outputs" class="level1">
+<h1>Ambiguous inputs and outputs</h1>
+<p>Inputs to risk matrices (likelihood and impact) are often subjective and biased. Different assessors may arrive at opposite ratings for the same risks. Sometimes the likelihood ratings are underscored with frequencies for the occurrence of an event, e.g., three times a year, and the impact categories are defined by financial losses, e.g., $ 500,000, to guide risk assessors and avoid subjectivity and bias <sup>1)</sup>. However, the actual ratings are still based on the judgment of individuals and are not supported or derived from reliable data. In addition, most risk assessors rely on their experience based on past events and incidents. In fact, risk assessors should be trying to anticipate the likelihood and impact of future events, which is obviously a challenge.</p>
+<p><sup>1)</sup> The National Institute of Standards &amp; Technology (NIST) standard <a href="https://csrc.nist.gov/publications/detail/sp/800-30/rev-1/final">SP 800-30r1</a> “Guide for Conducting Risk Assessments” provides a starting point for rating scales in Appendix G, which should be tailored to fit any organization-specific conditions. For both likelihood and impact, the qualitative values of very low, low, moderate, high, and high are converted to semi-quantitative values of 0-4, 5-20, 21-79, 80-95, and 96-100, respectively.</p>
+</section>
+<section id="misleading-risk-representation" class="level1">
+<h1>Misleading risk representation</h1>
+<p>A correct representation of the semi-quantitative categories defined by NIST SP 800-30r1 results in a completely different risk matrix than the common 5x5 risk matrix.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Classic 5x5 risk matrix with linear scales.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p><em>Figure 5: classic 5x5 risk matrix with equal squares</em></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="5x5 risk matrix with NIST SP 800-30r1 scales.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p><em>Figure 6: 5x5 matrix with rectangles considering the unequal dimensions of the semi-quantitative categories according to NIST SP 800-30r1</em></p>
+<p>A classic risk matrix with equal squares means that risks with the same risk rating (Risk = Likelihood x Impact) lie on a hyperbola. A circumstance most people are hardly aware of.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Risk matrix with linear scales and risk isolines.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p><em>Figure 7: risk matrix with linear scales and risk isolines<sup>1)</sup></em></p>
+<p>In comparison a risk matrix with double-logarithmic scale, where the risk isolines are straight lines.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Risk matrix with logarithmic scale and risk isolines.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>Figure 8: risk matrix with logarithmic scale and risk isolines</p>
+<p><sup>1)</sup> Isoline: A line of constant value on a map or chart.</p>
+</section>
+<section id="false-assumption" class="level1">
+<h1>False assumption</h1>
+<p>Risk matrices imply that the effort to reduce risk is the same for all risks in the same field of the risk matrix. This is incorrect for obvious reasons. Risk mitigation costs vary widely. Cost/benefit is a critical factor in risk treatment, and management must decide how best to spend limited resources to reduce overall risk.</p>
+</section>
+<section id="risk-appetite" class="level1">
+<h1>Risk appetite</h1>
+<p>Risk appetite is the level of risk that an organization is willing and able to accept. The challenge with risk appetite is how to implement and enforce it and make it relevant to the business on a day-to-day basis, i.e.&nbsp;linking risk appetite to risk acceptance decisions.</p>
+<p>It is common to visualize risk appetite using a staircase diagram. The picture suggests that all risks from the red, yellow and amber areas should be reduced, i.e.&nbsp;moved to the green area below the risk appetite line.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="5x5 risk matrix with risk appetite line.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p><em>Figure 9: 5x5 matrix with risk appetite line</em></p>
+<p>Risk acceptance should be a decision-making process at management or board level, not an automatic process triggered by a threshold. Risk acceptance should be a conscious decision based on risk/return, strategic objectives and risk capacity, not based on a baseline approach.</p>
+</section>
+<section id="bottom-line" class="level1">
+<h1>Bottom line</h1>
+<p>It is worth questioning common and widely used concepts such as the risk matrix. The risk matrix is a good example of how complex issues cannot be simplified as much as one would like.</p>
+<ul>
+<li><p>Simple scoring methods do not alleviate the fundamental problem of limited information.</p></li>
+<li><p>Simple risk presentation is in no way appropriate, although risk matrices work perfectly in a PowerPoint business culture.</p></li>
+</ul>
+<p>A double-logarithmic risk matrix is probably not appropriate for most audiences, but perhaps a risk matrix with rectangles is, given the uneven dimensions of the semi-quantitative categories. However, risk matrices should be used with caution, with careful interpretation, explanation, and sound background knowledge.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -1,12 +1,16 @@
 ---
 title: "Welcome To My Blog"
-author: "Tristan O'Malley"
-date: "2023-05-29"
+author: "Johannes Buck"
+date: "2023-06-02"
 categories: [news]
 ---
 
-This is the first post in a Quarto blog. Welcome!
+This is my first post in the `β Blog`. Welcome!
+ 
+![](typewriter-2653187_640.jpg)
 
-![](thumbnail.jpg)
+*Picture from Rudy and Peter Skitterian on Pixaby*
 
-Since this post doesn't specify an explicit `image`, the first image in the post will be used in the listing page of posts.
+Professionally, I work in cyber security and risk management. As far as my time allows, I will publish blogs on these topics. The blogs will be based on my many years of experience and will focus on what has worked in practice. There will also be blogs on more theoretical topics that are of particular interest to me.
+
+The blogs reflect my personal view and do not claim to be general. Different views are possible on any topic. I consider critical discussion to be especially important and valuable. The blog is published under the CC BY-SA 2.0 license. Knowledge should be shared freely and without restrictions.

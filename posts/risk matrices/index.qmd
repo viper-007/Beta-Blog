@@ -1,0 +1,102 @@
+---
+title: "Risk Matrices – Why they don’t work"
+author: "Johannes Buck"
+date: "2023-06-04"
+categories: [cyber security, risk management]
+---
+
+![](Classic%205x5%20risk%20matrix%20with%20linear%20scales.png){fig-align="center"}
+
+Do we use risk matrices even though we know the limitations and shortcomings of this popular risk assessment tool? This post provides some insights that can help you use risk matrices more effectively. It adapted from an article I published on my website, [B Advisory](https://b-advisory.ch), on April 1, 2019.
+
+# Risk matrices
+
+Risk matrices are used in risk assessments to define the level of risk by considering the likelihood of occurrence and impact. It is a simple mechanism for visualizing risk and supporting management decision making. Risk matrices are mentioned in several standards such as ISO and NIST. However, risk matrices have several shortcomings.
+
+# Risk basics
+
+Risk is expressed as a combination of the likelihood of an event occurring and the impact on the business expressed in the equation:
+
+![*Figure 1: Risk Equation*](Risk%20equation.png){fig-align="center"}
+
+# Selective representation of individual risks
+
+The risk matrix is a presentation of individual risks, often arbitrarily selected. Dependencies, interactions and dynamics between individual risks are ignored.
+
+Risk matrices, by their nature, are not suitable for risk aggregation or risk portfolio presentation. Risks cannot simply be added up. Risk aggregation requires risk quantification based on probability distributions or stochastic processes. Monte Carlo simulation is one method used for risk aggregation.
+
+![](Aggregation%20scheme.png){fig-align="center"}
+
+*Figure 2: Aggregation scheme for a distribution-based determination of the overall risk*
+
+# Poor resolution
+
+A 5x5 risk matrix is often used for risk assessment.
+
+![](Classic%205x5%20risk%20matrix%20with%20linear%20scales.png){fig-align="center"}
+
+*Figure 3: classic 5x5 risk matrix with linear scales*\*
+
+Most security risks do not have a linear risk distribution where five categories (rare, unlikely, possible, likely, certain) or (negligible, minor, moderate, critical, catastrophic) would be appropriate. A logarithmic representation for both likelihood and impact provides a much better resolution with a wider spread. A risk matrix with a double-logarithmic scale allows to illustrate even so-called tail risks with extremely low probability and very high impact to be represented.
+
+![](Risk%20matrix%20with%20logarithmic%20scales.png){fig-align="center"}
+
+*Figure 4: risk matrix with logarithmic scales*
+
+# Ambiguous inputs and outputs
+
+Inputs to risk matrices (likelihood and impact) are often subjective and biased. Different assessors may arrive at opposite ratings for the same risks. Sometimes the likelihood ratings are underscored with frequencies for the occurrence of an event, e.g., three times a year, and the impact categories are defined by financial losses, e.g., \$ 500,000, to guide risk assessors and avoid subjectivity and bias ^1)^. However, the actual ratings are still based on the judgment of individuals and are not supported or derived from reliable data. In addition, most risk assessors rely on their experience based on past events and incidents. In fact, risk assessors should be trying to anticipate the likelihood and impact of future events, which is obviously a challenge.
+
+^1)^ The National Institute of Standards & Technology (NIST) standard [SP 800-30r1](https://csrc.nist.gov/publications/detail/sp/800-30/rev-1/final) "Guide for Conducting Risk Assessments" provides a starting point for rating scales in Appendix G, which should be tailored to fit any organization-specific conditions. For both likelihood and impact, the qualitative values of very low, low, moderate, high, and high are converted to semi-quantitative values of 0-4, 5-20, 21-79, 80-95, and 96-100, respectively.
+
+# Misleading risk representation
+
+A correct representation of the semi-quantitative categories defined by NIST SP 800-30r1 results in a completely different risk matrix than the common 5x5 risk matrix.
+
+![](Classic%205x5%20risk%20matrix%20with%20linear%20scales.png){fig-align="center"}
+
+*Figure 5: classic 5x5 risk matrix with equal squares*
+
+![](5x5%20risk%20matrix%20with%20NIST%20SP%20800-30r1%20scales.png){fig-align="center"}
+
+*Figure 6: 5x5 matrix with rectangles considering the unequal dimensions of the semi-quantitative categories according to NIST SP 800-30r1*
+
+A classic risk matrix with equal squares means that risks with the same risk rating (Risk = Likelihood x Impact) lie on a hyperbola. A circumstance most people are hardly aware of.
+
+![](Risk%20matrix%20with%20linear%20scales%20and%20risk%20isolines.png){fig-align="center"}
+
+*Figure 7: risk matrix with linear scales and risk isolines^1)^*
+
+In comparison a risk matrix with double-logarithmic scale, where the risk isolines are straight lines.
+
+![](Risk%20matrix%20with%20logarithmic%20scale%20and%20risk%20isolines.png){fig-align="center"}
+
+Figure 8: risk matrix with logarithmic scale and risk isolines
+
+^1)^ Isoline: A line of constant value on a map or chart.
+
+# False assumption
+
+Risk matrices imply that the effort to reduce risk is the same for all risks in the same field of the risk matrix. This is incorrect for obvious reasons. Risk mitigation costs vary widely. Cost/benefit is a critical factor in risk treatment, and management must decide how best to spend limited resources to reduce overall risk.
+
+# Risk appetite
+
+Risk appetite is the level of risk that an organization is willing and able to accept. The challenge with risk appetite is how to implement and enforce it and make it relevant to the business on a day-to-day basis, i.e. linking risk appetite to risk acceptance decisions.
+
+It is common to visualize risk appetite using a staircase diagram. The picture suggests that all risks from the red, yellow and amber areas should be reduced, i.e. moved to the green area below the risk appetite line.
+
+![](5x5%20risk%20matrix%20with%20risk%20appetite%20line.png){fig-align="center"}
+
+*Figure 9: 5x5 matrix with risk appetite line*
+
+Risk acceptance should be a decision-making process at management or board level, not an automatic process triggered by a threshold. Risk acceptance should be a conscious decision based on risk/return, strategic objectives and risk capacity, not based on a baseline approach.
+
+# Bottom line
+
+It is worth questioning common and widely used concepts such as the risk matrix. The risk matrix is a good example of how complex issues cannot be simplified as much as one would like.
+
+-   Simple scoring methods do not alleviate the fundamental problem of limited information.
+
+-   Simple risk presentation is in no way appropriate, although risk matrices work perfectly in a PowerPoint business culture.
+
+A double-logarithmic risk matrix is probably not appropriate for most audiences, but perhaps a risk matrix with rectangles is, given the uneven dimensions of the semi-quantitative categories. However, risk matrices should be used with caution, with careful interpretation, explanation, and sound background knowledge.

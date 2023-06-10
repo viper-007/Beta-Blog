@@ -6,7 +6,7 @@ categories: [news]
 ---
 
 This is my first post in the `β Blog`. Welcome!
- 
+
 ![](typewriter-2653187_640.jpg)
 
 *Picture from Rudy and Peter Skitterian on Pixaby*

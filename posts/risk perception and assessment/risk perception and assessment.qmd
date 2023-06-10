@@ -1,0 +1,30 @@
+---
+title: "Risk Perception and Assessment"
+author: "Johannes Buck"
+date: "2023-06-08"
+categories: [cyber security, risk management]
+---
+
+![](Cognitive%20Biases.png){fig-align="center"}
+
+Cognitive biases are systematic errors in the way individuals view the world based on subjective perceptions of reality. The following list includes some cognitive biases that can negatively affect risk perception and assessment:
+
+1\. Rare events are underestimated and frequent events are overestimated.
+
+2\. The greater the potential for harm, the greater the perceived risk.
+
+3\. Risks to which one is exposed on a daily basis or risks that one believes one knows well are perceived as less threatening.
+
+4\. Risks that have recently occurred are perceived as threatening.
+
+5\. If a risk is taken voluntarily, it is perceived as less threatening.
+
+6\. If the damage is reversible, it is perceived as less dangerous.
+
+7\. If you are personally affected, a risk is perceived as more dangerous.
+
+8\. If a benefit is not apparent, a risk is perceived as threatening.
+
+In addition, risk perception and assessment are distorted by unrealistic optimism ("Nothing will happen to me!") and illusions of control ("I can handle it!").
+
+Apart from the inherent shortcomings and weaknesses of qualitative risk management, cognitive biases are difficult to overcome and have a major impact on the results of qualitative risk assessments.

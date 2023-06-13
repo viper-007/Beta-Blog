@@ -30,7 +30,7 @@ Links to third party websites are provided for convenience only and do not imply
 
 ### Copyright Notice
 
-The entire content of this website is licensed under a Creative Commons Attribution-ShareAlike 2.0 Generic License ([CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/)).
+The entire content of this website is licensed under a Creative Commons Attribution-NonCommercial 4.0 International ([CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)).
 
 ### Privacy Policy
 

@@ -9,7 +9,7 @@ website:
   repo-url: https://github.com/viper-007/Beta-Blog
 
   page-footer:
-    left: "Made with [Quarto](https://quarto.org/) by Johannes Buck. License: [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/)."
+    left: "Made with [Quarto](https://quarto.org/) by Johannes Buck. License: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)."
 
   navbar:
     background: dark

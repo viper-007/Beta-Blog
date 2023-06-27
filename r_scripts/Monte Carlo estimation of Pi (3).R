@@ -16,5 +16,5 @@ simulation = function(long){
 size = 1000
 res = simulation(size)
 ini = 1
-plot(res[ini:size], type = "l", main = "approixmation of pi", xlab = "number of points", ylab = "estimated value of pi", ylim = c(2, 4), col.main = "blue", col.lab ="blue")
+plot(res[ini:size], type = "l", main = "improvement of the accuracy ot the estimation", xlab = "number of points", ylab = "estimated value of pi", ylim = c(2, 4))
 lines(rep(pi, size)[ini:size], col = "red")

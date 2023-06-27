@@ -1,0 +1,132 @@
+---
+title: "Monte Carlo Simulation"
+author: "Johannes Buck"
+date: "2023-06-27"
+categories: [statistics, risk management]
+---
+
+Monte Carlo simulation is a technique for estimating the probability distribution of a system using random sampling techniques.
+
+In Monte Carlo simulation, the behavior of a system is simulated using random numbers and probability distributions to replicate the uncertainties and variability that exist in the real world. It is particularly useful when the system or process being analyzed is too complex to solve analytically or when the underlying mathematical model is not well defined.
+
+Monte Carlo simulation is a stochastic method, which means that results can vary from simulation to simulation due to the random sampling involved. However, by using a large number of iterations, the simulation results converge to more accurate estimates.
+
+![](/posts/monte%20carlo%20simulation/Schematic%20of%20Monte%20Carlo%20simulation.png)
+
+Figure 1: Schematic of Monte Carlo simulation
+
+## Process
+
+The process steps involved in performing a Monte Carlo simulation are as follows:
+
+1.  Define the problem: identify the system to be analyzed.
+
+2.  Identify the parameters: identify the parameters of the system and their probability distributions. This includes specifying the ranges or values that each parameter can take, as well as their respective probabilities.
+
+3.  Generate random samples: generate a set of random numbers that correspond to the probability distributions of the parameters.
+
+4.  Simulate the system: calculate the output values based on the input parameters.
+
+5.  Analyze the results: analyze the probability distribution of the output variables.
+
+6.  Validate the results: compare the results with observations or experimental data.
+
+## Purpose
+
+Monte Carlo simulation is a useful method for analyzing uncertain scenarios and providing probabilistic analysis of various situations. Monte Carlo simulation can be used for both static and dynamic simulations.
+
+In a **static simulation**, the input variables are fixed and do not change over time. Monte Carlo simulation can be used to estimate the distribution of the output variable(s) under these fixed input conditions. For example, Monte Carlo simulation can be used to estimate the distribution of project costs under fixed assumptions about the duration, scope, and, resource requirements of the project.
+
+In a **dynamic simulation**, the input variables change over time, and the simulation models the behavior of the system or process over time. Monte Carlo simulation can be used to estimate the distribution of the output variable(s) at different points in time under changing input conditions. For example, Monte Carlo simulation can be used to estimate the distribution of a portfolio's returns over a period of time, taking into account changing market conditions and other factors that affect the portfolio's performance.
+
+**Example: Monte Carlo method applied to approximating the value of π**
+
+This is done by picking random points $(x,y \mid x \in [-1..1] \wedge y \in [-1..1])$ and checking (using Pythagoras' theorem) if they are inside the unit circle:
+
+$$x^2 + y^2 \leq 1$$
+
+The ratio of the number of points inside and outside the circle can then be determined as follows:
+
+$$\frac{circle\,area}{square\,area} = \frac{r^2 \cdot \pi}{(2 \cdot r)^2} = \frac {\pi}{4} = \frac {hits\,in\,circle\,area}{generated\,points\,in\,the\,square} = P\,{(in\,the\,circle)}$$
+
+R code
+
+```{R}
+num_darts <- 1000
+num_darts_in_circle <- 0
+
+for(i in 1:num_darts) {
+  x <- runif(n = 1, min = -1, max = 1)
+  y <- runif(n = 1, min = -1, max = 1)
+  if(x^2 + y^2 <= 1) {
+    num_darts_in_circle = num_darts_in_circle + 1
+  }
+}
+
+print(4 * num_darts_in_circle / num_darts)
+```
+
+R code for optimized runtime with vector operations
+
+```{R}
+library("plotrix")
+
+num_darts <- 1000000
+num_darts_in_circle <- 0
+
+x <- runif(n = num_darts, min = -1, max = 1)
+y <- runif(n = num_darts, min = -1, max = 1)
+
+sum_squares <- x^2 + y^2
+indexes_darts_in_circle <- which(sum_squares <= 1)
+num_darts_in_circle <- length(indexes_darts_in_circle)
+print(4 * num_darts_in_circle / num_darts)
+```
+
+
+```{R}
+#| echo: false
+
+simulation = function(long){
+  c = rep(0,long)
+  numberIn = 0
+  for(i in 1:long){
+    x = runif(2,-1,1)
+    if(sqrt(x[1]*x[1] + x[2]*x[2]) <= 1){
+      numberIn = numberIn + 1
+    }
+    prop = numberIn / i
+    piHat = prop *4
+    c[i] = piHat
+  }
+  return(c)
+}
+
+size = 1000
+res = simulation(size)
+ini = 1
+plot(res[ini:size], type = "l", main = "Improve estimation accuracy as points increase", xlab = "number of points", ylab = "estimated value of pi", ylim = c(2, 4))
+lines(rep(pi, size)[ini:size], col = "red")
+```
+
+
+Plotting the results
+
+```{R}
+#| echo: false
+library("plotrix")
+
+num_darts <- 100
+num_darts_in_circle <- 0
+
+x <- runif(n = num_darts, min = -1, max = 1)
+y <- runif(n = num_darts, min = -1, max = 1)
+
+sum_squares <- x^2 + y^2
+indexes_darts_in_circle <- which(sum_squares <= 1)
+num_darts_in_circle <- length(indexes_darts_in_circle)
+
+plot(x[1:i], y[1:i], xlim = c(-1, 1), ylim = c(-1, 1), asp = 1)
+rect(-1, -1, 1, 1)
+draw.circle(0, 0, 1, nv = 1000, border = "red", col = "lightblue", lty = 1, density = 10, lwd = 1)
+```

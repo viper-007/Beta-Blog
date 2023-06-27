@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Beta Blog",
-    "section": "",
-    "text": "Risk Perception and Assessment\n\n\n\n\n\n\n\ncyber security\n\n\nrisk management\n\n\n\n\n\n\n\n\n\n\n\nJun 8, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\nRisk Matrices – Why they don’t work\n\n\n\n\n\n\n\ncyber security\n\n\nrisk management\n\n\n\n\n\n\n\n\n\n\n\nJun 4, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJun 2, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -14,18 +7,11 @@
     "text": "This blog is about cyber security and risk management. Blog posts will be published in a loose series.\nThe following tools were used to create this blog:\n\nQuarto (open source publishing system)\nRStudio for web authoring\nGitHub for version control\nNetlify for web hosting\n\nThe initial setup took place on June 2, 2023\n\nDisclaimer of liability\nThe author reserves the right not to be responsible for the topicality, correctness, completeness or quality of the information provided. Liability claims regarding damage caused by the use of any information provided, including any kind of information which is incomplete or incorrect, will therefore be rejected.\nParts of the pages or the complete publication including all offers and information might be extended, changed or partly or completely deleted by the author without separate announcement.\n\n\nReferrals and links\nLinks to third party websites are provided for convenience only and do not imply any responsibility for or approval of the information published on those other websites.\n\n\nCopyright Notice\nThe entire content of this website is licensed under a Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0).\n\n\nPrivacy Policy\nThis website does not use any cookies. By visiting this website, information about the access (date, time, page views) may be stored on the server. Personal data may be provided voluntarily (e.g. by comments)."
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Beta Blog",
     "section": "",
-    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is my first post in the β Blog. Welcome!\n\nPicture from Rudy and Peter Skitterian on Pixaby\nProfessionally, I work in cyber security and risk management. As far as my time allows, I will publish blogs on these topics. The blogs will be based on my many years of experience and will focus on what has worked in practice. There will also be blogs on more theoretical topics that are of particular interest to me.\nThe blogs reflect my personal view and do not claim to be general. Different views are possible on any topic. I consider critical discussion to be especially important and valuable. The blog is published under the CC BY-SA 2.0 license. Knowledge should be shared freely and without restrictions."
+    "text": "Monte Carlo Simulation\n\n\n\n\n\n\n\nstatistics\n\n\nrisk management\n\n\n\n\n\n\n\n\n\n\n\nJun 27, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\nSimulation Models\n\n\n\n\n\n\n\nstatistics\n\n\nrisk management\n\n\n\n\n\n\n\n\n\n\n\nJun 17, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\nSystem Models\n\n\n\n\n\n\n\nstatistics\n\n\nrisk management\n\n\n\n\n\n\n\n\n\n\n\nJun 16, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\n–version\n\n\n\n\n\n\n\ncyber security\n\n\nrisk management\n\n\n\n\n\n\n\n\n\n\n\nJun 8, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\nRisk Matrices – Why they don’t work\n\n\n\n\n\n\n\ncyber security\n\n\nrisk management\n\n\n\n\n\n\n\n\n\n\n\nJun 4, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJun 2, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/risk matrices/index.html",
@@ -37,8 +23,225 @@
   {
     "objectID": "posts/risk perception and assessment/risk perception and assessment.html",
     "href": "posts/risk perception and assessment/risk perception and assessment.html",
-    "title": "Risk Perception and Assessment",
+    "title": "–version",
     "section": "",
     "text": "Cognitive biases are systematic errors in the way individuals view the world based on subjective perceptions of reality. The following list includes some cognitive biases that can negatively affect risk perception and assessment:\n1. Rare events are underestimated and frequent events are overestimated.\n2. The greater the potential for harm, the greater the perceived risk.\n3. Risks to which one is exposed on a daily basis or risks that one believes one knows well are perceived as less threatening.\n4. Risks that have recently occurred are perceived as threatening.\n5. If a risk is taken voluntarily, it is perceived as less threatening.\n6. If the damage is reversible, it is perceived as less dangerous.\n7. If you are personally affected, a risk is perceived as more dangerous.\n8. If a benefit is not apparent, a risk is perceived as threatening.\nIn addition, risk perception and assessment are distorted by unrealistic optimism (“Nothing will happen to me!”) and illusions of control (“I can handle it!”).\nApart from the inherent shortcomings and weaknesses of qualitative risk management, cognitive biases are difficult to overcome and have a major impact on the results of qualitative risk assessments."
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is my first post in the β Blog. Welcome!\n\nPicture from Rudy and Peter Skitterian on Pixaby\nProfessionally, I work in cyber security and risk management. As far as my time allows, I will publish blogs on these topics. The blogs will be based on my many years of experience and will focus on what has worked in practice. There will also be blogs on more theoretical topics that are of particular interest to me.\nThe blogs reflect my personal view and do not claim to be general. Different views are possible on any topic. I consider critical discussion to be especially important and valuable. The blog is published under the CC BY-SA 4.0 license. Knowledge should be shared freely and without restrictions."
+  },
+  {
+    "objectID": "posts/system models.html",
+    "href": "posts/system models.html",
+    "title": "System Models",
+    "section": "",
+    "text": "Quantitative risk assessment relies on models. A model is an abstraction of reality used to gain clarity about a problem and its potential solutions by reducing the complexity.\nSystem models can be classified in relation to their randomness (deterministic or stochastic), time-dependence (static or dynamic), and number types (continuous or discrete).\nFigure 1: Taxonomy of model types"
+  },
+  {
+    "objectID": "posts/system models.html#deterministic-models",
+    "href": "posts/system models.html#deterministic-models",
+    "title": "System Models",
+    "section": "Deterministic models",
+    "text": "Deterministic models\nDeterministic models are based on the assumption that the future can be predicted with certainty, and they use a fixed set of inputs to produce a single, deterministic output. These models are often simpler and easier to understand than stochastic models, and they can be useful in situations where the input data is well-defined and reliable. However, deterministic models may not capture the full range of potential outcomes and can be overly optimistic about risk. Therefore, deterministic models are suitable for operational risk management.\n\nFigure 2: Deterministic Model (reproduced after [1])"
+  },
+  {
+    "objectID": "posts/system models.html#stochastic-models",
+    "href": "posts/system models.html#stochastic-models",
+    "title": "System Models",
+    "section": "Stochastic models",
+    "text": "Stochastic models\nStochastic models incorporate randomness and uncertainty into their calculations, allowing them to generate a range of possible outcomes and associated probabilities. This can be particularly useful in situations where the input data is incomplete or subject to fluctuations over time. Stochastic models are more complex than deterministic models, but they are often better suited to capturing the full range of potential risks and their likelihoods. They are also more adaptable to changing circumstances and can provide more robust risk assessments.\n\nFigure 3: Stochastic Model (reproduced after [2])"
+  },
+  {
+    "objectID": "posts/system models.html#static-models",
+    "href": "posts/system models.html#static-models",
+    "title": "System Models",
+    "section": "Static models",
+    "text": "Static models\nStatic models are typically used to represent operational risks that do not change significantly over time, such as risks associated with a particular process, product, or service. For example, a static model could be used to identify and assess the operational risks associated with a specific product line or business unit. Static models can be useful for providing a high-level overview of operational risks and identifying areas for improvement."
+  },
+  {
+    "objectID": "posts/system models.html#dynamic-models",
+    "href": "posts/system models.html#dynamic-models",
+    "title": "System Models",
+    "section": "Dynamic models",
+    "text": "Dynamic models\nDynamic models take into account the changing nature of operational risks over time, allowing for the modeling of complex interactions and feedback loops. These models can be useful in situations where the risk environment is constantly evolving or where there are multiple sources of risk that can interact with one another.\n\nFigure 4: Static vs. dynamic models"
+  },
+  {
+    "objectID": "posts/system models.html#discrete-models",
+    "href": "posts/system models.html#discrete-models",
+    "title": "System Models",
+    "section": "Discrete models",
+    "text": "Discrete models\nDiscrete models use variables that change only at discrete set of points in time. Most operational risks are based on scenarios with a continuous range of values. However, discrete models can be used to analyze a specific events or scenarios that may lead to operational failures or losses. For example, a discrete model could be used to identify the specific events that could lead to a cyber attack or a supply chain disruption"
+  },
+  {
+    "objectID": "posts/system models.html#continuous-models",
+    "href": "posts/system models.html#continuous-models",
+    "title": "System Models",
+    "section": "Continuous models",
+    "text": "Continuous models\nContinuous models are designed to model risks that occur over a continuous range of values, such as financial losses or process failures. These models can be useful for capturing the full distribution of possible outcomes and assessing the potential impact of different levels of risk exposure.\n\nFigure 5: Discrete vs. continuous models (reproduced after [3])"
+  },
+  {
+    "objectID": "posts/system models.html#models-for-operational-risks",
+    "href": "posts/system models.html#models-for-operational-risks",
+    "title": "System Models",
+    "section": "Models for operational risks",
+    "text": "Models for operational risks\nStochastic, dynamic, continuous models are suitable for operational risk management because they are designed to capture the inherent complexity and variability of operational risks.\nDeterministic, static. discrete models are not appropriate for operational risk management because operational risks change over time (they are dynamic, not static) and operational risk parameters have continuous values.\nReferences\n[1] Kelton, W.D.; Law, A.M. 2000. Simulation Modeling and Analysis; Boston, MA, USA: McGraw Hill.\n[2] Platon, V.; Constantinescu, A. Monte Carlo Method in Risk Analysis for Investment Projects; Procedia Economics and Finance 15 (2014) 393 – 400. https://doi.org/10.1016/S2212-5671(14)00463-8.\n[3] R. Holzer, P. Wuchner, and H. de Meer, “Modeling of Self-Organizing Systems: An Overview” Electronic Communications of the EASST vol. 27 (2010). http://dx.doi.org/10.14279/tuj.eceasst.27.385."
+  },
+  {
+    "objectID": "posts/system models.html#footnotes",
+    "href": "posts/system models.html#footnotes",
+    "title": "System Models",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nMarkdown is a simple language.↩︎"
+  },
+  {
+    "objectID": "posts/system models/system models.html",
+    "href": "posts/system models/system models.html",
+    "title": "System Models",
+    "section": "",
+    "text": "Quantitative risk assessment relies on models. A model is an abstraction of reality used to gain clarity about a problem and its potential solutions by reducing the complexity.\nSystem models can be classified in relation to their randomness (deterministic or stochastic), time-dependence (static or dynamic), and number types (continuous or discrete).\nFigure 1: Taxonomy of model types"
+  },
+  {
+    "objectID": "posts/system models/system models.html#deterministic-models",
+    "href": "posts/system models/system models.html#deterministic-models",
+    "title": "System Models",
+    "section": "Deterministic models",
+    "text": "Deterministic models\nDeterministic models are based on the assumption that the future can be predicted with certainty, and they use a fixed set of inputs to produce a single, deterministic output. These models are often simpler and easier to understand than stochastic models, and they can be useful in situations where the input data is well-defined and reliable. However, deterministic models may not capture the full range of potential outcomes and can be overly optimistic about risk. Therefore, deterministic models are suitable for operational risk management.\n\nFigure 2: Deterministic Model (reproduced after [1])"
+  },
+  {
+    "objectID": "posts/system models/system models.html#stochastic-models",
+    "href": "posts/system models/system models.html#stochastic-models",
+    "title": "System Models",
+    "section": "Stochastic models",
+    "text": "Stochastic models\nStochastic models incorporate randomness and uncertainty into their calculations, allowing them to generate a range of possible outcomes and associated probabilities. This can be particularly useful in situations where the input data is incomplete or subject to fluctuations over time. Stochastic models are more complex than deterministic models, but they are often better suited to capturing the full range of potential risks and their likelihoods. They are also more adaptable to changing circumstances and can provide more robust risk assessments.\n\nFigure 3: Stochastic Model (reproduced after [2])"
+  },
+  {
+    "objectID": "posts/system models/system models.html#static-models",
+    "href": "posts/system models/system models.html#static-models",
+    "title": "System Models",
+    "section": "Static models",
+    "text": "Static models\nStatic models are typically used to represent operational risks that do not change significantly over time, such as risks associated with a particular process, product, or service. For example, a static model could be used to identify and assess the operational risks associated with a specific product line or business unit. Static models can be useful for providing a high-level overview of operational risks and identifying areas for improvement."
+  },
+  {
+    "objectID": "posts/system models/system models.html#dynamic-models",
+    "href": "posts/system models/system models.html#dynamic-models",
+    "title": "System Models",
+    "section": "Dynamic models",
+    "text": "Dynamic models\nDynamic models take into account the changing nature of operational risks over time, allowing for the modeling of complex interactions and feedback loops. These models can be useful in situations where the risk environment is constantly evolving or where there are multiple sources of risk that can interact with one another.\n\nFigure 4: Static vs. dynamic models"
+  },
+  {
+    "objectID": "posts/system models/system models.html#discrete-models",
+    "href": "posts/system models/system models.html#discrete-models",
+    "title": "System Models",
+    "section": "Discrete models",
+    "text": "Discrete models\nDiscrete models use variables that change only at discrete set of points in time. Most operational risks are based on scenarios with a continuous range of values. However, discrete models can be used to analyze a specific events or scenarios that may lead to operational failures or losses. For example, a discrete model could be used to identify the specific events that could lead to a cyber attack or a supply chain disruption"
+  },
+  {
+    "objectID": "posts/system models/system models.html#continuous-models",
+    "href": "posts/system models/system models.html#continuous-models",
+    "title": "System Models",
+    "section": "Continuous models",
+    "text": "Continuous models\nContinuous models are designed to model risks that occur over a continuous range of values, such as financial losses or process failures. These models can be useful for capturing the full distribution of possible outcomes and assessing the potential impact of different levels of risk exposure.\n\nFigure 5: Discrete vs. continuous models (reproduced after [3])"
+  },
+  {
+    "objectID": "posts/system models/system models.html#models-for-operational-risks",
+    "href": "posts/system models/system models.html#models-for-operational-risks",
+    "title": "System Models",
+    "section": "Models for operational risks",
+    "text": "Models for operational risks\nStochastic, dynamic, continuous models are suitable for operational risk management because they are designed to capture the inherent complexity and variability of operational risks.\nDeterministic, static. discrete models are not appropriate for operational risk management because operational risks change over time (they are dynamic, not static) and operational risk parameters have continuous values.\nReferences\n[1] Kelton, W.D.; Law, A.M. 2000. Simulation Modeling and Analysis; Boston, MA, USA: McGraw Hill.\n[2] Platon, V.; Constantinescu, A. Monte Carlo Method in Risk Analysis for Investment Projects; Procedia Economics and Finance 15 (2014) 393 – 400. https://doi.org/10.1016/S2212-5671(14)00463-8.\n[3] R. Holzer, P. Wuchner, and H. de Meer, “Modeling of Self-Organizing Systems: An Overview” Electronic Communications of the EASST vol. 27 (2010). http://dx.doi.org/10.14279/tuj.eceasst.27.385."
+  },
+  {
+    "objectID": "posts/simulation models/simulation models.html",
+    "href": "posts/simulation models/simulation models.html",
+    "title": "Simulation Models",
+    "section": "",
+    "text": "The statement “All models are wrong, but some are useful” is usually attributed to the statistician George Box [1]. A model is an approximation of reality. Reality is more complex than any model."
+  },
+  {
+    "objectID": "posts/simulation models/simulation models.html#deterministic-simulation-model",
+    "href": "posts/simulation models/simulation models.html#deterministic-simulation-model",
+    "title": "Simulation Models",
+    "section": "Deterministic simulation model",
+    "text": "Deterministic simulation model\nA deterministic simulation model does not contain any random variables. Deterministic simulation models have a known set of inputs that result in a unique set of outputs.\nExamples:\n\nPatients arriving at the doctor’s office at the scheduled time.\nA production line with fixed processing times for each part\nTrain, bus, or plane schedules\nPricing structures for products or services\nLinear programming models for finding the best solution to a problem with linear constraints and a linear objective function (e.g., optimal delivery route)\n\nNote: The examples show that deterministic simulation models simplify reality (patients are delayed, production processes fail due to technical problems)."
+  },
+  {
+    "objectID": "posts/simulation models/simulation models.html#stochastic-simulation-model",
+    "href": "posts/simulation models/simulation models.html#stochastic-simulation-model",
+    "title": "Simulation Models",
+    "section": "Stochastic simulation model",
+    "text": "Stochastic simulation model\nA stochastic simulation model has one or more random variables as inputs. Random inputs result in random outputs. Probability distributions such as Bernoulli distribution, Binominal distribution, Poisson distribution, etc. are used for stochastic simulation models.\nExamples:\n\nTurbulent flow over an airplane wing\nDynamic pricing\nWeather forecasting\nEarth climatology\nFinancial markets\nPopulation dynamics"
+  },
+  {
+    "objectID": "posts/simulation models/simulation models.html#static-simulation-model",
+    "href": "posts/simulation models/simulation models.html#static-simulation-model",
+    "title": "Simulation Models",
+    "section": "Static simulation model",
+    "text": "Static simulation model\nA static simulation model or steady-state model is time-invariant, i.e. inputs and parameters do not change over time.\nStatic simulation models are (steatdy-state) memoryless systems because the output does not depend on past input signals \\(x(n-1)\\). It depends only on present input signals \\(x(n)\\).\nMathematical example:\n\\(y(n) = 6 \\cdot x(n)\\)\n\\(6\\) is a constant that multiplies the input \\(x(n)\\). The output \\(y(n)\\) is simultaneously dependent on the input \\(x(n)\\).\nPhysical example:\nThe load on a bridge. While this static model does not account for the effects of moving traffic, wind, earthquakes, or other factors that may change over time, it provides a useful first-order analysis of whether the bridge can support the weight it is designed to carry.\nNote: Static models are often used as an approximation of dynamic models to simplify the model and to reduce the complexity and the computational effort for the simulation."
+  },
+  {
+    "objectID": "posts/simulation models/simulation models.html#dynamic-simulation-model",
+    "href": "posts/simulation models/simulation models.html#dynamic-simulation-model",
+    "title": "Simulation Models",
+    "section": "Dynamic simulation model",
+    "text": "Dynamic simulation model\nA dynamic simulation model is time-dependent, i.e. the state of the system changes over time. Dynamic simulation models require memory to store time-based values. Dynamic simulation models are used to evaluate scenarios that change over time or to analyze trends. Dynamic models are often described by differential equations where the state variables change continuously.\nMathematical example:\n\\(y(n) = x(n) + 6x \\cdot (n-2)\\)\nIf \\(x(n)\\) is the current input signal, then\n\n\\(x(n-t\\)) is the past signal\n\\(x(n+t)\\) is the future signal\n\nPhysical example:\nA dynamic simulation model of a bridge taking into account the effects of loads caused by moving traffic, wind, and earthquakes."
+  },
+  {
+    "objectID": "posts/simulation models/simulation models.html#discrete-simulation-model",
+    "href": "posts/simulation models/simulation models.html#discrete-simulation-model",
+    "title": "Simulation Models",
+    "section": "Discrete simulation model",
+    "text": "Discrete simulation model\nA discrete model is one in which the state variables change only at a discrete set of times. For example, a store where the number of customers (state variable) changes only when a customer arrives or leaves.\nExample: Lifeboats and life jackets [2]\nA shipyard is designing a new ferry boat and wants to determine the number of lifeboats and life jackets it should have.\n\nEach life jacket holds 1 person and requires \\(0.05^\\,m3\\) of storage space.\nEach lifeboat holds 20 people and requires \\(2.1^\\,m3\\) of storage space.\nWe need to have capacity for 1,000 people in one or the other. - The total space to be devoted to this equipment is at most \\(85\\,m^3\\).\n\nHow many of each should be installed?\nYou could go through the following steps to determine a solution:\n\nFirst, see if it’s possible to put everyone in lifeboats, which would be best. This would require \\(\\frac{1000}{20} \\cdot 2.1 = 105\\,m^3\\) of space, so the answer is no, we must use some combination.\nMake sure there’s enough space for life jackets for everyone, otherwise the problem is impossible: \\(1000 \\cdot .05 = 50\\,m^3\\), so it would be possible to provide only life jackets and have space left over. But for the best solution, we want to use more of the available space and provide as many boats as possible.\nFigure out how many boats and life jackets will be used if we use exactly all the space available and provide exactly the capacity we need. We can frame this as a mathematical problem. There are two unknowns\n\n\n\\(x_1\\) = number of jackets\n\\(x_2\\) = number of boats\n\nand two equations to satisfy, one saying that the total capacity must be 1,000 people and the other saying that the total volume must be \\(85\\,m^3\\) . This is a linear system of equations:\n\\[\\begin{equation} \\tag{1.1}\n     \\displaylines{C_1x_1 + C_2x_2 = C\\\\V_1x_1 + V_2x_2 = V}\n\\end{equation}\\]\nwhere\n\n\\(C_1\\) = 1 (capacity of each jacket)\n\\(C_2\\) = 20 (capacity of each boat)\n\\(C\\) = 1000 (total capacity needed)\n\\(V_1\\) = 0.05 (volume of each jacket)\n\\(V_2\\) = 2.1 (volume of each boat)\n\\(V\\) = 85 (total available volume)\n\n\nSolve the mathematical problem. Equation (1.1) is just a 2 × 2 linear system, so it is easy to solve, obtaining\n\n\n\\(x_1\\) = 363.6364 (number of jackets)\n\\(x_2\\) = 31.8182 (number of boats)\n\nInterpreting the mathematical solution We cannot actually provide fractional jackets or boats, so we have to fix up these numbers. The only way to do this and keep the volume from increasing is to reduce the number of boats to 31 and increase the number of jackets to keep the capacity at 1,000. Since 31 × 20 = 620 this means we need 380 jackets. The total volume required is \\(84.1\\,m^3\\) .\nNote that the lifeboats are placed on symmetrical racks on both sides of the boat, so there must be an even number of lifeboats. Using this new information, revise the solution. There must be 30 boats and 400 life jackets.\nReconsider the solution to see if we have missed anything.\nNotice that the original mathematical solution had \\(x_2\\) almost equal to 32. This suggests that if we had just a little more space (\\(85.2\\,m^3\\) ), we could increase the number of boats to 32 instead of 30, a significant improvement. The shipyard could find another \\(0.2\\,m^3\\), which would allow two more boats to fit."
+  },
+  {
+    "objectID": "posts/simulation models/simulation models.html#continuous-simulation-model",
+    "href": "posts/simulation models/simulation models.html#continuous-simulation-model",
+    "title": "Simulation Models",
+    "section": "Continuous simulation model",
+    "text": "Continuous simulation model\nA continuous model is one in which the state variables change continuously over time.\nContinuous, static model\nExample: Voltage drop across a resistor\n\\(V = I \\cdot R\\)\nThe voltage drop depends on the value of the current at that moment. Therefore, it is a static system. A continuous model is static (stationary or memoryless) if its output depends only on the current input.\n\nFigure 1: Electrical circuit no. 1\n\nFigure 2: Voltage curve as function of current and resistor\nContinuous, dynamic model\nExample: Charging of a capacitor\nA series circuit consisting of a resistor, a capacitor, a switch, and a constant DC voltage source $V_0$ is called a charging circuit.\nIf the capacitor is initially uncharged while the switch is open, and the switch is closed at $t=0$, Kirchhoff’s law of voltage states that:\n\\(V_S - R \\cdot i(t) - V_C(t) = 0\\)\n\nFigure 3: Electric circuit no 2\n\nFigure 4: Voltage curve of capacitor charging\nReferences:\n[1] George E. P. Box. “Science and Statistics.” Journal of the American Statistical Association 71, no. 356 (1976): 791–99.https://doi.org/10.2307/2286841.\n[2] Billey, S., Burke, J., Chartier, T., Greenbaum, A., & LeVequw R. (2010). Discrete Mathematical Modeling: Math 381 Course Notes. University of Washington. 381no&lt;tes_new.pdf (washington.edu)."
+  },
+  {
+    "objectID": "posts/monte carlo simulation/monte carlo simulation.html",
+    "href": "posts/monte carlo simulation/monte carlo simulation.html",
+    "title": "Monte Carlo Simulation",
+    "section": "",
+    "text": "Monte Carlo simulation is a technique for estimating the probability distribution of a system using random sampling techniques.\nIn Monte Carlo simulation, the behavior of a system is simulated using random numbers and probability distributions to replicate the uncertainties and variability that exist in the real world. It is particularly useful when the system or process being analyzed is too complex to solve analytically or when the underlying mathematical model is not well defined.\nMonte Carlo simulation is a stochastic method, which means that results can vary from simulation to simulation due to the random sampling involved. However, by using a large number of iterations, the simulation results converge to more accurate estimates.\nFigure 1: Schematic of Monte Carlo simulation"
+  },
+  {
+    "objectID": "posts/monte carlo simulation/monte carlo simulation.html#process",
+    "href": "posts/monte carlo simulation/monte carlo simulation.html#process",
+    "title": "Monte Carlo Simulation",
+    "section": "Process",
+    "text": "Process\nThe process steps involved in performing a Monte Carlo simulation are as follows:\n\nDefine the problem: identify the system to be analyzed.\nIdentify the parameters: identify the parameters of the system and their probability distributions. This includes specifying the ranges or values that each parameter can take, as well as their respective probabilities.\nGenerate random samples: generate a set of random numbers that correspond to the probability distributions of the parameters.\nSimulate the system: calculate the output values based on the input parameters.\nAnalyze the results: analyze the probability distribution of the output variables.\nValidate the results: compare the results with observations or experimental data."
+  },
+  {
+    "objectID": "posts/monte carlo simulation/monte carlo simulation.html#purpose",
+    "href": "posts/monte carlo simulation/monte carlo simulation.html#purpose",
+    "title": "Monte Carlo Simulation",
+    "section": "Purpose",
+    "text": "Purpose\nMonte Carlo simulation is a useful method for analyzing uncertain scenarios and providing probabilistic analysis of various situations. Monte Carlo simulation can be used for both static and dynamic simulations.\nIn a static simulation, the input variables are fixed and do not change over time. Monte Carlo simulation can be used to estimate the distribution of the output variable(s) under these fixed input conditions. For example, Monte Carlo simulation can be used to estimate the distribution of project costs under fixed assumptions about the duration, scope, and, resource requirements of the project.\nIn a dynamic simulation, the input variables change over time, and the simulation models the behavior of the system or process over time. Monte Carlo simulation can be used to estimate the distribution of the output variable(s) at different points in time under changing input conditions. For example, Monte Carlo simulation can be used to estimate the distribution of a portfolio’s returns over a period of time, taking into account changing market conditions and other factors that affect the portfolio’s performance.\nExample: Monte Carlo method applied to approximating the value of π\nThis is done by picking random points \\((x,y \\mid x \\in [-1..1] \\wedge y \\in [-1..1])\\) and checking (using Pythagoras’ theorem) if they are inside the unit circle:\n\\[x^2 + y^2 \\leq 1\\]\nThe ratio of the number of points inside and outside the circle can then be determined as follows:\n\\[\\frac{circle\\,area}{square\\,area} = \\frac{r^2 \\cdot \\pi}{(2 \\cdot r)^2} = \\frac {\\pi}{4} = \\frac {hits\\,in\\,circle\\,area}{generated\\,points\\,in\\,the\\,square} = P\\,{(in\\,the\\,circle)}\\]\nR code\n\nnum_darts &lt;- 1000\nnum_darts_in_circle &lt;- 0\n\nfor(i in 1:num_darts) {\n  x &lt;- runif(n = 1, min = -1, max = 1)\n  y &lt;- runif(n = 1, min = -1, max = 1)\n  if(x^2 + y^2 &lt;= 1) {\n    num_darts_in_circle = num_darts_in_circle + 1\n  }\n}\n\nprint(4 * num_darts_in_circle / num_darts)\n\n[1] 3.188\n\n\nR code for optimized runtime with vector operations\n\nlibrary(\"plotrix\")\n\nnum_darts &lt;- 1000000\nnum_darts_in_circle &lt;- 0\n\nx &lt;- runif(n = num_darts, min = -1, max = 1)\ny &lt;- runif(n = num_darts, min = -1, max = 1)\n\nsum_squares &lt;- x^2 + y^2\nindexes_darts_in_circle &lt;- which(sum_squares &lt;= 1)\nnum_darts_in_circle &lt;- length(indexes_darts_in_circle)\nprint(4 * num_darts_in_circle / num_darts)\n\n[1] 3.141988\n\n\n\n\n\n\n\nPlotting the results"
+  },
+  {
+    "objectID": "posts/monte carlo simulation/monte carlo simulation (2).html",
+    "href": "posts/monte carlo simulation/monte carlo simulation (2).html",
+    "title": "Monte Carlo Simulation",
+    "section": "",
+    "text": "Monte Carlo simulation is a technique for estimating the probability distribution of a system using random sampling techniques.\nIn Monte Carlo simulation, the behavior of a system is simulated using random numbers and probability distributions to replicate the uncertainties and variability that exist in the real world. It is particularly useful when the system or process being analyzed is too complex to solve analytically or when the underlying mathematical model is not well defined.\nMonte Carlo simulation is a stochastic method, which means that results can vary from simulation to simulation due to the random sampling involved. However, by using a large number of iterations, the simulation results converge to more accurate estimates.\nFigure 1: Schematic of Monte Carlo simulation"
+  },
+  {
+    "objectID": "posts/monte carlo simulation/monte carlo simulation (2).html#process",
+    "href": "posts/monte carlo simulation/monte carlo simulation (2).html#process",
+    "title": "Monte Carlo Simulation",
+    "section": "Process",
+    "text": "Process\nThe process steps involved in performing a Monte Carlo simulation are as follows:\n\nDefine the problem: identify the system to be analyzed.\nIdentify the parameters: identify the parameters of the system and their probability distributions. This includes specifying the ranges or values that each parameter can take, as well as their respective probabilities.\nGenerate random samples: generate a set of random numbers that correspond to the probability distributions of the parameters.\nSimulate the system: calculate the output values based on the input parameters.\nAnalyze the results: analyze the probability distribution of the output variables.\nValidate the results: compare the results with observations or experimental data."
+  },
+  {
+    "objectID": "posts/monte carlo simulation/monte carlo simulation (2).html#purpose",
+    "href": "posts/monte carlo simulation/monte carlo simulation (2).html#purpose",
+    "title": "Monte Carlo Simulation",
+    "section": "Purpose",
+    "text": "Purpose\nMonte Carlo simulation is a useful method for analyzing uncertain scenarios and providing probabilistic analysis of various situations. Monte Carlo simulation can be used for both static and dynamic simulations.\nIn a static simulation, the input variables are fixed and do not change over time. Monte Carlo simulation can be used to estimate the distribution of the output variable(s) under these fixed input conditions. For example, Monte Carlo simulation can be used to estimate the distribution of project costs under fixed assumptions about the duration, scope, and, resource requirements of the project.\nIn a dynamic simulation, the input variables change over time, and the simulation models the behavior of the system or process over time. Monte Carlo simulation can be used to estimate the distribution of the output variable(s) at different points in time under changing input conditions. For example, Monte Carlo simulation can be used to estimate the distribution of a portfolio’s returns over a period of time, taking into account changing market conditions and other factors that affect the portfolio’s performance.\nExample: Monte Carlo method applied to approximating the value of π\nThis is done by picking random points \\((x,y \\mid x \\in [-1..1] \\wedge y \\in [-1..1])\\) and checking (using Pythagoras’ theorem) if they are inside the unit circle:\n\\[x^2 + y^2 \\leq 1\\]\nThe ratio of the number of points inside and outside the circle can then be determined as follows:\n\\[\\frac{circle\\,area}{square\\,area} = \\frac{r^2 \\cdot \\pi}{(2 \\cdot r)^2} = \\frac {\\pi}{4} = \\frac {hits\\,in\\,circle\\,area}{generated\\,points\\,in\\,the\\,square} = P\\,{(in\\,the\\,circle)}\\]\nR code\n\nnum_darts &lt;- 1000\nnum_darts_in_circle &lt;- 0\n\nfor(i in 1:num_darts) {\n  x &lt;- runif(n = 1, min = -1, max = 1)\n  y &lt;- runif(n = 1, min = -1, max = 1)\n  if(x^2 + y^2 &lt;= 1) {\n    num_darts_in_circle = num_darts_in_circle + 1\n  }\n}\n\nprint(4 * num_darts_in_circle / num_darts)\n\n[1] 3.048\n\n\nR code for optimized runtime with vector operations\n\nlibrary(\"plotrix\")\n\nnum_darts &lt;- 1000000\nnum_darts_in_circle &lt;- 0\n\nx &lt;- runif(n = num_darts, min = -1, max = 1)\ny &lt;- runif(n = num_darts, min = -1, max = 1)\n\nsum_squares &lt;- x^2 + y^2\nindexes_darts_in_circle &lt;- which(sum_squares &lt;= 1)\nnum_darts_in_circle &lt;- length(indexes_darts_in_circle)\nprint(4 * num_darts_in_circle / num_darts)\n\n[1] 3.141048\n\n\nR code with plotting the results\n\nlibrary(\"plotrix\")\n\nnum_darts &lt;- 100\nnum_darts_in_circle &lt;- 0\n\nx &lt;- runif(n = num_darts, min = -1, max = 1)\ny &lt;- runif(n = num_darts, min = -1, max = 1)\n\nsum_squares &lt;- x^2 + y^2\nindexes_darts_in_circle &lt;- which(sum_squares &lt;= 1)\nnum_darts_in_circle &lt;- length(indexes_darts_in_circle)\n\nplot(x[1:i], y[1:i], xlim = c(-1, 1), ylim = c(-1, 1), asp = 1)\nrect(-1, -1, 1, 1)\ndraw.circle(0, 0, 1, nv = 1000, border = \"red\", col = \"lightblue\", lty = 1, density = 10, lwd = 1)"
   }
 ]

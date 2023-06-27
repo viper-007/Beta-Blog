@@ -13,4 +13,4 @@ This is my first post in the `β Blog`. Welcome!
 
 Professionally, I work in cyber security and risk management. As far as my time allows, I will publish blogs on these topics. The blogs will be based on my many years of experience and will focus on what has worked in practice. There will also be blogs on more theoretical topics that are of particular interest to me.
 
-The blogs reflect my personal view and do not claim to be general. Different views are possible on any topic. I consider critical discussion to be especially important and valuable. The blog is published under the CC BY-SA 2.0 license. Knowledge should be shared freely and without restrictions.
+The blogs reflect my personal view and do not claim to be general. Different views are possible on any topic. I consider critical discussion to be especially important and valuable. The blog is published under the CC BY-SA 4.0 license. Knowledge should be shared freely and without restrictions.

@@ -1,0 +1,186 @@
+---
+title: "Simulation Models"
+author: "Johannes Buck"
+date: "2023-06-17"
+categories: [statistics, risk management]
+---
+
+The statement *"All models are wrong, but some are useful"* is usually attributed to the statistician George Box \[1\]. A model is an approximation of reality. Reality is more complex than any model.
+
+## Deterministic simulation model
+
+A deterministic simulation model does not contain any random variables. Deterministic simulation models have a known set of inputs that result in a unique set of outputs.
+
+Examples:
+
+-   Patients arriving at the doctor's office at the scheduled time.
+
+-   A production line with fixed processing times for each part
+
+-   Train, bus, or plane schedules
+
+-   Pricing structures for products or services
+
+-   Linear programming models for finding the best solution to a problem with linear constraints and a linear objective function (e.g., optimal delivery route)
+
+Note: The examples show that deterministic simulation models simplify reality (patients are delayed, production processes fail due to technical problems).
+
+## Stochastic simulation model
+
+A stochastic simulation model has one or more random variables as inputs. Random inputs result in random outputs. Probability distributions such as Bernoulli distribution, Binominal distribution, Poisson distribution, etc. are used for stochastic simulation models.
+
+Examples:
+
+-   Turbulent flow over an airplane wing
+
+-   Dynamic pricing
+
+-   Weather forecasting
+
+-   Earth climatology
+
+-   Financial markets
+
+-   Population dynamics
+
+## Static simulation model
+
+A static simulation model or steady-state model is time-invariant, i.e. inputs and parameters do not change over time.
+
+Static simulation models are (steatdy-state) memoryless systems because the output does not depend on past input signals $x(n-1)$. It depends only on present input signals $x(n)$.
+
+Mathematical example:
+
+$y(n) = 6 \cdot x(n)$
+
+$6$ is a constant that multiplies the input $x(n)$. The output $y(n)$ is simultaneously dependent on the input $x(n)$.
+
+Physical example:
+
+The load on a bridge. While this static model does not account for the effects of moving traffic, wind, earthquakes, or other factors that may change over time, it provides a useful first-order analysis of whether the bridge can support the weight it is designed to carry.
+
+Note: Static models are often used as an approximation of dynamic models to simplify the model and to reduce the complexity and the computational effort for the simulation.
+
+## Dynamic simulation model
+
+A dynamic simulation model is time-dependent, i.e. the state of the system changes over time. Dynamic simulation models require memory to store time-based values. Dynamic simulation models are used to evaluate scenarios that change over time or to analyze trends. Dynamic models are often described by differential equations where the state variables change continuously.
+
+Mathematical example:
+
+$y(n) = x(n) + 6x \cdot (n-2)$
+
+If $x(n)$ is the current input signal, then
+
+-   $x(n-t$) is the past signal
+
+-   $x(n+t)$ is the future signal
+
+Physical example:
+
+A dynamic simulation model of a bridge taking into account the effects of loads caused by moving traffic, wind, and earthquakes.
+
+## Discrete simulation model
+
+A discrete model is one in which the state variables change only at a discrete set of times. For example, a store where the number of customers (state variable) changes only when a customer arrives or leaves.
+
+Example: Lifeboats and life jackets \[2\]
+
+A shipyard is designing a new ferry boat and wants to determine the number of lifeboats and life jackets it should have.
+
+-   Each life jacket holds 1 person and requires $0.05^\,m3$ of storage space.
+
+-   Each lifeboat holds 20 people and requires $2.1^\,m3$ of storage space.
+
+-   We need to have capacity for 1,000 people in one or the other. - The total space to be devoted to this equipment is at most $85\,m^3$.
+
+How many of each should be installed?
+
+You could go through the following steps to determine a solution:
+
+1.  First, see if it's possible to put everyone in lifeboats, which would be best. This would require $\frac{1000}{20} \cdot 2.1 = 105\,m^3$ of space, so the answer is no, we must use some combination.
+
+2.  Make sure there's enough space for life jackets for everyone, otherwise the problem is impossible: $1000 \cdot .05 = 50\,m^3$, so it would be possible to provide only life jackets and have space left over. But for the best solution, we want to use more of the available space and provide as many boats as possible.
+
+3.  Figure out how many boats and life jackets will be used if we use exactly all the space available and provide exactly the capacity we need. We can frame this as a mathematical problem. There are two unknowns
+
+-   $x_1$ = number of jackets
+
+-   $x_2$ = number of boats
+
+and two equations to satisfy, one saying that the total capacity must be 1,000 people and the other saying that the total volume must be $85\,m^3$ . This is a linear system of equations:
+
+$$\begin{equation} \tag{1.1}
+     \displaylines{C_1x_1 + C_2x_2 = C\\V_1x_1 + V_2x_2 = V}
+\end{equation}$$
+
+where
+
+-   $C_1$ = 1 (capacity of each jacket)
+
+-   $C_2$ = 20 (capacity of each boat)
+
+-   $C$ = 1000 (total capacity needed)
+
+-   $V_1$ = 0.05 (volume of each jacket)
+
+-   $V_2$ = 2.1 (volume of each boat)
+
+-   $V$ = 85 (total available volume)
+
+4.  Solve the mathematical problem. Equation (1.1) is just a 2 × 2 linear system, so it is easy to solve, obtaining
+
+-   $x_1$ = 363.6364 (number of jackets)
+
+-   $x_2$ = 31.8182 (number of boats)
+
+Interpreting the mathematical solution We cannot actually provide fractional jackets or boats, so we have to fix up these numbers. The only way to do this and keep the volume from increasing is to reduce the number of boats to 31 and increase the number of jackets to keep the capacity at 1,000. Since 31 × 20 = 620 this means we need 380 jackets. The total volume required is $84.1\,m^3$ .
+
+Note that the lifeboats are placed on symmetrical racks on both sides of the boat, so there must be an even number of lifeboats. Using this new information, revise the solution. There must be 30 boats and 400 life jackets.
+
+Reconsider the solution to see if we have missed anything.
+
+Notice that the original mathematical solution had $x_2$ almost equal to 32. This suggests that if we had just a little more space ($85.2\,m^3$ ), we could increase the number of boats to 32 instead of 30, a significant improvement. The shipyard could find another $0.2\,m^3$, which would allow two more boats to fit.
+
+## Continuous simulation model
+
+A continuous model is one in which the state variables change continuously over time.
+
+**Continuous, static model**
+
+Example: Voltage drop across a resistor
+
+$V = I \cdot R$
+
+The voltage drop depends on the value of the current at that moment. Therefore, it is a static system. A continuous model is static (stationary or memoryless) if its output depends only on the current input.
+
+![](Electric%20Circuit.png)
+
+Figure 1: Electrical circuit no. 1
+
+![](Voltage%20Curve.png)
+
+Figure 2: Voltage curve as function of current and resistor
+
+**Continuous, dynamic model**
+
+Example: Charging of a capacitor
+
+A series circuit consisting of a resistor, a capacitor, a switch, and a constant DC voltage source \$V_0\$ is called a charging circuit.
+
+If the capacitor is initially uncharged while the switch is open, and the switch is closed at \$t=0\$, Kirchhoff's law of voltage states that:
+
+$V_S - R \cdot i(t) - V_C(t) = 0$
+
+![](Electric%20Circuit%20(2).png)
+
+Figure 3: Electric circuit no 2
+
+![](Voltage%20Curve%20(2).png)
+
+Figure 4: Voltage curve of capacitor charging
+
+**References:**
+
+\[1\] George E. P. Box. "Science and Statistics." *Journal of the American Statistical Association* 71, no. 356 (1976): 791--99.<https://doi.org/10.2307/2286841>.
+
+\[2\] Billey, S., Burke, J., Chartier, T., Greenbaum, A., & LeVequw R. (2010). *Discrete Mathematical Modeling: Math 381 Course Notes.* University of Washington. [381no\<tes_new.pdf (washington.edu)](https://sites.math.washington.edu/~conroy/m381-general/pdfResources/381notes_new.pdf).

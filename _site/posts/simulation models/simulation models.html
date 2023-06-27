@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Johannes Buck">
-<meta name="dcterms.date" content="2023-06-04">
+<meta name="dcterms.date" content="2023-06-17">
 
-<title>β Blog - Risk Matrices – Why they don’t work</title>
+<title>β Blog - Simulation Models</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -63,6 +63,8 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -114,9 +116,9 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Risk Matrices – Why they don’t work</h1>
+      <h1 class="title">Simulation Models</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">cyber security</div>
+                <div class="quarto-category">statistics</div>
                 <div class="quarto-category">risk management</div>
               </div>
                   </div>
@@ -135,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">June 4, 2023</p>
+        <p class="date">June 17, 2023</p>
       </div>
     </div>
     
@@ -151,15 +153,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#risk-matrices" id="toc-risk-matrices" class="nav-link active" data-scroll-target="#risk-matrices">Risk matrices</a></li>
-  <li><a href="#risk-basics" id="toc-risk-basics" class="nav-link" data-scroll-target="#risk-basics">Risk basics</a></li>
-  <li><a href="#selective-representation-of-individual-risks" id="toc-selective-representation-of-individual-risks" class="nav-link" data-scroll-target="#selective-representation-of-individual-risks">Selective representation of individual risks</a></li>
-  <li><a href="#poor-resolution" id="toc-poor-resolution" class="nav-link" data-scroll-target="#poor-resolution">Poor resolution</a></li>
-  <li><a href="#ambiguous-inputs-and-outputs" id="toc-ambiguous-inputs-and-outputs" class="nav-link" data-scroll-target="#ambiguous-inputs-and-outputs">Ambiguous inputs and outputs</a></li>
-  <li><a href="#misleading-risk-representation" id="toc-misleading-risk-representation" class="nav-link" data-scroll-target="#misleading-risk-representation">Misleading risk representation</a></li>
-  <li><a href="#false-assumption" id="toc-false-assumption" class="nav-link" data-scroll-target="#false-assumption">False assumption</a></li>
-  <li><a href="#risk-appetite" id="toc-risk-appetite" class="nav-link" data-scroll-target="#risk-appetite">Risk appetite</a></li>
-  <li><a href="#bottom-line" id="toc-bottom-line" class="nav-link" data-scroll-target="#bottom-line">Bottom line</a></li>
+  <li><a href="#deterministic-simulation-model" id="toc-deterministic-simulation-model" class="nav-link active" data-scroll-target="#deterministic-simulation-model">Deterministic simulation model</a></li>
+  <li><a href="#stochastic-simulation-model" id="toc-stochastic-simulation-model" class="nav-link" data-scroll-target="#stochastic-simulation-model">Stochastic simulation model</a></li>
+  <li><a href="#static-simulation-model" id="toc-static-simulation-model" class="nav-link" data-scroll-target="#static-simulation-model">Static simulation model</a></li>
+  <li><a href="#dynamic-simulation-model" id="toc-dynamic-simulation-model" class="nav-link" data-scroll-target="#dynamic-simulation-model">Dynamic simulation model</a></li>
+  <li><a href="#discrete-simulation-model" id="toc-discrete-simulation-model" class="nav-link" data-scroll-target="#discrete-simulation-model">Discrete simulation model</a></li>
+  <li><a href="#continuous-simulation-model" id="toc-continuous-simulation-model" class="nav-link" data-scroll-target="#continuous-simulation-model">Continuous simulation model</a></li>
   </ul>
 </nav>
     </div>
@@ -169,114 +168,126 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Classic 5x5 risk matrix with linear scales.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<p>Do we use risk matrices even though we know the limitations and shortcomings of this popular risk assessment tool? This post provides some insights that can help you use risk matrices more effectively. It adapted from an article I published on my website, <a href="https://b-advisory.ch">B Advisory</a>, on April 1, 2019.</p>
-<section id="risk-matrices" class="level1">
-<h1>Risk matrices</h1>
-<p>Risk matrices are used in risk assessments to define the level of risk by considering the likelihood of occurrence and impact. It is a simple mechanism for visualizing risk and supporting management decision making. Risk matrices are mentioned in several standards such as ISO and NIST. However, risk matrices have several shortcomings.</p>
-</section>
-<section id="risk-basics" class="level1">
-<h1>Risk basics</h1>
-<p>Risk is expressed as a combination of the likelihood of an event occurring and the impact on the business expressed in the equation:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Risk equation.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption"><em>Figure 1: Risk Equation</em></figcaption>
-</figure>
-</div>
-</section>
-<section id="selective-representation-of-individual-risks" class="level1">
-<h1>Selective representation of individual risks</h1>
-<p>The risk matrix is a presentation of individual risks, often arbitrarily selected. Dependencies, interactions and dynamics between individual risks are ignored.</p>
-<p>Risk matrices, by their nature, are not suitable for risk aggregation or risk portfolio presentation. Risks cannot simply be added up. Risk aggregation requires risk quantification based on probability distributions or stochastic processes. Monte Carlo simulation is one method used for risk aggregation.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Aggregation scheme.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<p><em>Figure 2: Aggregation scheme for a distribution-based determination of the overall risk</em></p>
-</section>
-<section id="poor-resolution" class="level1">
-<h1>Poor resolution</h1>
-<p>A 5x5 risk matrix is often used for risk assessment.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Classic 5x5 risk matrix with linear scales.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<p><em>Figure 3: classic 5x5 risk matrix with linear scales</em>*</p>
-<p>Most security risks do not have a linear risk distribution where five categories (rare, unlikely, possible, likely, certain) or (negligible, minor, moderate, critical, catastrophic) would be appropriate. A logarithmic representation for both likelihood and impact provides a much better resolution with a wider spread. A risk matrix with a double-logarithmic scale allows to illustrate even so-called tail risks with extremely low probability and very high impact to be represented.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Risk matrix with logarithmic scales.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<p><em>Figure 4: risk matrix with logarithmic scales</em></p>
-</section>
-<section id="ambiguous-inputs-and-outputs" class="level1">
-<h1>Ambiguous inputs and outputs</h1>
-<p>Inputs to risk matrices (likelihood and impact) are often subjective and biased. Different assessors may arrive at opposite ratings for the same risks. Sometimes the likelihood ratings are underscored with frequencies for the occurrence of an event, e.g., three times a year, and the impact categories are defined by financial losses, e.g., $ 500,000, to guide risk assessors and avoid subjectivity and bias <sup>1)</sup>. However, the actual ratings are still based on the judgment of individuals and are not supported or derived from reliable data. In addition, most risk assessors rely on their experience based on past events and incidents. In fact, risk assessors should be trying to anticipate the likelihood and impact of future events, which is obviously a challenge.</p>
-<p><sup>1)</sup> The National Institute of Standards &amp; Technology (NIST) standard <a href="https://csrc.nist.gov/publications/detail/sp/800-30/rev-1/final">SP 800-30r1</a> “Guide for Conducting Risk Assessments” provides a starting point for rating scales in Appendix G, which should be tailored to fit any organization-specific conditions. For both likelihood and impact, the qualitative values of very low, low, moderate, high, and high are converted to semi-quantitative values of 0-4, 5-20, 21-79, 80-95, and 96-100, respectively.</p>
-</section>
-<section id="misleading-risk-representation" class="level1">
-<h1>Misleading risk representation</h1>
-<p>A correct representation of the semi-quantitative categories defined by NIST SP 800-30r1 results in a completely different risk matrix than the common 5x5 risk matrix.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Classic 5x5 risk matrix with linear scales.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<p><em>Figure 5: classic 5x5 risk matrix with equal squares</em></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="5x5 risk matrix with NIST SP 800-30r1 scales.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<p><em>Figure 6: 5x5 matrix with rectangles considering the unequal dimensions of the semi-quantitative categories according to NIST SP 800-30r1</em></p>
-<p>A classic risk matrix with equal squares means that risks with the same risk rating (Risk = Likelihood x Impact) lie on a hyperbola. A circumstance most people are hardly aware of.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Risk matrix with linear scales and risk isolines.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<p><em>Figure 7: risk matrix with linear scales and risk isolines<sup>1)</sup></em></p>
-<p>In comparison a risk matrix with double-logarithmic scale, where the risk isolines are straight lines.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Risk matrix with logarithmic scale and risk isolines.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<p>Figure 8: risk matrix with logarithmic scale and risk isolines</p>
-<p><sup>1)</sup> Isoline: A line of constant value on a map or chart.</p>
-</section>
-<section id="false-assumption" class="level1">
-<h1>False assumption</h1>
-<p>Risk matrices imply that the effort to reduce risk is the same for all risks in the same field of the risk matrix. This is incorrect for obvious reasons. Risk mitigation costs vary widely. Cost/benefit is a critical factor in risk treatment, and management must decide how best to spend limited resources to reduce overall risk.</p>
-</section>
-<section id="risk-appetite" class="level1">
-<h1>Risk appetite</h1>
-<p>Risk appetite is the level of risk that an organization is willing and able to accept. The challenge with risk appetite is how to implement and enforce it and make it relevant to the business on a day-to-day basis, i.e.&nbsp;linking risk appetite to risk acceptance decisions.</p>
-<p>It is common to visualize risk appetite using a staircase diagram. The picture suggests that all risks from the red, yellow and amber areas should be reduced, i.e.&nbsp;moved to the green area below the risk appetite line.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="5x5 risk matrix with risk appetite line.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<p><em>Figure 9: 5x5 matrix with risk appetite line</em></p>
-<p>Risk acceptance should be a decision-making process at management or board level, not an automatic process triggered by a threshold. Risk acceptance should be a conscious decision based on risk/return, strategic objectives and risk capacity, not based on a baseline approach.</p>
-</section>
-<section id="bottom-line" class="level1">
-<h1>Bottom line</h1>
-<p>It is worth questioning common and widely used concepts such as the risk matrix. The risk matrix is a good example of how complex issues cannot be simplified as much as one would like.</p>
+<p>The statement <em>“All models are wrong, but some are useful”</em> is usually attributed to the statistician George Box [1]. A model is an approximation of reality. Reality is more complex than any model.</p>
+<section id="deterministic-simulation-model" class="level2">
+<h2 class="anchored" data-anchor-id="deterministic-simulation-model">Deterministic simulation model</h2>
+<p>A deterministic simulation model does not contain any random variables. Deterministic simulation models have a known set of inputs that result in a unique set of outputs.</p>
+<p>Examples:</p>
 <ul>
-<li><p>Simple scoring methods do not alleviate the fundamental problem of limited information.</p></li>
-<li><p>Simple risk presentation is in no way appropriate, although risk matrices work perfectly in a PowerPoint business culture.</p></li>
+<li><p>Patients arriving at the doctor’s office at the scheduled time.</p></li>
+<li><p>A production line with fixed processing times for each part</p></li>
+<li><p>Train, bus, or plane schedules</p></li>
+<li><p>Pricing structures for products or services</p></li>
+<li><p>Linear programming models for finding the best solution to a problem with linear constraints and a linear objective function (e.g., optimal delivery route)</p></li>
 </ul>
-<p>A double-logarithmic risk matrix is probably not appropriate for most audiences, but perhaps a risk matrix with rectangles is, given the uneven dimensions of the semi-quantitative categories. However, risk matrices should be used with caution, with careful interpretation, explanation, and sound background knowledge.</p>
+<p>Note: The examples show that deterministic simulation models simplify reality (patients are delayed, production processes fail due to technical problems).</p>
+</section>
+<section id="stochastic-simulation-model" class="level2">
+<h2 class="anchored" data-anchor-id="stochastic-simulation-model">Stochastic simulation model</h2>
+<p>A stochastic simulation model has one or more random variables as inputs. Random inputs result in random outputs. Probability distributions such as Bernoulli distribution, Binominal distribution, Poisson distribution, etc. are used for stochastic simulation models.</p>
+<p>Examples:</p>
+<ul>
+<li><p>Turbulent flow over an airplane wing</p></li>
+<li><p>Dynamic pricing</p></li>
+<li><p>Weather forecasting</p></li>
+<li><p>Earth climatology</p></li>
+<li><p>Financial markets</p></li>
+<li><p>Population dynamics</p></li>
+</ul>
+</section>
+<section id="static-simulation-model" class="level2">
+<h2 class="anchored" data-anchor-id="static-simulation-model">Static simulation model</h2>
+<p>A&nbsp;static simulation model or steady-state model is time-invariant, i.e.&nbsp;inputs and parameters do not change over time.</p>
+<p>Static simulation models are (steatdy-state) memoryless systems because the output does not depend on past input signals <span class="math inline">\(x(n-1)\)</span>. It depends only on present input signals <span class="math inline">\(x(n)\)</span>.</p>
+<p>Mathematical example:</p>
+<p><span class="math inline">\(y(n) = 6 \cdot x(n)\)</span></p>
+<p><span class="math inline">\(6\)</span> is a constant that multiplies the input <span class="math inline">\(x(n)\)</span>. The output <span class="math inline">\(y(n)\)</span> is simultaneously dependent on the input <span class="math inline">\(x(n)\)</span>.</p>
+<p>Physical example:</p>
+<p>The load on a bridge. While this static model does not account for the effects of moving traffic, wind, earthquakes, or other factors that may change over time, it provides a useful first-order analysis of whether the bridge can support the weight it is designed to carry.</p>
+<p>Note: Static models are often used as an approximation of dynamic models to simplify the model and to reduce the complexity and the computational effort for the simulation.</p>
+</section>
+<section id="dynamic-simulation-model" class="level2">
+<h2 class="anchored" data-anchor-id="dynamic-simulation-model">Dynamic simulation model</h2>
+<p>A dynamic simulation model is time-dependent, i.e.&nbsp;the state of the system changes over time. Dynamic simulation models require memory to store time-based values. Dynamic simulation models are used to evaluate scenarios that change over time or to analyze trends. Dynamic models are often described by differential equations where the state variables change continuously.</p>
+<p>Mathematical example:</p>
+<p><span class="math inline">\(y(n) = x(n) + 6x \cdot (n-2)\)</span></p>
+<p>If <span class="math inline">\(x(n)\)</span> is the current input signal, then</p>
+<ul>
+<li><p><span class="math inline">\(x(n-t\)</span>) is the past signal</p></li>
+<li><p><span class="math inline">\(x(n+t)\)</span> is the future signal</p></li>
+</ul>
+<p>Physical example:</p>
+<p>A dynamic simulation model of a bridge taking into account the effects of loads caused by moving traffic, wind, and earthquakes.</p>
+</section>
+<section id="discrete-simulation-model" class="level2">
+<h2 class="anchored" data-anchor-id="discrete-simulation-model">Discrete simulation model</h2>
+<p>A discrete model is one in which the state variables change only at a discrete set of times. For example, a store where the number of customers (state variable) changes only when a customer arrives or leaves.</p>
+<p>Example: Lifeboats and life jackets [2]</p>
+<p>A shipyard is designing a new ferry boat and wants to determine the number of lifeboats and life jackets it should have.</p>
+<ul>
+<li><p>Each life jacket holds 1 person and requires <span class="math inline">\(0.05^\,m3\)</span> of storage space.</p></li>
+<li><p>Each lifeboat holds 20 people and requires <span class="math inline">\(2.1^\,m3\)</span> of storage space.</p></li>
+<li><p>We need to have capacity for 1,000 people in one or the other. - The total space to be devoted to this equipment is at most <span class="math inline">\(85\,m^3\)</span>.</p></li>
+</ul>
+<p>How many of each should be installed?</p>
+<p>You could go through the following steps to determine a solution:</p>
+<ol type="1">
+<li><p>First, see if it’s possible to put everyone in lifeboats, which would be best. This would require <span class="math inline">\(\frac{1000}{20} \cdot 2.1 = 105\,m^3\)</span> of space, so the answer is no, we must use some combination.</p></li>
+<li><p>Make sure there’s enough space for life jackets for everyone, otherwise the problem is impossible: <span class="math inline">\(1000 \cdot .05 = 50\,m^3\)</span>, so it would be possible to provide only life jackets and have space left over. But for the best solution, we want to use more of the available space and provide as many boats as possible.</p></li>
+<li><p>Figure out how many boats and life jackets will be used if we use exactly all the space available and provide exactly the capacity we need. We can frame this as a mathematical problem. There are two unknowns</p></li>
+</ol>
+<ul>
+<li><p><span class="math inline">\(x_1\)</span> = number of jackets</p></li>
+<li><p><span class="math inline">\(x_2\)</span> = number of boats</p></li>
+</ul>
+<p>and two equations to satisfy, one saying that the total capacity must be 1,000 people and the other saying that the total volume must be <span class="math inline">\(85\,m^3\)</span> . This is a linear system of equations:</p>
+<p><span class="math display">\[\begin{equation} \tag{1.1}
+     \displaylines{C_1x_1 + C_2x_2 = C\\V_1x_1 + V_2x_2 = V}
+\end{equation}\]</span></p>
+<p>where</p>
+<ul>
+<li><p><span class="math inline">\(C_1\)</span> = 1 (capacity of each jacket)</p></li>
+<li><p><span class="math inline">\(C_2\)</span> = 20 (capacity of each boat)</p></li>
+<li><p><span class="math inline">\(C\)</span> = 1000 (total capacity needed)</p></li>
+<li><p><span class="math inline">\(V_1\)</span> = 0.05 (volume of each jacket)</p></li>
+<li><p><span class="math inline">\(V_2\)</span> = 2.1 (volume of each boat)</p></li>
+<li><p><span class="math inline">\(V\)</span> = 85 (total available volume)</p></li>
+</ul>
+<ol start="4" type="1">
+<li>Solve the mathematical problem. Equation (1.1) is just a 2 × 2 linear system, so it is easy to solve, obtaining</li>
+</ol>
+<ul>
+<li><p><span class="math inline">\(x_1\)</span> = 363.6364 (number of jackets)</p></li>
+<li><p><span class="math inline">\(x_2\)</span> = 31.8182 (number of boats)</p></li>
+</ul>
+<p>Interpreting the mathematical solution We cannot actually provide fractional jackets or boats, so we have to fix up these numbers. The only way to do this and keep the volume from increasing is to reduce the number of boats to 31 and increase the number of jackets to keep the capacity at 1,000. Since 31 × 20 = 620 this means we need 380 jackets. The total volume required is <span class="math inline">\(84.1\,m^3\)</span> .</p>
+<p>Note that the lifeboats are placed on symmetrical racks on both sides of the boat, so there must be an even number of lifeboats. Using this new information, revise the solution. There must be 30 boats and 400 life jackets.</p>
+<p>Reconsider the solution to see if we have missed anything.</p>
+<p>Notice that the original mathematical solution had <span class="math inline">\(x_2\)</span> almost equal to 32. This suggests that if we had just a little more space (<span class="math inline">\(85.2\,m^3\)</span> ), we could increase the number of boats to 32 instead of 30, a significant improvement. The shipyard could find another <span class="math inline">\(0.2\,m^3\)</span>, which would allow two more boats to fit.</p>
+</section>
+<section id="continuous-simulation-model" class="level2">
+<h2 class="anchored" data-anchor-id="continuous-simulation-model">Continuous simulation model</h2>
+<p>A continuous model&nbsp;is one in which the state variables change continuously over time.</p>
+<p><strong>Continuous, static model</strong></p>
+<p>Example: Voltage drop across a resistor</p>
+<p><span class="math inline">\(V = I \cdot R\)</span></p>
+<p>The voltage drop depends on the value of the current at that moment. Therefore, it is a static system. A continuous model is static (stationary or memoryless) if its output depends only on the current input.</p>
+<p><img src="Electric Circuit.png" class="img-fluid"></p>
+<p>Figure 1: Electrical circuit no. 1</p>
+<p><img src="Voltage Curve.png" class="img-fluid"></p>
+<p>Figure 2: Voltage curve as function of current and resistor</p>
+<p><strong>Continuous, dynamic model</strong></p>
+<p>Example:&nbsp;Charging of a capacitor</p>
+<p>A series circuit consisting of a resistor, a capacitor, a switch, and a constant DC voltage source $V_0$ is called a charging circuit.</p>
+<p>If the capacitor is initially uncharged while the switch is open, and the switch is closed at $t=0$, Kirchhoff’s law of voltage states that:</p>
+<p><span class="math inline">\(V_S - R \cdot i(t) - V_C(t) = 0\)</span></p>
+<p><img src="Electric Circuit (2).png" class="img-fluid"></p>
+<p>Figure 3: Electric circuit no 2</p>
+<p><img src="Voltage Curve (2).png" class="img-fluid"></p>
+<p>Figure 4: Voltage curve of capacitor charging</p>
+<p><strong>References:</strong></p>
+<p>[1] George E. P. Box. “Science and Statistics.”&nbsp;<em>Journal of the American Statistical Association</em>&nbsp;71, no. 356 (1976): 791–99.<a href="https://doi.org/10.2307/2286841" class="uri">https://doi.org/10.2307/2286841</a>.</p>
+<p>[2] Billey, S., Burke, J., Chartier, T., Greenbaum, A., &amp; LeVequw R. (2010). <em>Discrete Mathematical Modeling: Math 381 Course Notes.</em> University of Washington. <a href="https://sites.math.washington.edu/~conroy/m381-general/pdfResources/381notes_new.pdf">381no&lt;tes_new.pdf (washington.edu)</a>.</p>
 
 
 </section>

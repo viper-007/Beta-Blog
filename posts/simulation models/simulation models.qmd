@@ -3,9 +3,13 @@ title: "Simulation Models"
 author: "Johannes Buck"
 date: "2023-06-17"
 categories: [statistics, risk management]
+description: All models are wrong, but some are useful.
+image: simulation model.png
 ---
 
-The statement *"All models are wrong, but some are useful"* is usually attributed to the statistician George Box \[1\]. A model is an approximation of reality. Reality is more complex than any model.
+The statement *"All models are wrong, but some are useful."* is usually attributed to the statistician George Box \[1\].
+
+A model is an approximation of reality. Reality is more complex than any model.
 
 ## Deterministic simulation model
 

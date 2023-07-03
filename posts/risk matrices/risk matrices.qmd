@@ -3,11 +3,13 @@ title: "Risk Matrices – Why they don’t work"
 author: "Johannes Buck"
 date: "2023-06-04"
 categories: [cyber security, risk management]
+description: Do we use risk matrices even though we know the limitations and shortcomings of this popular risk assessment tool?
+image: Classic 5x5 risk matrix with linear scales.png
 ---
 
 ![](Classic%205x5%20risk%20matrix%20with%20linear%20scales.png){fig-align="center"}
 
-Do we use risk matrices even though we know the limitations and shortcomings of this popular risk assessment tool? This post provides some insights that can help you use risk matrices more effectively. It adapted from an article I published on my website, [B Advisory](https://b-advisory.ch), on April 1, 2019.
+This post provides some insights that can help you use risk matrices more effectively. It adapted from an article I published on my website, [B Advisory](https://b-advisory.ch), on April 1, 2019.
 
 # Risk matrices
 

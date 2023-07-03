@@ -3,9 +3,9 @@ title: "System Models"
 author: "Johannes Buck"
 date: "2023-06-16"
 categories: [statistics, risk management]
+description: Quantitative risk assessment relies on models. A model is an abstraction of reality used to gain clarity about a problem and its potential solutions by reducing the complexity.
+image: system model.png
 ---
-
-Quantitative risk assessment relies on models. A model is an abstraction of reality used to gain clarity about a problem and its potential solutions by reducing the complexity.
 
 System models can be classified in relation to their randomness (deterministic or stochastic), time-dependence (static or dynamic), and number types (continuous or discrete).
 

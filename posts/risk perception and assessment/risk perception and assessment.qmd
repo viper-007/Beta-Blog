@@ -4,7 +4,7 @@ author: "Johannes Buck"
 date: "2023-06-08"
 categories: [cyber security, risk management]
 description: Cognitive biases are systematic errors in the way individuals view the world based on subjective perceptions of reality.
-image: hacked-icon-2.jpg
+image: Cognitive Biases.png
 ---
 
 ![](Cognitive%20Biases.png){fig-align="center"}

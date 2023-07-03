@@ -3,9 +3,9 @@ title: "Monte Carlo Simulation"
 author: "Johannes Buck"
 date: "2023-06-27"
 categories: [statistics, risk management]
+description: Monte Carlo simulation is a technique for estimating the probability distribution of a system using random sampling techniques.
+image: monte carlo simulation.png
 ---
-
-Monte Carlo simulation is a technique for estimating the probability distribution of a system using random sampling techniques.
 
 In Monte Carlo simulation, the behavior of a system is simulated using random numbers and probability distributions to replicate the uncertainties and variability that exist in the real world. It is particularly useful when the system or process being analyzed is too complex to solve analytically or when the underlying mathematical model is not well defined.
 
@@ -83,7 +83,6 @@ num_darts_in_circle <- length(indexes_darts_in_circle)
 print(4 * num_darts_in_circle / num_darts)
 ```
 
-
 ```{R}
 #| echo: false
 
@@ -108,7 +107,6 @@ ini = 1
 plot(res[ini:size], type = "l", main = "Improve estimation accuracy as points increase", xlab = "number of points", ylab = "estimated value of pi", ylim = c(2, 4))
 lines(rep(pi, size)[ini:size], col = "red")
 ```
-
 
 Plotting the results
 

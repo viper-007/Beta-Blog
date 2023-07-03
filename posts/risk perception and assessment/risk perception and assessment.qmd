@@ -1,16 +1,15 @@
 ---
 title: "Risk perception and assessment"
-subtitle: "111"
 author: "Johannes Buck"
 date: "2023-06-08"
 categories: [cyber security, risk management]
-description: blabla
-image: Cognitive%20Biases.png
+description: Cognitive biases are systematic errors in the way individuals view the world based on subjective perceptions of reality.
+image: hacked-icon-2.jpg
 ---
 
 ![](Cognitive%20Biases.png){fig-align="center"}
 
-Cognitive biases are systematic errors in the way individuals view the world based on subjective perceptions of reality. The following list includes some cognitive biases that can negatively affect risk perception and assessment:
+The following list includes some cognitive biases that can negatively affect risk perception and assessment:
 
 1\. Rare events are underestimated and frequent events are overestimated.
 

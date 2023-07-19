@@ -4,7 +4,7 @@ author: "Johannes Buck"
 date: "2023-07-18"
 categories: [statistics, risk management]
 description: The triangular distribution (also known as the Simpson distribution) is a continuous probability distribution. The graph of the probability density function looks like a triangle and gives this distribution its name.
-image: tiangle distribution.png
+image: triangle distribution.png
 ---
 
 The triangular distribution (also known as the Simpson distribution) is a continuous probability distribution. The graph of the probability density function looks like a triangle and gives this distribution its name.

@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Johannes Buck">
-<meta name="dcterms.date" content="2023-06-27">
-<meta name="description" content="Monte Carlo simulation is a technique for estimating the probability distribution of a system using random sampling techniques.">
+<meta name="dcterms.date" content="2023-07-18">
+<meta name="description" content="The triangular distribution (also known as the Simpson distribution) is a continuous probability distribution. The graph of the probability density function looks like a triangle and gives this distribution its name.">
 
-<title>β Blog - Monte Carlo Simulation</title>
+<title>β Blog - Triangle Distribution</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -151,10 +151,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Monte Carlo Simulation</h1>
+      <h1 class="title">Triangle Distribution</h1>
                   <div>
         <div class="description">
-          Monte Carlo simulation is a technique for estimating the probability distribution of a system using random sampling techniques.
+          The triangular distribution (also known as the Simpson distribution) is a continuous probability distribution. The graph of the probability density function looks like a triangle and gives this distribution its name.
         </div>
       </div>
                           <div class="quarto-categories">
@@ -177,7 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">June 27, 2023</p>
+        <p class="date">July 18, 2023</p>
       </div>
     </div>
     
@@ -193,8 +193,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#process" id="toc-process" class="nav-link active" data-scroll-target="#process">Process</a></li>
-  <li><a href="#purpose" id="toc-purpose" class="nav-link" data-scroll-target="#purpose">Purpose</a></li>
+  <li><a href="#probability-density-function-pdf" id="toc-probability-density-function-pdf" class="nav-link active" data-scroll-target="#probability-density-function-pdf">Probability Density Function (PDF)</a></li>
+  <li><a href="#cumulative-distribution-function-cdf" id="toc-cumulative-distribution-function-cdf" class="nav-link" data-scroll-target="#cumulative-distribution-function-cdf">Cumulative Distribution Function (CDF)</a></li>
+  <li><a href="#mode" id="toc-mode" class="nav-link" data-scroll-target="#mode">Mode</a></li>
+  <li><a href="#expected-value" id="toc-expected-value" class="nav-link" data-scroll-target="#expected-value">Expected Value</a></li>
+  <li><a href="#mean" id="toc-mean" class="nav-link" data-scroll-target="#mean">Mean</a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
   </ul>
 </nav>
     </div>
@@ -204,79 +209,156 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>In Monte Carlo simulation, the behavior of a system is simulated using random numbers and probability distributions to replicate the uncertainties and variability that exist in the real world. It is particularly useful when the system or process being analyzed is too complex to solve analytically or when the underlying mathematical model is not well defined.</p>
-<p>Monte Carlo simulation is a stochastic method, which means that results can vary from simulation to simulation due to the random sampling involved. However, by using a large number of iterations, the simulation results converge to more accurate estimates.</p>
-<p><img src="../..\posts/monte carlo simulation/Schematic of Monte Carlo simulation.png" class="img-fluid"></p>
-<p>Figure 1: Schematic of Monte Carlo simulation</p>
-<section id="process" class="level2">
-<h2 class="anchored" data-anchor-id="process">Process</h2>
-<p>The process steps involved in performing a Monte Carlo simulation are as follows:</p>
-<ol type="1">
-<li><p>Define the problem: identify the system to be analyzed.</p></li>
-<li><p>Identify the parameters: identify the parameters of the system and their probability distributions. This includes specifying the ranges or values that each parameter can take, as well as their respective probabilities.</p></li>
-<li><p>Generate random samples: generate a set of random numbers that correspond to the probability distributions of the parameters.</p></li>
-<li><p>Simulate the system: calculate the output values based on the input parameters.</p></li>
-<li><p>Analyze the results: analyze the probability distribution of the output variables.</p></li>
-<li><p>Validate the results: compare the results with observations or experimental data.</p></li>
-</ol>
+<p>The triangular distribution (also known as the Simpson distribution) is a continuous probability distribution. The graph of the probability density function looks like a triangle and gives this distribution its name.</p>
+<p>The probability density function moves between a minimum <span class="math inline">\(a\)</span>, a maximum <span class="math inline">\(b\)</span> and the mode <span class="math inline">\(c\)</span> (the value with the highest probability). The <span class="math inline">\(y\)</span> axis shows the density of the respective probability for a value <span class="math inline">\(x \in [a, b]\)</span>.</p>
+<p>For a triangular distribution, the maximum of the probability density is at the value of the mode. For the lower and upper limit, the value of the probability density is zero.</p>
+<p>When very little concrete data is available to determine the distribution function <span class="math inline">\(f(x)\)</span> of a random variable <span class="math inline">\(x\)</span>, the triangular distribution is often used in practice. The triangular distribution is also a popular distribution in Monte Carlo simulation.</p>
+<p>Triangular distributions can take the following forms: symmetric distribution, right-skewed distribution, and left-skewed distribution.</p>
+<section id="probability-density-function-pdf" class="level2">
+<h2 class="anchored" data-anchor-id="probability-density-function-pdf">Probability Density Function (PDF)</h2>
+<p>The probability density function of the triangular distribution in the interval <span class="math inline">\(x \in [a, b]\)</span> is defined by</p>
+<p><span class="math display">\[\begin{equation} \tag{1.1}
+    f(x) = \begin{cases}
+        \dfrac{2(x-a)}{(b-a)(c-a)} &amp; \text{for } x \in [a, c] \\
+        \dfrac{2(b-x)}{(b-a)(b-c)} &amp; \text{for } x \in (c, b] \\
+        {0} &amp; \text{else}
+    \end{cases}
+\end{equation}\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The PDF (probability density function) in the triangular distribution shows how the probability is distributed across different values within a given interval. The triangular distribution is a continuous probability distribution in which the probability first increases linearly, then peaks, and then decreases linearly. The shape of the triangular distribution is determined by three parameters: the left tail value <span class="math inline">\(a\)</span>, the right tail value <span class="math inline">\(b\)</span>, and the mode <span class="math inline">\(c\)</span> (the value with the highest probability).</p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="triangle-distribution_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="576"></p>
+</div>
+</div>
 </section>
-<section id="purpose" class="level2">
-<h2 class="anchored" data-anchor-id="purpose">Purpose</h2>
-<p>Monte Carlo simulation is a useful method for analyzing uncertain scenarios and providing probabilistic analysis of various situations. Monte Carlo simulation can be used for both static and dynamic simulations.</p>
-<p>In a <strong>static simulation</strong>, the input variables are fixed and do not change over time. Monte Carlo simulation can be used to estimate the distribution of the output variable(s) under these fixed input conditions. For example, Monte Carlo simulation can be used to estimate the distribution of project costs under fixed assumptions about the duration, scope, and, resource requirements of the project.</p>
-<p>In a <strong>dynamic simulation</strong>, the input variables change over time, and the simulation models the behavior of the system or process over time. Monte Carlo simulation can be used to estimate the distribution of the output variable(s) at different points in time under changing input conditions. For example, Monte Carlo simulation can be used to estimate the distribution of a portfolio’s returns over a period of time, taking into account changing market conditions and other factors that affect the portfolio’s performance.</p>
-<p><strong>Example: Monte Carlo method applied to approximating the value of π</strong></p>
-<p>This is done by picking random points <span class="math inline">\((x,y \mid x \in [-1..1] \wedge y \in [-1..1])\)</span> and checking (using Pythagoras’ theorem) if they are inside the unit circle:</p>
-<p><span class="math display">\[x^2 + y^2 \leq 1\]</span></p>
-<p>The ratio of the number of points inside and outside the circle can then be determined as follows:</p>
-<p><span class="math display">\[\frac{circle\,area}{square\,area} = \frac{r^2 \cdot \pi}{(2 \cdot r)^2} = \frac {\pi}{4} = \frac {hits\,in\,circle\,area}{generated\,points\,in\,the\,square} = P\,{(in\,the\,circle)}\]</span></p>
-<p>R code</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>num_darts <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>num_darts_in_circle <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>num_darts) {</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">1</span>, <span class="at">min =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">max =</span> <span class="dv">1</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">1</span>, <span class="at">min =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">max =</span> <span class="dv">1</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> y<span class="sc">^</span><span class="dv">2</span> <span class="sc">&lt;=</span> <span class="dv">1</span>) {</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    num_darts_in_circle <span class="ot">=</span> num_darts_in_circle <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="dv">4</span> <span class="sc">*</span> num_darts_in_circle <span class="sc">/</span> num_darts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.092</code></pre>
+<section id="cumulative-distribution-function-cdf" class="level2">
+<h2 class="anchored" data-anchor-id="cumulative-distribution-function-cdf">Cumulative Distribution Function (CDF)</h2>
+<p>By integration, the cumulative distribution function <span class="math inline">\(F(x)\)</span> from equation (1.1) becomes</p>
+<p><span class="math display">\[\begin{equation} \tag{1.2}
+    F(x) = \begin{cases}
+        \dfrac{(x-a)^2}{(b-a)(c-a)} &amp; \text{for } x \in [a, c] \\
+        1-\dfrac{(b-x)^2}{(b-a)(b-c)} &amp; \text{for } x \in (c, b] \\
+        {0} &amp; \text{else}
+    \end{cases}
+\end{equation}\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
 </div>
 </div>
-<p>R code for optimized runtime with vector operations</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"plotrix"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>num_darts <span class="ot">&lt;-</span> <span class="dv">1000000</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>num_darts_in_circle <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> num_darts, <span class="at">min =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">max =</span> <span class="dv">1</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n =</span> num_darts, <span class="at">min =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">max =</span> <span class="dv">1</span>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>sum_squares <span class="ot">&lt;-</span> x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> y<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>indexes_darts_in_circle <span class="ot">&lt;-</span> <span class="fu">which</span>(sum_squares <span class="sc">&lt;=</span> <span class="dv">1</span>)</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>num_darts_in_circle <span class="ot">&lt;-</span> <span class="fu">length</span>(indexes_darts_in_circle)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="dv">4</span> <span class="sc">*</span> num_darts_in_circle <span class="sc">/</span> num_darts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.140396</code></pre>
+<div class="callout-body-container callout-body">
+<p>The cumulative distribution function (CDF) of a probability distribution indicates the probability that a random variable will take a value less than or equal to a given value. The CDF of a triangular distribution increases slowly at first, peaks at <span class="math inline">\(c\)</span>, and then decreases until it reaches the value 1 when the random variable reaches the maximum value <span class="math inline">\(b\)</span>. The meaning of the CDF is that it indicates the cumulative probability that the random variable will take <span class="math inline">\(a\)</span> value less than or equal to a certain value.</p>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="monte-carlo-simulation_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+<p><img src="triangle-distribution_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="576"></p>
 </div>
 </div>
-<p>Plotting the results</p>
+</section>
+<section id="mode" class="level2">
+<h2 class="anchored" data-anchor-id="mode">Mode</h2>
+<p>The mode is the value that occurs most frequently. The mode of a triangular distribution is the value of <span class="math inline">\(x\)</span> at which the probability density function (PDF) of the reaches its maximum value.</p>
+<p>At the point <span class="math inline">\(c\)</span> in <span class="math inline">\([a,b]\)</span> (mode), the probability distribution <span class="math inline">\(f(x)\)</span> has its maximum, which is given by <span class="math display">\[ \begin{equation} \tag{1.3}
+    F(\infty) = \int_{- \infty}^\infty {f(x)}{dx} = \frac{b-a}{2} \cdot f(c) = 1
+\end{equation} \]</span></p>
+<p>results to <span class="math display">\[ \begin{equation} \tag{1.4}
+    f(c) = \frac{2}{b-a}
+\end{equation} \]</span></p>
+<p>The mean and median of a triangular distribution are not necessarily the same as the mode. The mean and median depend on the specific parameters of the distribution, while the mode depends only on the range <span class="math inline">\([a, b]\)</span>.</p>
+</section>
+<section id="expected-value" class="level2">
+<h2 class="anchored" data-anchor-id="expected-value">Expected Value</h2>
+<p>The expected value is the weighted average of all possible outcomes, taking into account the probabilities of the outcomes. For a triangular distribution, the expected value is calculated by adding the values of the three parameters of the distribution (minimum, maximum and mode) and dividing by 3. <span class="math display">\[ \begin{equation} \tag{1.6}
+    E(x) = \frac{a+b+c}3
+\end{equation} \]</span></p>
+</section>
+<section id="mean" class="level2">
+<h2 class="anchored" data-anchor-id="mean">Mean</h2>
+<p>The mean is the arithmetic average of all observed values. In the case of a triangular distribution, the mean depends on the position of the mode in the distribution. If the mode is exactly halfway between the minimum and maximum, the mean is equal to the expected value. <span class="math display">\[ \begin{equation} \tag{1.7}
+    \bar{x} = \frac{b-a}2
+\end{equation} \]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In an asymmetric triangular distribution, the expected value and the mean are not identical. This is only the case with a symmetric triangular distribution. In general, the expected value of a triangular distribution is a better measure than the mean to indicate the average value of the distribution.</p>
+</div>
+</div>
+</section>
+<section id="interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation">Interpretation</h2>
+<p>In many real-world applications, sparse data is available to estimate a concrete distribution of the population.</p>
+<p>In management decision making where the <em>Best Case</em>, the <em>Worst Case</em> and the <em>Most Likely Case</em> are known or can be estimated. In this case, the triangular distribution can be used.</p>
+<p>The triangular distribution can also be used when absolute bounds are to be set for the minimum and maximum, but the distribution is similar to a lognormal distribution.</p>
+</section>
+<section id="example" class="level2">
+<h2 class="anchored" data-anchor-id="example">Example</h2>
+<p>A software developer estimates that it will take an average of 60 hours to program the application. In the best case, he estimates a processing time of 45 hours, but if problems occur, the effort can increase to 150 hours. This results in a triangular distribution with <span class="math inline">\(a=45\)</span> (minimum), <span class="math inline">\(b=150\)</span> (maximum), and <span class="math inline">\(c=60\)</span> (most likely value).</p>
+<p>The expected value for the project is: <span class="math display">\[E = \frac{a+b+c}{3} = \frac{45+150+60}{3} h = 85\,h\]</span></p>
+<p>The maximum (mode) of the triangular distribution is: <span class="math display">\[f(c) = \frac{2}{b-a} = \frac{2}{150-45} = 0.019\]</span></p>
+<p>The probability for the programmer’s estimate is: <span class="math display">\[
+F(x=c) =  \frac{(c-a)^2}{(b-a)(c-a)} = \frac{c-a}{b-a} = \frac{60-45}{150-45} = 0.143
+\]</span></p>
+<p>The probability of the expected value is: <span class="math display">\[
+F(x=E) = 1- \frac{(b-E)^2}{(b-a)(b-c)} = 1- \frac{(150-85)^2}{(150-45)(150-60)} = 0.553
+\]</span></p>
+<p><strong>Conclusion</strong></p>
+<p>The probability of the developer’s estimate of the project duration (60 h) is with 14% less likely than the probability of the expected value (85 h) at 55%.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="monte-carlo-simulation_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+<p><img src="triangle-distribution_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="576"></p>
 </div>
 </div>
+<p><strong>R Code</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Triangular Distribution</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(EnvStats)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Probability density function (PDF): dtri(q, min, max, mode)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Cumulative distribution function (CDF): ptri(q, min, max, mode)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># q: vector of quantiles, missing values (NA) are allowed</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate probability density function (PDF)</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">dtri</span>(<span class="at">x =</span> <span class="dv">60</span>, <span class="at">min =</span> <span class="dv">45</span>, <span class="at">max =</span> <span class="dv">150</span>, <span class="at">mode =</span> <span class="dv">60</span>) </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Cumulative distribution function (CDF)</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ptri</span>(<span class="at">q =</span> <span class="dv">60</span>, <span class="at">min =</span> <span class="dv">45</span>, <span class="at">max =</span> <span class="dv">150</span>, <span class="at">mode =</span> <span class="dv">60</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate probability density function (PDF)</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">dtri</span>(<span class="at">x =</span> <span class="dv">85</span>, <span class="at">min =</span> <span class="dv">45</span>, <span class="at">max =</span> <span class="dv">150</span>, <span class="at">mode =</span> <span class="dv">60</span>) </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Cumulative distribution function (CDF)</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">ptri</span>(<span class="at">q =</span> <span class="dv">85</span>, <span class="at">min =</span> <span class="dv">45</span>, <span class="at">max =</span> <span class="dv">150</span>, <span class="at">mode =</span> <span class="dv">60</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Console output:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.01904762</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.1428571</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.01375661</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">0.5529101</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

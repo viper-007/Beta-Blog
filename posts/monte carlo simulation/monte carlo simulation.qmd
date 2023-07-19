@@ -11,7 +11,7 @@ In Monte Carlo simulation, the behavior of a system is simulated using random nu
 
 Monte Carlo simulation is a stochastic method, which means that results can vary from simulation to simulation due to the random sampling involved. However, by using a large number of iterations, the simulation results converge to more accurate estimates.
 
-![](/posts/monte%20carlo%20simulation/Schematic%20of%20Monte%20Carlo%20simulation.png)
+![](Schematic of Monte Carlo simulation.png)
 
 Figure 1: Schematic of Monte Carlo simulation
 

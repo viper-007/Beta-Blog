@@ -9,7 +9,7 @@ image: system model.png
 
 System models can be classified in relation to their randomness (deterministic or stochastic), time-dependence (static or dynamic), and number types (continuous or discrete).
 
-![](Taxonomy of model types.png)
+![](Taxonomy%20of%20model%20types.png)
 
 Figure 1: Taxonomy of model types
 
@@ -17,7 +17,7 @@ Figure 1: Taxonomy of model types
 
 **Deterministic models** are based on the assumption that the future can be predicted with certainty, and they use a fixed set of inputs to produce a single, deterministic output. These models are often simpler and easier to understand than stochastic models, and they can be useful in situations where the input data is well-defined and reliable. However, deterministic models may not capture the full range of potential outcomes and can be overly optimistic about risk. Therefore, deterministic models are suitable for operational risk management.
 
-![](Deterministic model.png)
+![](Deterministic%20model.png)
 
 Figure 2: Deterministic Model (reproduced after \[1\])
 
@@ -25,7 +25,7 @@ Figure 2: Deterministic Model (reproduced after \[1\])
 
 **Stochastic models** incorporate randomness and uncertainty into their calculations, allowing them to generate a range of possible outcomes and associated probabilities. This can be particularly useful in situations where the input data is incomplete or subject to fluctuations over time. Stochastic models are more complex than deterministic models, but they are often better suited to capturing the full range of potential risks and their likelihoods. They are also more adaptable to changing circumstances and can provide more robust risk assessments.
 
-![](Stochastic model.png)
+![](Stochastic%20model.png)
 
 Figure 3: Stochastic Model (reproduced after \[2\])
 
@@ -37,7 +37,7 @@ Figure 3: Stochastic Model (reproduced after \[2\])
 
 **Dynamic models** take into account the changing nature of operational risks over time, allowing for the modeling of complex interactions and feedback loops. These models can be useful in situations where the risk environment is constantly evolving or where there are multiple sources of risk that can interact with one another.
 
-![](static vs. discrete.png)
+![](static%20vs.%20discrete.png)
 
 Figure 4: Static vs. dynamic models
 
@@ -49,7 +49,7 @@ Figure 4: Static vs. dynamic models
 
 **Continuous models** are designed to model risks that occur over a continuous range of values, such as financial losses or process failures. These models can be useful for capturing the full distribution of possible outcomes and assessing the potential impact of different levels of risk exposure.
 
-![](continuous vs. discrete.png)
+![](continuous%20vs.%20discrete.png)
 
 Figure 5: Discrete vs. continuous models (reproduced after \[3\])
 

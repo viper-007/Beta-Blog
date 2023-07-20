@@ -1,0 +1,23 @@
+---
+title: "R Basic Plots"
+format: html
+editor: visual
+---
+
+## Title
+
+...
+
+
+**R Code**
+
+```{r}
+1 + 1
+```
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code, only the output is displayed.

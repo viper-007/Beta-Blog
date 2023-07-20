@@ -155,13 +155,9 @@ The mean is the arithmetic average of all observed values. In the case of a tria
 In an asymmetric triangular distribution, the expected value and the mean are not identical. This is only the case with a symmetric triangular distribution. In general, the expected value of a triangular distribution is a better measure than the mean to indicate the average value of the distribution.
 :::
 
-## Interpretation
+## Using the triangular distribution in practice
 
-In many real-world applications, sparse data is available to estimate a concrete distribution of the population.
-
-In management decision making where the *Best Case*, the *Worst Case* and the *Most Likely Case* are known or can be estimated. In this case, the triangular distribution can be used.
-
-The triangular distribution can also be used when absolute bounds are to be set for the minimum and maximum, but the distribution is similar to a lognormal distribution.
+The triangular distribution is used for management decisions where the *Best Case*, the *Worst Case* and the *Most Likely Case* are known or can be estimated.
 
 ## Example
 
@@ -225,9 +221,9 @@ abline(h = 0.019, col = 'grey', lwd = 1, lty = 2)
 # Plot CDF
 plot(x, cdf, col = 'blue', type = 'l', main = "CDF", ylab = "F(x)", ylim = c(0, 1), axes = FALSE)
 # X-axis
-axis(1, at = c(45, 60, 150), cex.axis = 0.7)
+axis(1, at = c(45, 60, 85, 150), cex.axis = 0.7)
 # Y-axis
-axis(2, at = c(0, 0.14, 0.55, 1.0), cex.axis = 0.7)
+axis(2, at = c(0, 0.14, 0.55, 1.0), cex.axis = 0.5)
 
 # CDF labeling
 abline(v = a, col = 'grey', lwd = 1, lty = 2)

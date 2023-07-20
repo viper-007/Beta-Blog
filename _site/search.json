@@ -320,5 +320,12 @@
     "title": "Triangle Distribution",
     "section": "Interpretation",
     "text": "Interpretation\nIn many real-world applications, sparse data is available to estimate a concrete distribution of the population.\nIn management decision making where the Best Case, the Worst Case and the Most Likely Case are known or can be estimated. In this case, the triangular distribution can be used.\nThe triangular distribution can also be used when absolute bounds are to be set for the minimum and maximum, but the distribution is similar to a lognormal distribution."
+  },
+  {
+    "objectID": "posts/triangle distribution/triangle distribution.html#using-the-triangular-distribution-in-practice",
+    "href": "posts/triangle distribution/triangle distribution.html#using-the-triangular-distribution-in-practice",
+    "title": "Triangle Distribution",
+    "section": "Using the triangular distribution in practice",
+    "text": "Using the triangular distribution in practice\nThe triangular distribution is used for management decisions where the Best Case, the Worst Case and the Most Likely Case are known or can be estimated."
   }
 ]

@@ -123,65 +123,14 @@ There are several R packages that can be used for bootstrapping calculations wit
 
 -   nptest
 
-### Example 1 **--** Univariate Statistic (Median)
-
-For this example, we will generate $n = 100$ observations from a standard normal distribution, and use the median as the parameter/statistic of interest. Note that the true (population) median is zero. Since the median is a univariate statistic, the bootstrap distribution will be a vector of length $R + 1$ containing the bootstrap replicates of the median.
-
-```{r}
-# Univariate Statistic (Median)
-
-library(nptest)
-
-# generate 100 standard normal observations
-set.seed(1)
-n <- 100
-x <- rnorm(n)
-
-# nonparametric bootstrap
-npbs <- np.boot(x = x, statistic = median)
-npbs
-
-# check t0, SE, and bias
-median(x)                          # t0
-sd(npbs$boot.dist)                 # SE
-mean(npbs$boot.dist) - npbs$t0     # Bias
-
-# bootstrap distribution
-hist(npbs$boot.dist,
-     xlab = "t*",
-     ylab = "Density",
-     main = "Bootstrap Distribution")
-
-# Observed media
-abline(v = npbs$t0,
-       lty = 2,
-       col = "red")
-
-# CI 95% lower boundary
-abline(v = npbs$bca[2, 1],
-       lty = 2,
-       col = "blue")
-
-# CI 95% upper boundary
-abline(v = npbs$bca[2, 2],
-       lty = 2,
-       col = "blue")
-
-legend(
-  "topleft",
-  legend = c("t0", "CI 95%"),
-  col = c("red", "blue"),
-  lty = 2,
-  bty = "n"
-)
-```
-
-### Example 2 **--** Multivariate Statistic (Median)
+### Example 1 **--** Multivariate Statistic (Median)
 
 For this example, we will generate $n = 100$ observations from a standard normal distribution, and use the quartiles as the parameters/statistics of interest. Note that the true (population) quartiles are $Q1 = qnorm(0.25) = -0.6744898$, $Q2 = qnorm(0.5) = 0$, and $Q3 = qnorm(0.75) = 0.6744898$. Since the quartiles are a multivariate statistic, the bootstrap distribution will be a matrix of dimension $R + 1 × 3$, where each column contains the bootstrap replicates of the corresponding quartile.
 
 ```{r}
 # Multivariate Statistic (Quartiles)
+
+library(nptest)
 
 # generate 100 standard normal observations
 set.seed(1)

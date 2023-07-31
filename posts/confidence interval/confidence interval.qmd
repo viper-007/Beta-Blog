@@ -188,9 +188,11 @@ The 95% confidence interval is `[25.3, 29.7]`.
 
 **Example 2 -- Univariate Statistic (Median)**
 
-Generate $n=100$ observations from a standard normal distribution, and use the median as the statistic of interest. Note that the true (population) median is zero. Since the median is a univariate statistic, the bootstrap distribution will be a vector of length $R+1$ containing the bootstrap replicates of the median.
+For this example, we will generate $n = 100$ observations from a standard normal distribution, and use the median as the parameter/statistic of interest. Note that the true (population) median is zero. Since the median is a univariate statistic, the bootstrap distribution will be a vector of length $R + 1$ containing the bootstrap replicates of the median.
 
 ```{r}
+# Univariate Statistic (Median)
+
 library(nptest)
 
 # generate 100 standard normal observations
@@ -208,10 +210,33 @@ sd(npbs$boot.dist)                 # SE
 mean(npbs$boot.dist) - npbs$t0     # Bias
 
 # bootstrap distribution
-hist(npbs$boot.dist, xlab = "Statistic", main = "Bootstrap Distribution")
-box()
-abline(v = npbs$t0, lty = 2, col = "red")
-legend("topleft", "t0", lty = 2, col = "red", bty = "n")
+hist(npbs$boot.dist,
+     xlab = "t*",
+     ylab = "Density",
+     main = "Bootstrap Distribution")
+
+# Observed media
+abline(v = npbs$t0,
+       lty = 2,
+       col = "red")
+
+# CI 95% lower boundary
+abline(v = npbs$bca[2, 1],
+       lty = 2,
+       col = "blue")
+
+# CI 95% upper boundary
+abline(v = npbs$bca[2, 2],
+       lty = 2,
+       col = "blue")
+
+legend(
+  "topleft",
+  legend = c("t0", "CI 95%"),
+  col = c("red", "blue"),
+  lty = 2,
+  bty = "n"
+)
 ```
 
-Source: [Nonparametric Bootstrap in R (umn.edu)](http://users.stat.umn.edu/~helwig/notes/npboot-notes.html)
+### 

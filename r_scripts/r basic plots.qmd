@@ -8,7 +8,6 @@ editor: visual
 
 ...
 
-
 **R Code**
 
 ```{r}

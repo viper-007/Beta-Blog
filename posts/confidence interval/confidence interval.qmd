@@ -1,0 +1,217 @@
+---
+title: "Confidence Intervall"
+author: "Johannes Buck"
+date: "2023-07-30"
+categories: [statistics, risk management]
+description: A confidence interval is a statistical interval that contains the location of a true parameter of a population with a certain probability.
+image: teaser_image.png
+---
+
+## Parameter estimation
+
+There are two estimation methods in inferential statistics:
+
+-   point estimation
+
+-   interval estimation
+
+### Point estimation
+
+In point estimation, properties about the population are determined as exact values and are usually given a measure of the estimation error.
+
+### Interval estimation
+
+In interval estimation, an interval is specified for the characteristic of the population, and this is then given a confidence interval (e.g., 95%).
+
+### Conclusion
+
+Point estimation pretends "pseudo-accuracy". The estimated parameter value is given with point accuracy, although the true parameter value is very rarely hit exactly.
+
+![](/posts/confidence%20interval/intervall%20vs%20point%20estimation.png)
+
+You can compare a point estimate to trying to hit a fly (the true parameter value) with a pin (point estimate). With a fly swatter (interval), the probability of hitting the fly is much higher.
+
+## Confidence Interval Definition
+
+A confidence interval is a statistical interval that contains the location of a true parameter of a population with a certain probability. A confidence level of 95% contains the true value with 95% probability.
+
+![](/posts/confidence%20interval/Konfidenzintervall.png)
+
+The intervals $\hat{\theta}_A$, $\hat{\theta}_B$ and $\hat{\theta}_E$ do not contain the true value $\theta$.
+
+The intervals $\hat{\theta}_A$ and $\hat{\theta}_E$ belong to the 5% of the "least likely" (farthest from the true value) sample values.
+
+A confidence interval has a lower bound $x_u$ and an upper bound $x_o$.
+
+$\bar{x}$ denotes the mean of the data set, $z_u$ and $z_o$ are the z-transformed interval limits.
+
+The standard error is the fraction of the standard deviation $s_x$ and the square root of the sample size $n$.
+
+$$ \begin{equation} \tag{1.0}
+    \large x_u = \bar{x} + z_u \cdot \frac{s_x}{\sqrt{n}}
+\end{equation} $$
+
+$$ \begin{equation} \tag{1.1}
+    \large x_o = \bar{x} + z_o \cdot \frac{s_x}{\sqrt{n}}
+\end{equation} $$
+
+## Example
+
+Calculate the 95% confidence interval for the monthly snack spending of a group of people.
+
+**Step 1: Calculate the estimated parameter**
+
+Calculate the mean $\bar{x}$ from the existing data set.
+
+| \# participants | Monthly snack spending USD |
+|-----------------|----------------------------|
+| 20              | 8                          |
+| 30              | 32                         |
+| 10              | 0                          |
+| 30              | 48                         |
+| 10              | 16                         |
+
+Sample size $\large n = 20+30+10+30+10 = 100$
+
+$\large \bar{x}=\frac{20\cdot8+30\cdot32+10\cdot0+30\cdot48+10\cdot16}{100}= \text{USD } 27.2$
+
+**Step 2: Transform the interval limits into standard normally distributed values**
+
+With a confidence level of 95%, we obtain the following interval limits: the lower limit is 2.5% $= x_u = 0.025$ and the upper limit is 97.5% $x_o = 0.975$.
+
+We now need to standardize these values by looking at the z-distribution table.
+
+-   For the upper bound $x_o$, the z-value is easy to read: $x_o = 0.975$ corresponds to $z_o = 1.960$.
+
+-   Since the normal distribution is symmetric and mirrored on the x-axis, the lower limit $z_u = -1.960$ results in
+
+![](/posts/confidence%20interval/z-Verteilungstabelle.png)
+
+With a mean of $\bar{x} = 27.20$ USD, a lower limit of $z_u= -1.960$, an upper limit of $z_o= 1.960$ and a sample size of $n = 100$, all required parameters for the formula are given except for the standard deviation $s_x$.
+
+**Step 3: Calculation of variance and standard deviation**
+
+The variance can be calculated using the values from the table as follows:
+
+$\large s_x^2=\ \frac{\left(8-27.2\right)^2\cdot20+\left(32-27.2\right)^2\cdot30+\left(0-27.2\right)^2\cdot10+\left(48-27.2\right)^2\cdot30+\left(16-27.2\right)^2\cdot10}{100}$
+
+$\large s_x^2=296.96$
+
+The standard deviation is the square root of the variance:
+
+$\large s_x=\sqrt{s_x^2}=\sqrt{296.96}=17.23$
+
+**Step 4: Calculation of lower and upper limit**
+
+$\large x_u=\ \bar{x}+\ z_u\ \cdot\ \frac{s_x}{\sqrt n}=27.2+\left(-1.960\right)\cdot\frac{17.23}{\sqrt{100}}=23.82$
+
+$\large x_o=\ \bar{x}+\ z_o\ \cdot\ \frac{s_x}{\sqrt n}=27.2+1.960\cdot\frac{17.23}{\sqrt{100}}=30.58$
+
+Thus, the limits of the contingency interval are at points 23.82 and 30.58. The conclusion is: with 95% confidence, the true mean for the group of people's monthly snack spending is between USD 23.82 and USDF 30.58.
+
+## Z-Distribution
+
+By performing a z-standardization, we can transform the normal distribution into a standard normal distribution. This can be done with any normal distribution (but only with normal distributions). This gives us a distribution that is always the same, with mean $µ = 0$ and standard deviation $σ = 1$. Just like the normal distribution, the standard normal distribution tells you what percentage of values fall within a given range. Now, this range no longer depends on $µ$ and $σ$, but is standardized.
+
+![](/posts/confidence%20interval/Normal%20Distribution.png)
+
+![](/posts/confidence%20interval/Standard%20Normal%20Distribution.png)
+
+In the standard normal distribution, approximately 68.2% of the values always lie in the range between $z = -1$ and $z = +1$. Or put another way: There is a 68.2% probability that the value is between -1 and +1.
+
+Using a z-transformation or z-standardization, you subtract the arithmetic mean from each measured value, divide the resulting difference by the standard deviation, and you get the so-called *z-scores*.
+
+As formula (with $x$ for the respective value, $μ$ for the arithmetic mean and $σ$ for the standard deviation) $$z=\frac{x-μ}σ$$
+
+After the z-transformation
+
+-   the arithmetic mean of the transformed series is always zero, and
+
+-   the variance and standard deviation are always 1.
+
+If a normal distribution is present, the corresponding probabilities can be read from a standard normal distribution table based on the z-values. The standard normal table contains only positive z-values. Since the normal distribution is symmetric and mirrored on the x-axis, the z-value for the lower limit results from the negative z-value for the upper limit $z_u = -z_o$.
+
+## Three Sigma Rule
+
+The "Three Sigma Rule" is a statistical rule used to quantify the probability of events within a normally distributed data set.
+
+![](/posts/confidence%20interval/Drei-Sigma-Regel.png)
+
+The three sigma rule states that\
+a) 68.3% of the data are within one standard deviation of the mean ($\mu \pm \sigma$).
+
+b\) 95.4% of the data are within two standard deviations of the mean ($\mu \pm 2\sigma$).
+
+c\) 99.7% of the data are within 3 standard deviations of the mean ($\mu \pm 3\sigma$).
+
+::: callout-note
+The three-sigma rule applies only to normally distributed data sets. The three sigma rule does not apply to skewed triangular distributions.
+:::
+
+## R code
+
+**Example 1 -- Confidence interval of dataset**
+
+```{r}
+# Calculate confidence interval with function t.test from core package stats
+
+# Sample data
+data <- c(23, 28, 32, 27, 25, 30, 31, 29, 26, 24)
+
+# Calculate the confidence interval
+# The function t.test performs the Student's t-Tests on vectors of data
+# By default conf.level=0.95
+result <- t.test(data)
+
+# Extract the confidence interval
+confidence_interval <- result$conf.int
+
+# Get the lower bound and the upper bound of the confidence interval
+lower_bound <- result$conf.int[1]
+upper_bound <- result$conf.int[2]
+
+# Print lower bound and uppder bound of the confidence interval
+cat("Lower bound of the 95% confidence interval:", lower_bound, "\n")
+cat("Upper bound of the 95% confidence interval:", upper_bound, "\n")
+
+# Plot histogram
+plot(data, main = "Histogram", xlab = "Data", ylab = "Value")
+
+# Draw lower bound and upper bound of the confidence interval
+abline(h = lower_bound, col = 'red', lwd = 1, lty = 2)
+text(x = 1.5, y = lower_bound+0.3, labels = "lower bound", col = "#4D4D4D")
+abline(h = upper_bound, col = 'red', lwd = 1, lty = 2)
+text(x = 1.5, y = upper_bound+0.3, labels = "upper bound", col = "#4D4D4D")
+```
+
+The 95% confidence interval is `[25.3, 29.7]`.
+
+**Example 2 -- Univariate Statistic (Median)**
+
+Generate $n=100$ observations from a standard normal distribution, and use the median as the statistic of interest. Note that the true (population) median is zero. Since the median is a univariate statistic, the bootstrap distribution will be a vector of length $R+1$ containing the bootstrap replicates of the median.
+
+```{r}
+library(nptest)
+
+# generate 100 standard normal observations
+set.seed(1)
+n <- 100
+x <- rnorm(n)
+
+# nonparametric bootstrap
+npbs <- np.boot(x = x, statistic = median)
+npbs
+
+# check t0, SE, and bias
+median(x)                          # t0
+sd(npbs$boot.dist)                 # SE
+mean(npbs$boot.dist) - npbs$t0     # Bias
+
+# bootstrap distribution
+hist(npbs$boot.dist, xlab = "Statistic", main = "Bootstrap Distribution")
+box()
+abline(v = npbs$t0, lty = 2, col = "red")
+legend("topleft", "t0", lty = 2, col = "red", bty = "n")
+```
+
+Source: [Nonparametric Bootstrap in R (umn.edu)](http://users.stat.umn.edu/~helwig/notes/npboot-notes.html)

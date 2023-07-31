@@ -2,6 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/bootstrapping/bootstrapping.html",
+      "/posts/confidence interval/confidence interval.html",
       "/posts/triangle distribution/triangle distribution.html",
       "/posts/monte carlo simulation/monte carlo simulation.html",
       "/posts/simulation models/simulation models.html",

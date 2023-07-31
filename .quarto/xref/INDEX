@@ -37,5 +37,14 @@
   },
   "posts/triangle distribution/triangle distribution.qmd": {
     "triangle distribution.html": "5157aab7"
+  },
+  "posts/confidence interval/confidence interval.qmd": {
+    "confidence interval.html": "f7c36b4d"
+  },
+  "r_scripts/r basic plots.qmd": {
+    "r basic plots.html": "ec68bd54"
+  },
+  "posts/bootstrapping/bootstrapping.qmd": {
+    "bootstrapping.html": "8bd4e3ab"
   }
 }

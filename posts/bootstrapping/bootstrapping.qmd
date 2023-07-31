@@ -1,0 +1,217 @@
+---
+title: "Bootstrapping"
+author: "Johannes Buck"
+date: "2023-08-01"
+categories: [statistics, risk management]
+description: The bootstrap method is a statistical resampling technique used to estimate the properties of a population by repeatedly sampling with replacement from a given data set.
+image: bootstrap.jpg
+---
+
+## Bootstrapping Method
+
+Bootstrapping is a statistical method that resamples a single data set to create many samples. This process allows to calculate standard errors, construct confidence intervals, and perform hypothesis testing for numerous types of sample statistics.
+
+The basic idea of bootstrapping is that inference about a population from sample data (sample → population) can be modeled by resampling the sample data and performing inference about a sample from resampled data (resampled → sample).
+
+![](/posts/bootstrapping/Traditional%20statistics%20method.png)
+
+Figure 1: Traditional statistical method
+
+![](/posts/bootstrapping/Bootstrapping%20method.png)
+
+Figure 2: Bootstrapping method
+
+**Simple Random Samples (SRS)**
+
+A simple random sample (SRS) of size $n$ consists of $n$ individuals from the population, selected so that each set of $n$ individuals has an equal chance of being the sample actually selected.
+
+**Populations vs. Samples**
+
+Parameters describe populations, statistics describe samples.
+
+-   The mean ($\mu$) and standard deviation ($\sigma$) of a population are parameters.
+
+-   The mean ($\bar{x}$) and standard deviation ($s$) of a sample are statistics.
+
+## Types of bootstrapping
+
+### Parametric Bootstrapping
+
+Parametric bootstraps resample a known distribution function \$F\$ (e.g., normal) whose parameters (e.g., mean, variance) are estimated from the sample data.
+
+### Nonparametric Bootstraps
+
+Nonparametric bootstraps make no assumptions $\hat{F}$ about the underlying data distribution $F$.
+
+Process steps:
+
+1.  Estimate the parameters of the hypothesized parametric model (parametric bootstrapping only).
+
+2.  Take a random sample from the original data by sampling with replacement, with the same number of items as in the original data set.
+
+3.  Compute the statistic of interest (e.g., mean, median, standard deviation) from the bootstrapped sample.
+
+4.  Repeat steps $(2)$ and $(3)$ a large number of times.
+
+5.  Analyze the distribution of the bootstrap statistics or statistics of interest (e.g., mean, standard deviation, confidence intervals).
+
+::: callout-note
+**Parametric bootstrapping** can be efficient when the underlying data distribution is well known. However, it can lead to biased results if the assumed model is incorrect.
+
+**Nonparametric bootstrapping** is more flexible because it does not rely on specific distribution assumptions. It can be particularly useful when the underlying data distribution is unknown or complex. However, it may require a larger number of bootstrap samples to obtain accurate estimates compared to parametric bootstrapping.
+
+$\rightarrow$ Parametric bootstrapping assumes a specific distribution and estimates parameters from the data, while nonparametric bootstrapping makes no assumption about the distribution and estimates the sampling distribution directly through resampling.
+:::
+
+## Bootstrapping vs. Monte Carlo Simulation
+
+Bootstrapping and Monte Carlo simulation are two different statistical techniques that are used for different purposes. Bootstrapping can be seen as a specific application of Monte Carlo methods, where random resampling is used to estimate sampling distributions and perform statistical inference.
+
+### About Bootstrapping
+
+Bootstrapping is a resampling technique used to estimate the sampling distribution of a statistic by repeatedly sampling with replacement from the original data.
+
+**Advantages**
+
+1.  **Nonparametric:** Bootstrapping does not assume a specific underlying distribution, making it useful when the distribution of the data is unknown or non-standard.
+
+2.  **Easy to implement:** Bootstrapping is conceptually simple and easy to implement.
+
+3.  **Useful with small sample sizes:** It works with limited data where traditional statistical tests may be less reliable.
+
+**Disadvantages**
+
+1.  **Computationally intensive:** Bootstrapping involves many resampling iterations, which can be computationally expensive for large datasets or complex models.
+
+2.  **Data quality dependence:** Bootstrapping results are highly dependent on the quality and representativeness of the original data.
+
+3.  **Not suitable for all scenarios:** While powerful, bootstrapping may not be the best approach for certain statistical problems, especially those involving complex models or non-standard scenarios.
+
+## Monte Carlo Simulation
+
+Monte Carlo simulation is a technique used to model and analyze the probability of different outcomes in a process that involves uncertainty and randomness. It relies on random sampling to estimate complex mathematical functions or to simulate different scenarios.
+
+**Advantages**
+
+1.  **Flexibility:** Monte Carlo simulation is applicable to a wide range of problems, including optimization, probability estimation, and risk analysis, making it a versatile tool.
+
+2.  **Provides a range of outcomes:** It provides a distribution of possible outcomes, giving insight into the likelihood of different scenarios occurring.
+
+3.  **Works well with optimization problems:** Monte Carlo simulation can be integrated with optimization algorithms to find optimal solutions in complex systems.
+
+**Disadvantages**
+
+1.  **Resource intensive:** Monte Carlo simulation requires a large number of iterations to produce reliable results, which can be computationally expensive and time consuming.
+
+2.  **Convergence issues:** In some cases, Monte Carlo simulation may converge slowly or require special techniques to ensure accurate results.
+
+Key Differences Between Monte Carlo Simulation and Bootstrapping
+
+| Feature     | Mote Carlo simulation                                    | Bootstrapping method                                                      |
+|-------------------|---------------------------|--------------------------|
+| Generality  | Can be used to estimate the uncertainty of any statistic | Only used to estimate the uncertainty of statistics from a sample of data |
+| Efficiency  | Less efficient than bootstrapping                        | More efficient than Monte Carlo simulation                                |
+| Ease of use | More difficult to use than bootstrapping                 | Easier to use than Monte Carlo simulation                                 |
+
+## R code
+
+There are several R packages that can be used for bootstrapping calculations with R:
+
+-   boot
+
+-   bootstrap
+
+-   nptest
+
+### Example 1 **--** Univariate Statistic (Median)
+
+For this example, we will generate $n = 100$ observations from a standard normal distribution, and use the median as the parameter/statistic of interest. Note that the true (population) median is zero. Since the median is a univariate statistic, the bootstrap distribution will be a vector of length $R + 1$ containing the bootstrap replicates of the median.
+
+```{r}
+# Univariate Statistic (Median)
+
+library(nptest)
+
+# generate 100 standard normal observations
+set.seed(1)
+n <- 100
+x <- rnorm(n)
+
+# nonparametric bootstrap
+npbs <- np.boot(x = x, statistic = median)
+npbs
+
+# check t0, SE, and bias
+median(x)                          # t0
+sd(npbs$boot.dist)                 # SE
+mean(npbs$boot.dist) - npbs$t0     # Bias
+
+# bootstrap distribution
+hist(npbs$boot.dist,
+     xlab = "t*",
+     ylab = "Density",
+     main = "Bootstrap Distribution")
+
+# Observed media
+abline(v = npbs$t0,
+       lty = 2,
+       col = "red")
+
+# CI 95% lower boundary
+abline(v = npbs$bca[2, 1],
+       lty = 2,
+       col = "blue")
+
+# CI 95% upper boundary
+abline(v = npbs$bca[2, 2],
+       lty = 2,
+       col = "blue")
+
+legend(
+  "topleft",
+  legend = c("t0", "CI 95%"),
+  col = c("red", "blue"),
+  lty = 2,
+  bty = "n"
+)
+```
+
+### Example 2 **--** Multivariate Statistic (Median)
+
+For this example, we will generate $n = 100$ observations from a standard normal distribution, and use the quartiles as the parameters/statistics of interest. Note that the true (population) quartiles are $Q1 = qnorm(0.25) = -0.6744898$, $Q2 = qnorm(0.5) = 0$, and $Q3 = qnorm(0.75) = 0.6744898$. Since the quartiles are a multivariate statistic, the bootstrap distribution will be a matrix of dimension $R + 1 × 3$, where each column contains the bootstrap replicates of the corresponding quartile.
+
+```{r}
+# Multivariate Statistic (Quartiles)
+
+# generate 100 standard normal observations
+set.seed(1)
+n <- 100
+x <- rnorm(n)
+
+# nonparametric bootstrap (using ... to enter 'probs' argument)
+npbs <- np.boot(x = x,
+                statistic = quantile,
+                probs = c(0.25, 0.5, 0.75))
+npbs
+
+# bootstrap distribution
+par(mfrow = c(1, 3))
+for (j in 1:3) {
+  hist(
+    npbs$boot.dist[, j],
+    xlab = "t*",
+    ylab = "Density",
+    main = paste0("Bootstrap Distribution", ": Q", j)
+  )
+  abline(v = npbs$t0[j],
+         lty = 2,
+         col = "red")
+  legend(
+    "topright",
+    paste0("t0[", j, "]"),
+    lty = 2,
+    col = "red",
+    bty = "n"
+  )
+}
+```

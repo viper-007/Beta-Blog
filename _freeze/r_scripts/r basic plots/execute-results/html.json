@@ -1,0 +1,14 @@
+{
+  "hash": "9b3ac5938bf7d0f0ff6653228d71e737",
+  "result": {
+    "markdown": "---\ntitle: \"R Basic Plots\"\nformat: html\neditor: visual\n---\n\n\n## Title\n\n...\n\n**R Code**\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n\n::: {.cell}\n::: {.cell-output .cell-output-stdout}\n```\n[1] 4\n```\n:::\n:::\n\n\nThe `echo: false` option disables the printing of code, only the output is displayed.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

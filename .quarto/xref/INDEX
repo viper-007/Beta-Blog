@@ -46,5 +46,14 @@
   },
   "posts/bootstrapping/bootstrapping.qmd": {
     "bootstrapping.html": "8bd4e3ab"
+  },
+  "unpublished posts/standard error vs confidence interval/standard error vs confidence interval.qmd": {
+    "standard error vs confidence interval.html": "bc02372a"
+  },
+  "posts/standard error vs confidence interval/standard error vs confidence interval.qmd": {
+    "standard error vs confidence interval.html": "c073c1c2"
+  },
+  "posts/standard deviation - standard error - confidence interval/standard deviation - standard error - confidence interval.qmd": {
+    "standard deviation - standard error - confidence interval.html": "eec8d206"
   }
 }

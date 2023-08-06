@@ -1,12 +1,8 @@
 ---
-title: "R Basic Plots"
+title: "Embedded R code"
 format: html
 editor: visual
 ---
-
-## Title
-
-...
 
 **R Code**
 

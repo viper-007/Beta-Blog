@@ -1,0 +1,127 @@
+---
+title: "Standard Deviation, Standard Error, and Confidence Interval"
+author: "Johannes Buck"
+date: "2023-08-02"
+categories: [statistics, risk management]
+description: When to use standard deviation, standard error, and confidence interval?
+image: s - SE - CI.png
+---
+
+## Standard deviation
+
+-   Standard deviation measures the amount of variation or dispersion within a single dataset.
+
+-   It is used to describe how individual data points deviate from the mean (average) of the dataset.
+
+-   Standard deviation is typically used when you have the entire population data or when you want to analyze the variability within a single sample.
+
+The formula for the **population standard deviation** (denoted as $σ$) is:
+
+$$\sigma = \sqrt{\frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n}}$$
+
+where:
+
+-   $x_i$ represents each individual data point in the dataset
+
+-   $\bar{x}$ is the mean (average) of all data points
+
+-   $n$ is the number of data points in the dataset (sample size)
+
+The formula for the **sample standard deviation** (denoted as $s$) is:
+
+$$s = \sqrt{\frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n-1}}$$
+
+where:
+
+-   $x_i$ represents each individual data point in the dataset
+
+-   $\bar{x}$ is the mean (average) of all data points
+
+-   $n$ is the number of data points in the dataset (sample size)
+
+The standard deviation is a statistics tool in statistics that allows to understand the spread or dispersion of data points, the consistency of the data, and the degree of uncertainty associated with the data.
+
+A smaller standard deviation indicates that data points tend to be closer to the mean, while a larger standard deviation suggests more significant variability or spread within the dataset.
+
+### R code
+
+```{r}
+# Data set
+data <- c(10, 15, 20, 25, 30)
+
+# Calculate sample standard deviation
+sample_standard_deviation <- sd(data)
+
+# Print the result
+cat("Sample standard deviation:", sample_standard_deviation)
+```
+
+::: callout-note
+The R function sd calculates the **sample** standard deviation.
+:::
+
+## Standard error
+
+-   Standard error measures the variability of a sample statistic (e.g., sample mean) from one sample to another, assuming that multiple samples are drawn from the same population.
+
+-   It provides an indication of the precision or accuracy of the sample statistic in estimating the population parameter.
+
+-   Standard error is typically used in inferential statistics to make inferences about the population based on a sample.
+
+The formula for the standard error (denoted as $SE$ is:
+
+$$SE = \frac{\sigma}{\sqrt{n}}$$
+
+where:
+
+-   $σ$ represents the population standard deviation
+
+-   $n$ is the sample size
+
+If the population standard deviation ($σ$) is unknown and needs to be estimated from the sample, the formula becomes:
+
+$$SE = \frac{s}{\sqrt{n}}$$
+
+where:
+
+-   $s$ is the sample standard deviation
+
+The standard error is used in hypothesis testing, confidence intervals, and other statistical analyses.
+
+A smaller standard error indicates that the sample statistic is more precise and likely to be closer to the true population parameter. Conversely, a larger standard error suggests that the sample statistic has more uncertainty and could vary widely in different samples.
+
+## Confidence interval
+
+A confidence interval is a statistical range that is constructed around a sample statistic, such as the sample mean or sample proportion, to estimate the likely range of values of the corresponding population parameter. It provides a measure of uncertainty about the true value of the population parameter based on the information available from a sample.
+
+-   A confidence interval is a range of values around a sample statistic (e.g., sample mean) to estimate the likely range of values of the corresponding population parameter.
+-   It provides a measure of the uncertainty about the true value the population parameter.
+-   The confidence level is typically expressed as a percentage (e.g., 95% confidence interval), and it represents the probability that the interval contains the true population parameter in repeated sampling.
+
+The formula for the confidence interval (denoted as $CI$) is:
+
+$$CI = \bar{x} \pm z \frac{s}{\sqrt{n}}$$
+
+where:
+
+-   $\bar{x}$ is the sample mean
+
+-   $z$ is the confidence level value
+
+-   $s$ is the sample standard deviation
+
+-   $n$ is the sample size (number of data points in the dataset)
+
+Confidence intervals are used in statistical inference as they provide a range of plausible values for the population parameter and help in making more informed decisions and drawing conclusions from sample data.
+
+The wider the confidence interval, the less precise the estimate, while a narrower confidence interval indicates a more precise estimate.
+
+::: callout-note
+-   The standard deviation quantifies the variation within a single dataset, while standard error quantifies the variability of a sample statistic across different samples from the same population.
+
+-   The standard deviation describes the spread of the data points, while standard error describes the precision of a sample statistic in estimating the population parameter.
+
+-   The standard error is a measure of precision or accuracy of the sample estimate, while a confidence interval is a range of values that provides an estimate of the likely range of the population parameter with a specified level of confidence.
+
+-   The standard error helps in understanding the variability of the sample statistic, while confidence intervals help in making inferences about the population parameter based on the sample data.
+:::

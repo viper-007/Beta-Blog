@@ -108,7 +108,7 @@ Monte Carlo simulation is a technique used to model and analyze the probability 
 Key Differences Between Monte Carlo Simulation and Bootstrapping
 
 | Feature     | Mote Carlo simulation                                    | Bootstrapping method                                                      |
-|-------------------|---------------------------|--------------------------|
+|-------------|----------------------------------------------------------|---------------------------------------------------------------------------|
 | Generality  | Can be used to estimate the uncertainty of any statistic | Only used to estimate the uncertainty of statistics from a sample of data |
 | Efficiency  | Less efficient than bootstrapping                        | More efficient than Monte Carlo simulation                                |
 | Ease of use | More difficult to use than bootstrapping                 | Easier to use than Monte Carlo simulation                                 |

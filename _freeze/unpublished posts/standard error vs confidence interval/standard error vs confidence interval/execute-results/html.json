@@ -1,0 +1,14 @@
+{
+  "hash": "3fe38d36925ffadb9014a764ad6033cc",
+  "result": {
+    "markdown": "---\ntitle: \"Standard Error vs Confidence Interval\"\nauthor: \"Johannes Buck\"\ndate: \"2023-08-01\"\ndraft: true\ncategories: [statistics, risk management]\ndescription: abc\nimage: placeholder.png\n---\n\n\n# Standard Errors and Confidence Intervals\n\n#### How do we know when a parameter estimate from a random sample is significant?\n\nStandard error of the estimate refers to one standard deviation of the distribution of the parameter of interest, that are you estimating. Confidence intervals are the quantiles of the distribution of the parameter of interest, that you are estimating, at least in a frequentist paradigm.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nrandom_normal <- rnorm(n = 10,\n                       mean = 10,\n                       sd = 2)\nm <- lm(random_normal ~ 1)\nsummary(m)\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n\nCall:\nlm(formula = random_normal ~ 1)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-1.2252 -1.0955 -0.8253  1.0227  3.1111 \n\nCoefficients:\n            Estimate Std. Error t value Pr(>|t|)    \n(Intercept)   9.7753     0.4648   21.03 5.83e-09 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.47 on 9 degrees of freedom\n```\n:::\n:::\n\n\nPlease note, that CI is set up to 95% which is wider that estimated mean 10.7324 +/- 0.7154. But they can be the same, if we'll set confidence interval to 68% level (instead of 95%), we'll get virtually the same answer, as 10.7324 +/-0.7154.\n\nSide note: regressing with syntax `random_normal ~ 1` is the same as estimating the mean. It's just for convenience to quickly obtain standard errors and CI in this particular case. Reporting both won't hurt, to my opinion. But CI's, in general, are more versatile.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

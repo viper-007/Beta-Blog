@@ -215,7 +215,7 @@ hist(npbs$boot.dist,
      ylab = "Density",
      main = "Bootstrap Distribution")
 
-# Observed media
+# Observed median
 abline(v = npbs$t0,
        lty = 2,
        col = "red")

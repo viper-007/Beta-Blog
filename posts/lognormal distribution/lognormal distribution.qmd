@@ -125,10 +125,20 @@ distribution.
 #  Comparison of mean value, median, and mode
 
 # Create PDF plots 
-curve(dlnorm(x, meanlog=3.36, sdlog=0.4376), from=0, to=100, col='blue', main = "Lognormal PDF", xlab = "x", ylab = "f(x)") 
+curve(dlnorm(x, meanlog=3.36, sdlog=0.4376), from=0, to=100, col='orange', main = "Lognormal PDF", xlab = "x", ylab = "f(x)") 
+
+# Mode
+segments(23.77, 0, 23.77, dlnorm(23.77, meanlog=3.36, sdlog=0.4376), col = "blue", lty = 1, lwd=2)
+
+# Median
+segments(28.79, 0, 28.79, dlnorm(28.79, meanlog=3.36, sdlog=0.4376), col = "purple", lty = 1, lwd=2)
+
+# Mean
+segments(31.68, 0, 31.68, dlnorm(31.68, meanlog=3.36, sdlog=0.4376), col = "lightblue", lty = 1, lwd=2)
+
 
 # Add legend 
-legend("topright", legend = c("PDF(0, 0.25)", "PDF(0, 0.50)", "PDF(0, 1.00)"), fill = c("blue", "purple", "lightblue"), border = NA, cex = 0.6, bty = "n")
+legend("topright", legend = c("μ: 3.36; σ: 0.4376", "Mode: 23.77", "Median: 28.79", "Mean: 31.68"), fill = c("darkred", "blue", "purple", "lightblue"), border = NA, cex = 0.6, bty = "n")
 ```
 
 Figure 4: Comparison of mean value, median, and mode

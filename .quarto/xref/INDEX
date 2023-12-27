@@ -55,5 +55,11 @@
   },
   "posts/standard deviation - standard error - confidence interval/standard deviation - standard error - confidence interval.qmd": {
     "standard deviation - standard error - confidence interval.html": "eec8d206"
+  },
+  "posts/lognormal distribution/lognormal distribution.qmd": {
+    "lognormal distribution.html": "4071447e"
+  },
+  "r_scripts/embedded R codes.qmd": {
+    "embedded R codes.html": "28f22480"
   }
 }

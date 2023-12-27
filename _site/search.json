@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Beta Blog",
     "section": "",
-    "text": "Standard Deviation, Standard Error, and Confidence Interval\n\n\n\n\n\n\n\nstatistics\n\n\nrisk management\n\n\n\n\nWhen to use standard deviation, standard error, and confidence interval?\n\n\n\n\n\n\nAug 2, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\nBootstrapping\n\n\n\n\n\n\n\nstatistics\n\n\nrisk management\n\n\n\n\nThe bootstrap method is a statistical resampling technique used to estimate the properties of a population by repeatedly sampling with replacement from a given data set.\n\n\n\n\n\n\nAug 1, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\nConfidence Intervall\n\n\n\n\n\n\n\nstatistics\n\n\nrisk management\n\n\n\n\nA confidence interval is a statistical interval that contains the location of a true parameter of a population with a certain probability.\n\n\n\n\n\n\nJul 30, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\nTriangle Distribution\n\n\n\n\n\n\n\nstatistics\n\n\nrisk management\n\n\n\n\nThe triangular distribution (also known as the Simpson distribution) is a continuous probability distribution. The graph of the probability density function looks like a triangle and gives this distribution its name.\n\n\n\n\n\n\nJul 18, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\nMonte Carlo Simulation\n\n\n\n\n\n\n\nstatistics\n\n\nrisk management\n\n\n\n\nMonte Carlo simulation is a technique for estimating the probability distribution of a system using random sampling techniques.\n\n\n\n\n\n\nJun 27, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\nSimulation Models\n\n\n\n\n\n\n\nstatistics\n\n\nrisk management\n\n\n\n\nAll models are wrong, but some are useful.\n\n\n\n\n\n\nJun 17, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\nSystem Models\n\n\n\n\n\n\n\nstatistics\n\n\nrisk management\n\n\n\n\nQuantitative risk assessment relies on models. A model is an abstraction of reality used to gain clarity about a problem and its potential solutions by reducing the complexity.\n\n\n\n\n\n\nJun 16, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\nRisk perception and assessment\n\n\n\n\n\n\n\ncyber security\n\n\nrisk management\n\n\n\n\nCognitive biases are systematic errors in the way individuals view the world based on subjective perceptions of reality.\n\n\n\n\n\n\nJun 8, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\nRisk Matrices – Why they don’t work\n\n\n\n\n\n\n\ncyber security\n\n\nrisk management\n\n\n\n\nDo we use risk matrices even though we know the limitations and shortcomings of this popular risk assessment tool?\n\n\n\n\n\n\nJun 4, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJun 2, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\nNo matching items"
+    "text": "Lognormal Distribution\n\n\n\n\n\n\n\nstatistics\n\n\nrisk management\n\n\n\n\nThe lognormal distribution is a continuous probability distribution that can only take positive values. It describes the distribution of a random variable X if the random variable Y = ln(X) transformed by the logarithm is normally distributed.\n\n\n\n\n\n\nDec 26, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\nStandard Deviation, Standard Error, and Confidence Interval\n\n\n\n\n\n\n\nstatistics\n\n\nrisk management\n\n\n\n\nWhen to use standard deviation, standard error, and confidence interval?\n\n\n\n\n\n\nAug 2, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\nBootstrapping\n\n\n\n\n\n\n\nstatistics\n\n\nrisk management\n\n\n\n\nThe bootstrap method is a statistical resampling technique used to estimate the properties of a population by repeatedly sampling with replacement from a given data set.\n\n\n\n\n\n\nAug 1, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\nConfidence Intervall\n\n\n\n\n\n\n\nstatistics\n\n\nrisk management\n\n\n\n\nA confidence interval is a statistical interval that contains the location of a true parameter of a population with a certain probability.\n\n\n\n\n\n\nJul 30, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\nTriangle Distribution\n\n\n\n\n\n\n\nstatistics\n\n\nrisk management\n\n\n\n\nThe triangular distribution (also known as the Simpson distribution) is a continuous probability distribution. The graph of the probability density function looks like a triangle and gives this distribution its name.\n\n\n\n\n\n\nJul 18, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\nMonte Carlo Simulation\n\n\n\n\n\n\n\nstatistics\n\n\nrisk management\n\n\n\n\nMonte Carlo simulation is a technique for estimating the probability distribution of a system using random sampling techniques.\n\n\n\n\n\n\nJun 27, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\nSimulation Models\n\n\n\n\n\n\n\nstatistics\n\n\nrisk management\n\n\n\n\nAll models are wrong, but some are useful.\n\n\n\n\n\n\nJun 17, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\nSystem Models\n\n\n\n\n\n\n\nstatistics\n\n\nrisk management\n\n\n\n\nQuantitative risk assessment relies on models. A model is an abstraction of reality used to gain clarity about a problem and its potential solutions by reducing the complexity.\n\n\n\n\n\n\nJun 16, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\nRisk perception and assessment\n\n\n\n\n\n\n\ncyber security\n\n\nrisk management\n\n\n\n\nCognitive biases are systematic errors in the way individuals view the world based on subjective perceptions of reality.\n\n\n\n\n\n\nJun 8, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\nRisk Matrices – Why they don’t work\n\n\n\n\n\n\n\ncyber security\n\n\nrisk management\n\n\n\n\nDo we use risk matrices even though we know the limitations and shortcomings of this popular risk assessment tool?\n\n\n\n\n\n\nJun 4, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJun 2, 2023\n\n\nJohannes Buck\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/risk matrices/index.html",
@@ -474,5 +474,96 @@
     "title": "Standard Deviation, Standard Error, and Confidence Interval",
     "section": "R code",
     "text": "R code\n\nrandom_normal &lt;- rnorm(n = 10,\n                       mean = 10,\n                       sd = 2)\nm &lt;- lm(random_normal ~ 1)\nsummary(m)\n\n\nCall:\nlm(formula = random_normal ~ 1)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-2.73025 -1.72644 -0.09643  1.75533  3.00881 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  10.4914     0.6415   16.36 5.31e-08 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.029 on 9 degrees of freedom\n\n\nPlease note, that CI is set up to 95% which is wider that estimated mean 10.7324 +/- 0.7154. But they can be the same, if we’ll set confidence interval to 68% level (instead of 95%), we’ll get virtually the same answer, as 10.7324 +/-0.7154.\nSide note: regressing with syntax random_normal ~ 1 is the same as estimating the mean. It’s just for convenience to quickly obtain standard errors and CI in this particular case. Reporting both won’t hurt, to my opinion. But CI’s, in general, are more versatile.\n\nExample\nCalculate the normal distributions with different number of observations (\\(n = 100, 1000, and \\, 10000\\)) and different standard deviation (\\(sd = \\sqrt(1), \\sqrt(1.1)\\)) and compare the confidence intervals."
+  },
+  {
+    "objectID": "posts/lognormal distribution/lognormal distribution.html",
+    "href": "posts/lognormal distribution/lognormal distribution.html",
+    "title": "Lognormal Distribution",
+    "section": "",
+    "text": "The lognormal distribution is a continuous probability distribution that can only take positive values. It describes the distribution of a random variable \\(X\\) if the random variable \\(Y = ln(X)\\) transformed by the logarithm is normally distributed.\nThe lognormal distribution is often used to model phenomena in which the logarithmized values of the data follow a normal distribution, while the actual data itself has a non-normal distribution."
+  },
+  {
+    "objectID": "posts/lognormal distribution/lognormal distribution.html#probability-density-function-pdf",
+    "href": "posts/lognormal distribution/lognormal distribution.html#probability-density-function-pdf",
+    "title": "Lognormal Distribution",
+    "section": "Probability Density Function (PDF)",
+    "text": "Probability Density Function (PDF)\nThe probability density function of the lognormal distribution is defined by\n\\[\\begin{equation} \\tag{1.1} f(x) = \\frac{1}{x\\sigma \\sqrt{2\\pi}} e\\left(-\\frac{(\\ln(x) - \\mu)^2}{2\\sigma^2}\\right) \\end{equation}\\]\nwhere \\(x\\) is the random variable, \\(\\mu\\) is the mean of the logarithmic distribution, and \\(\\sigma\\) is the standard deviation of the logarithmic distribution.\n\n\n\n\n\nFigure 1: Lognormal Probability Density Functions (PDF) with varying standard deviations"
+  },
+  {
+    "objectID": "posts/lognormal distribution/lognormal distribution.html#cumulative-distribution-function-cdf",
+    "href": "posts/lognormal distribution/lognormal distribution.html#cumulative-distribution-function-cdf",
+    "title": "Lognormal Distribution",
+    "section": "Cumulative Distribution Function (CDF)",
+    "text": "Cumulative Distribution Function (CDF)\nThe Cumulative Distribution Function (CDF) of the lognormal distribution is as follows:\n\\[\\begin{equation} \\tag{1.2} F(x) = \\int_{0}^{x} f(t) dt = \\Phi (\\frac{ln(x)-\\mu}{\\sigma}) \\end{equation}\\]\nwhere \\(\\Phi\\) denotes the distribution function of the standard normal distribution.\n\n\n\n\n\nFigure 2: Lognormal Cumulative Density Functions (CDF) with varying standard deviations"
+  },
+  {
+    "objectID": "posts/lognormal distribution/lognormal distribution.html#relationship-between-normal-and-lognormal-distribution",
+    "href": "posts/lognormal distribution/lognormal distribution.html#relationship-between-normal-and-lognormal-distribution",
+    "title": "Lognormal Distribution",
+    "section": "Relationship between normal and lognormal distribution",
+    "text": "Relationship between normal and lognormal distribution\nIf \\(Y = \\mu + \\sigma Z\\) is normal distributed, then \\(X\\sim e^{Y}\\) is lognormal distributed.\n\nFigure 3: Normal distribution vs. lognormal distribution (inspired by figure from Wikipedia)"
+  },
+  {
+    "objectID": "posts/lognormal distribution/lognormal distribution.html#median",
+    "href": "posts/lognormal distribution/lognormal distribution.html#median",
+    "title": "Lognormal Distribution",
+    "section": "Median",
+    "text": "Median\nThe median of the lognormal distribution is:\n\\(\\large x_{med}=e^{\\mu}\\)\nThe median is the middle value when a data set is ordered from least to greatest."
+  },
+  {
+    "objectID": "posts/lognormal distribution/lognormal distribution.html#mean",
+    "href": "posts/lognormal distribution/lognormal distribution.html#mean",
+    "title": "Lognormal Distribution",
+    "section": "Mean",
+    "text": "Mean\nThe mean of the lognormal distribution is:\n\\(\\large m = e^{\\mu + {\\frac {\\sigma ^{2}}{2}}}\\)\nThe mean (average) of a data set is found by adding all numbers in the data set and then dividing by the number of values in the set. The mean of the lognormal distribution is equal to the expected value."
+  },
+  {
+    "objectID": "posts/lognormal distribution/lognormal distribution.html#mode",
+    "href": "posts/lognormal distribution/lognormal distribution.html#mode",
+    "title": "Lognormal Distribution",
+    "section": "Mode",
+    "text": "Mode\nThe mode (the most frequent value of the distribution) of the lognormal distribution is:\n\\(\\large Modus(X) = x_{D} = e^{\\mu -\\sigma ^{2}}\\)\nThe mode is the number that occurs most often in a data set."
+  },
+  {
+    "objectID": "posts/lognormal distribution/lognormal distribution.html#expected-value",
+    "href": "posts/lognormal distribution/lognormal distribution.html#expected-value",
+    "title": "Lognormal Distribution",
+    "section": "Expected Value",
+    "text": "Expected Value\nThe expected value of the lognormal distribution is:\n\\(\\large E(X) = e^{\\mu + {\\frac {\\sigma ^{2}}{2}}}\\)\nWhere \\(μ\\) is the mean value and \\(σ\\) is the standard deviation of the lognormal distribution.\nThe expected value of a lognormal distribution is a key figure that indicates the central tendency value of the distribution. It is important to note that the expected value of a lognormal distribution is generally greater than the median (the 50th percentile value) of the distribution. This is because the lognormal distribution has a positive skewness (right-skewed), which means that it tends to have higher values."
+  },
+  {
+    "objectID": "posts/lognormal distribution/lognormal distribution.html#example",
+    "href": "posts/lognormal distribution/lognormal distribution.html#example",
+    "title": "Lognormal Distribution",
+    "section": "Example",
+    "text": "Example\n…"
+  },
+  {
+    "objectID": "r_scripts/embedded R codes.html",
+    "href": "r_scripts/embedded R codes.html",
+    "title": "Embedded R code",
+    "section": "",
+    "text": "R Code\n\n1 + 1\n\n[1] 2\n\n\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code, only the output is displayed."
+  },
+  {
+    "objectID": "posts/lognormal distribution/lognormal distribution.html#variance",
+    "href": "posts/lognormal distribution/lognormal distribution.html#variance",
+    "title": "Lognormal Distribution",
+    "section": "Variance",
+    "text": "Variance\nThe variance of the lognormal distribution is:\n\\(\\large Var(X) = e^{2\\mu +\\sigma^2} (e^{\\sigma^2}-1)\\)"
+  },
+  {
+    "objectID": "posts/lognormal distribution/lognormal distribution.html#standard-deviation",
+    "href": "posts/lognormal distribution/lognormal distribution.html#standard-deviation",
+    "title": "Lognormal Distribution",
+    "section": "Standard deviation",
+    "text": "Standard deviation\nThe standard deviation of the lognormal distribution is:\n\\(\\large \\sqrt Var(X)\\)"
+  },
+  {
+    "objectID": "posts/lognormal distribution/lognormal distribution.html#skewness",
+    "href": "posts/lognormal distribution/lognormal distribution.html#skewness",
+    "title": "Lognormal Distribution",
+    "section": "Skewness",
+    "text": "Skewness\nThe lognormal distribution is skewed to the right. The greater the difference between the expected value and the median, the more pronounced the skewness of the lognormal distribution.\ndistribution.\n\n\n\n\n\nFigure 4: Comparison of mean value, median, and mode"
   }
 ]

@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/lognormal distribution/lognormal distribution.html",
       "/posts/standard deviation - standard error - confidence interval/standard deviation - standard error - confidence interval.html",
       "/posts/bootstrapping/bootstrapping.html",
       "/posts/confidence interval/confidence interval.html",

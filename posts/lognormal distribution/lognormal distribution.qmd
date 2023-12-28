@@ -117,8 +117,6 @@ $\large \sqrt Var(X)$
 
 The lognormal distribution is skewed to the right. The greater the difference between the expected value and the median, the more pronounced the skewness of the lognormal distribution.
 
-distribution.
-
 ```{r, fig.width=6, fig.height=4}
 #| echo: false  
 
@@ -146,8 +144,6 @@ Figure 4: Comparison of mean value, median, and mode
 ## Example 1: US Income 2006
 
 The graph below shows the distribution of US income in 2006. It illustrates how the location parameter is the median of this distribution. The shaded area represents 50% of the distribution, which corresponds to the median value of 28,788. The value is calculated by taking e and increasing it by the location value. In this case, $e^{10.2677} = 28,788$.
-
-...
 
 ```{r, fig.width=6, fig.height=8}
 #| echo: false  

@@ -221,7 +221,7 @@ x_values <- seq(0, 15000, length.out = 1000)
 cdf_values <- plnorm(x_values, meanlog = log(mean_lifetime), sdlog = sd_lifetime)
 
 # CDF Plot
-plot(x_values, cdf_values, type = 'l', col = 'blue', lwd = 2,
+plot(x_values, cdf_values, type = 'l', col = 'lightblue', lwd = 2,
      main = 'Engine liftime CDF',
      ylab = 'Cumulative Probability', xlab = 'Lifetime (hours)')
 
@@ -229,7 +229,7 @@ plot(x_values, cdf_values, type = 'l', col = 'blue', lwd = 2,
 abline(h = probability_exceeds_threshold, col = 'red', lty = 2)
 
 # Add legend
-legend("bottomright", legend = c("CDF", "Threshold"), col = c("blue", "red"), border = NA, lty = 1:2, cex = 0.8, bty = "n")
+legend("bottomright", legend = c("CDF", "Threshold"), col = c("lightblue", "red"), border = NA, lty = 1:2, cex = 0.8, bty = "n")
 
 # Print the result
 cat("Probability that the lifetime exceeds 12,000 hours:", probability_exceeds_threshold, "\n")

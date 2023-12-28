@@ -36,7 +36,6 @@ abline(v = thresh, col = "red", lty = 2)
 abline(v = median, col = "red", lty = 2)
 
 
-
 # Add legend 
 legend("topright", legend = c("Mean: 10.2677", "Standard deviation: 0.73796", "Median: 28,788","50% area"), fill = c("white", "white", "white", lightblue_trans), border = NA, cex = 0.6, bty = "n")
 

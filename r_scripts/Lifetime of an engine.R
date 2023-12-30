@@ -59,6 +59,12 @@ abline(v = threshold_lifetime, col = 'red', lty = 2)
 # Add a horizontal line at the threshold probability
 abline(h = probability_exceeds_threshold, col = 'purple', lty = 2)
 
+
+# Fill the area below the curve from 0 to the threshold
+polygon(c(0, x_values[x_values <= threshold_lifetime], threshold_lifetime), c(0, cdf_values[x_values <= threshold_lifetime], 0), col = purple_trans, border = NA)
+
+
+
 # Add legend
 legend("bottomright", legend = c("CDF", "Threshold", "Threshold Probability"), col = c("lightblue", "red", "purple"), border = NA, lty = c(1, 2, 2), cex = 0.8, bty = "n")
 

@@ -241,12 +241,8 @@ abline(v = threshold_lifetime, col = 'red', lty = 2)
 # Add a vertical line at the threshold
 abline(v = threshold_lifetime, col = 'red', lty = 2)
 
-# Find the x and y coordinates for the polygon
-x_polygon <- c(0, seq(0, threshold_lifetime))
-y_polygon <- c(0, 1 - dnorm(log(seq(0, threshold_lifetime)), mean = mean_normal, sd = sd_normal))
-
-# Add the filled area below the curve from 0 to threshold_lifetime
-polygon(x_polygon, y_polygon, col = purple_trans, border = NA)
+# Fill the area below the curve from 0 to the threshold
+polygon(c(0, x_values[x_values <= threshold_lifetime], threshold_lifetime), c(0, pdf_values[x_values <= threshold_lifetime], 0), col = purple_trans, border = NA)
 
 # Add legend
 legend("topright", legend = c("CDF", "Threshold", "Threshold Probability"), col = c("lightblue", "red", "purple"), border = NA, lty = c(1, 2, 0), fill = c("white", "white", purple_trans), cex = 0.8, bty = "n")

@@ -61,5 +61,8 @@
   },
   "r_scripts/embedded R codes.qmd": {
     "embedded R codes.html": "28f22480"
+  },
+  "posts/probability density function (PDF) - cumulative distribution function (CDF)/PDF - CDF.qmd": {
+    "PDF - CDF.html": "b291698b"
   }
 }

@@ -1,0 +1,273 @@
+---
+title: "Cyber security risk assessments with triangular distributions"
+author: "Johannes Buck"
+date: "2024-01-06"
+categories: [statistics, risk management]
+description: Triangular distributions and opinion pooling are a simple and straightforward approach to quantitative cyber security risk management.
+image: CS RA w TD.png
+---
+
+In a quantitative risk calculation, a triangle distribution is a probability distribution that assumes a minimum, maximum, and most likely value for a variable. It is often used when the available data is limited, and we have some knowledge about the range of possible values.
+
+# Cyber security risk management
+
+![](images/Risk%20Management%20Process.png)
+
+*Figure 1: Risk management process*
+
+The risk management process has four stages:
+
+1)  **Identify risk -** assess the organization's environment to identify current or potential risks that could affect business operations.
+2)  **Assess risk -** analyze likelihood and impact to the organization of the identified risks
+3)  **Manage risk -** define measures to mitigate the risks
+4)  **Monitor controls -** continuously evaluate control effectiveness and add or adjust controls as needed
+
+# Quantitative cyber security risk assessments
+
+Risk is a function of the probability of occurrence of an event and the impact of that event on the business:
+
+![](images/Risk%20Equation.png)
+
+*Figure 2: Risk Equation*
+
+Cyber security risk assessments can be performed using qualitative or quantitative methods. In this post we will discuss how the triangular distribution can be used for simple and straightforward quantitative cyber security risk assessments. In a subsequent post, we will discuss how the Monte Carlo simulation can be used for a more sophisticated approach to quantitative cyber security risk assessments.
+
+## Example
+
+Company XYZ has assessed the potential financial impact of a data breach. Based on historical data and expert judgment, they estimate the following values for the financial impact (in USD) with a triangle distribution:
+
+-   Minimum financial impact: a = USD 40,000
+
+-   Most likely financial impact (mode): c = USD 150,000
+
+-   Maximum financial impact: b = USD 60,000
+
+```{r, fig.width=7, fig.height=5}
+#| echo: FALSE
+#| warning: FALSE
+
+# Triangular Distribution (PDF, CDF and CI)
+
+library(EnvStats)
+
+# Assign parameters (min = a, max = b, mode = c)
+a <- 45
+b <- 150
+c <- 60
+inc <- 0.1
+
+# adjust range and increment
+x <- seq(a, b, by = inc)
+
+# Probability Density Function (PDF)
+pdf <- ifelse(x < c, 2 * (x - a) / ((c - a) * (b - a)), 2 * (b - x) / ((b - c) * (b - a)))
+
+# Cumulative Distribution Function (CDF)
+cdf <- ifelse(x < c, (x - a)^2 / ((c - a) * (b - a)), 1 - (b - x)^2 / ((b - c) * (b - a)))
+
+# Calculate expected value
+expected_value <- (a+b+c) / 3
+
+# Calculate probability of the expected value
+probability_expected_value <- ptri(q = 85, min = a, max = b, mode = c) 
+  
+# Calculate the 95% confidence interval
+lower_bound <- qtri(0.025, a, b, c)
+upper_bound <- qtri(0.975, a, b, c)
+confidence_interval <- c(lower_bound, upper_bound)
+lb <- round(lower_bound, digits = 0)
+ub <- round(upper_bound, digits = 0)
+
+# divide window into a 1x2 grid
+par(mfrow=c(1,2))
+
+# Plot PDF
+plot(x, pdf, col = 'blue', type = 'l', main = "PDF", xlab ='$1k', ylab = "f(x)", ylim = c(0, 0.02), axes = FALSE)
+# X-axis
+axis(1, at = c(45, 60, 85, 150), cex.axis = 0.7)
+# Y-axis
+axis(2, at = c(0, 0.02), cex.axis = 0.7)
+# PDF labeling
+abline(v = a, col = 'grey', lwd = 1, lty = 2)
+abline(v = c, col = 'grey', lwd = 1, lty = 2)
+abline(v = b, col = 'grey', lwd = 1, lty = 2)
+abline(v = 85, col = 'lightblue', lwd = 1, lty = 2)
+abline(h = 0.019, col = 'grey', lwd = 1, lty = 2)
+abline(v = lower_bound, col = 'purple', lwd = 1, lty = 2)
+abline(v = upper_bound, col = 'purple', lwd = 1, lty = 2)
+axis(1, at = c(lb, ub), col='purple', cex.axis = 0.7)
+
+# Plot CDF
+plot(x, cdf, col = 'blue', type = 'l', main = "CDF", xlab ='$1k', ylab = "F(x)", ylim = c(0, 1), axes = FALSE)
+# X-axis
+axis(1, at = c(45, 60, 85, 150), cex.axis = 0.7)
+axis(1, at = c(lb, ub), col='purple', cex.axis = 0.7)
+# Y-axis
+axis(2, at = c(0, 0.14, 0.55, 1.0), cex.axis = 0.5)
+# CDF labeling
+abline(v = a, col = 'grey', lwd = 1, lty = 2)
+abline(v = c, col = 'grey', lwd = 1, lty = 2)
+abline(v = 85, col = 'lightblue', lwd = 1, lty = 2)
+abline(v = b, col = 'grey', lwd = 1, lty = 2)
+abline(h = 0.14, col = 'grey', lwd = 1, lty = 2)
+abline(h = 0.55, col = 'lightblue', lwd = 1, lty = 2)
+abline(h = 1.0, col = 'grey', lwd = 1, lty = 2)
+abline(v = lower_bound, col = 'purple', lwd = 1, lty = 2)
+abline(v = upper_bound, col = 'purple', lwd = 1, lty = 2)
+
+# Print results
+# cat("Min:", a, "\n") 
+# cat("Max:", b, "\n")
+# cat("Mode:", c, "\n")
+# cat("Expected value:", expected_value, "\n")
+# cat("Probability of the expected value:", probability_expected_value, "\n")
+# cat("Confidence Interval [lower bound]:", lb, "\n")
+# cat("Confidence Interval [upper band]:", ub, "\n")
+```
+
+**Results**
+
+The triangle distribution parameters are:
+
+-   Expected value: USD 85,000
+
+-   Probability of the expected value: 0.553 (55%)
+
+-   Confidence Interval \[lower bound\]: USD 51,000
+
+-   Confidence Interval \[upper band\]: USD 135,000
+
+**Interpretation**
+
+-   The 95% confidence interval covers almost the entire range of the triangular distribution.
+
+-   The probability of the expected value is only 55%.
+
+These two conclusions tell us that the expected value is characterized by a high degree of uncertainty which is typical of a skewed triangular distribution.
+
+::: callout-note
+Confidence Interval Various methods can be used to calculate a confidence interval for the triangular distribution. It is important to note that these methods are based on assumptions and may not always be accurate, especially if the triangular distribution is highly asymmetric. In such cases, more advanced statistical methods may be required.
+:::
+
+# Opinion Pooling
+
+## Linear opinion pooling (LOP)
+
+The results of triangular distributions can be aggregated by combining multiple triangular distributions to represent the overall uncertainty. This can be done by taking the minimum of the minimum values, the maximum of the maximum values, and aggregating the modes to form a new triangular distribution that represents the combined uncertainty. One approach to this is opinion pooling.
+
+The following formula can be used for linear opinion pooling: $$LOP = \sum_{i=1}^{N} (w_i \times o_i)$$ where:
+
+-   $N$ is the number of experts resp. opinions
+
+-   $o_i$ is the opinion of expert $i$
+
+-   $w_i$ is the weight of expert $i$ (used to reflect the trustworthiness of expert $i$)
+
+Note: $w_i$ are the non-negative weights such that $\sum_{i} w_i = 1$, with $w_1= w_2= \ldots = w_k = 1/k$ if all the opinions as equally trustworthy.
+
+If no weighting is used: $$LOP = \frac {1}{N} \sum_{i=1}^{N} o_i$$
+
+## Logarithmic opinion pooling (LogOP)
+
+Logarithmic opinion pooling is a method used to combine opinions from multiple experts. The basic idea is to take the logarithm of the individual probabilities and then average them. This helps prevent extreme opinions from dominating the final result.
+
+The following formula can be used for logarithmic opinion pooling: $$LogOp = \exp \left(\sum_{i=1}^{N} w_i \times \ln(o_i) \right)$$ where:
+
+-   $N$ is the number of experts resp. opinions
+
+-   $o_i$ is the opinion of expert $i$
+
+-   $w_i$ is the weight of expert $i$ (used to reflect the trustworthiness of expert $i$)
+
+If no weighting is used: $$LogOp = \frac{1}{N} \exp \left(\sum_{i=1}^{N} \ln(o_i) \right)$$
+
+## Linear opinion pooling vs. logarithmic opinion pooling
+
+Linear opinion pooling and logarithmic opinion pooling are two methods used in combining multiple opinions to form a collective opinion. The choice between these methods depends on the characteristics of the underlying beliefs and the desired properties of the aggregated opinion.
+
+**1. Linear Opinion Pooling (LOP)**
+
+-   **Applicability:** Linear pooling is often suitable when the underlying opinions are assumed to be independent and equally weighted.
+
+-   **Characteristics:** This method assumes that each opinion contributes equally to the collective belief. It is straightforward and easy to implement.
+
+-   **Use Cases:** Linear pooling may be appropriate when there is no reason to believe that any source of information is more reliable or more influential than others.
+
+**2. Logarithmic Opinion Pooling (LogOP)**
+
+-   **Applicability:** Logarithmic pooling is more suitable when there is a need to underweight extreme opinions and give more importance to the middle-ground opinions.
+
+-   **Characteristics:** It is based on the assumption that extreme opinions (outliners) are more likely to be incorrect or biased, and thus they should have less impact on the final aggregated opinion. Note that the logarithmic pooling can produce an aggregated probability that is zero, even if none of the experts assign a probability of zero to the outcome. This is because the logarithmic function is unbounded below.
+
+-   **Use Cases:** Logarithmic pooling might be more appropriate in situations where there is a possibility of extreme opinions being outliers or influenced by noise, and a more conservative approach to combining opinions is desired.
+
+The choice between linear and logarithmic opinion pooling depends on the context and the specific characteristics of the data. Linear and logarithmic opinion pooling are not the only methods available. Other approaches such as Bayesian aggregation, may also be considered.
+
+> \[!NOTE\] Probabilistic Opinion Pooling Probabilistic Opinion Pooling is a concept developed by Franz Dietrich. It refers to methods for combining the opinions or judgments of multiple individuals and generating a joint probability distribution for a given statement or hypothesis. Dietrich is a researcher in the field of decision theory and formal social choice theory.
+
+### LOP Example
+
+**Scenario**
+
+DDoS attack on the organization, where three experts estimate the probability of occurrence and potential impact.
+
+**Estimations**
+
+-   Expert A: probability = 0.7; impact = USD 100,000 =\> risk = USD 70,000
+
+-   Expert B: probability = 0.6; impact = USD 300,000 =\> risk = USD 180,000
+
+-   Expert C: probability = 0.8; impact = USD 200,000 =\> risk = USD 160,000
+
+**Trustworthiness**
+
+The trustworthiness or expertise of the experts can be weighted:
+
+-   Expert A: $w_A$ = 0.3
+
+-   Expert B: $w_B$ = 0.4
+
+-   Expert C: $w_C$ = 0.3
+
+Note: The sum of all weighting factors should be 1.0.
+
+**Overall Assessment**
+
+Calculate the overall assessment by applying the linear pooling method: $$\text{Overall assessment} = w_A \times \text{risk}_A + w_B \times \text{risk}_B + w_C \times \text{risk}_C$$ $$\text{Overall assessment} = 0.3 \times \text{USD 70,000} + 0.4 \times \text{USD 180,000} + 0.3 \times \text{USD 160,000} = \text{USD 141,000}$$
+
+### LogOP Example
+
+Used the same scenario and the same values for the expert estimations and trustworthiness as in the LOP example.
+
+The logarithmic opinion pooling formula is: $$LogOp(r_1,r_2,r_3)= \exp⁡(w_1 \times ln⁡(r_1)+w_2 \times ln⁡(r_2)+w_3 \times ln⁡(r_3))$$
+
+$$LogOp(70,180,160)= \exp⁡(0.3 \times ln⁡(70)+0.4 \times ln⁡(180)+ 0.3 \times ln⁡(160))$$
+
+$$LogOp(70,180,160)= \text{USD 1k } 130.880$$
+
+**Overall Assessment**
+
+The overall assessment calculated with logarithmic pooling is USD 130,880. The result of the logarithmic pooling is compared with the linear opinion pooling lower (USD 130,880 \< USD 141,000) because of the effect to correct outliners (risk estimation of expert A which is significantly lower then the risks estimated by the experts B and C).
+
+# Aggregation of triangular distributions
+
+There are a several methods to aggregate triangular distributions,:
+
+1.  **Opinion pooling:** Calculates the weighted average of the individual distributions with linear pooling or logarithmic pooling.
+
+2.  **Monte Carlo simulation:** Generate a large number of random samples from each triangular distribution and combining them to obtain an aggregated result.
+
+3.  **Convolution:** Combines probability density functions (PDF) of individual distributions to obtain a distribution representing the sum of them.
+
+4.  **Bayesian inference:** Bayesian inference can be used when the distributions have different levels of uncertainty.
+
+| Method                 | Description                                                                                                      | Advantages                                                  | Disadvantages                                                         |
+|------------------|------------------|------------------|------------------|
+| Opinion pooling        | Calculates the average of teach triangular distribution.                                                         | Simple and straightforward                                  | May not be accurate if distributions have different shapes            |
+| Monte Carlo simulation | Simulates random samples from each triangular distribution and combines them to form an aggregated distribution. | Simple method, but requires computer power                  | Computationally intensive                                             |
+| Convolution            | Mathematical operation on two functions ($f$ and $g$) that produces a third function ($f*g$).                    | Complex method which requires higher mathematical knowledge | Computational complexity, sensitivity to assumptions                  |
+| Bayesian inference     | Combine the information from multiple triangular distributions into a single posterior distribution.             | Flexibility, can handle small sample sizes                  | In many cases, analytical solutions for Bayesian models may not exist |
+
+*Table 1: Key characteristics of each aggregation method*
+
+In a subsequent post, convolution and Bayesian inference are discussed as methods for aggregating cyber security risks.

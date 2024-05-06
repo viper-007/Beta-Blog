@@ -17,7 +17,7 @@ ROSI can help organizations determine which security investments are worth the c
 
 ![](images/Balance%20between%20costs,%20agility,%20innovation%20and%20risk.png)
 
-*Figure 1: Balance between costs, agility/innovation and risk*
+Figure 1: Balance between costs, agility/innovation and risk
 
 ## ROI vs. ROSI
 
@@ -166,7 +166,7 @@ Gordon and Loeb were able to show that the optimal level of cyber security inves
 
 ![](images/Gordon-Loeb%20Model.png)
 
-*Figure 2: The optimal level of cyber security investment at* $z^*$
+Figure 2: The optimal level of cyber security investment at $z^*$
 
 **Example**
 
@@ -193,7 +193,7 @@ While the Gordon-Loeb model is a valuable contribution to the field of cyber sec
 The limitations of points 3, 4, and 5 apply not only to the Gordon-Loeb model, but also to ROSI. The Gordon-Loeb model can be used as a starting point rather than a universal rule.
 
 ::: callout-note
-Dependence on mathematical approach
+## Dependence on mathematical approach
 
 Research showed that even within the initial assumptions of the model, some security incident probability functions should be fixed with no less than $\frac{1}{2}$ the expected loss, contradicting the hypothesis that the $\frac{1}{e}$ factor was universal. Using a different mathematical approach (the second derivative of the loss function need not to be continuous), one can create loss functions whose optimal fixing costs 100% of the estimated loss.
 :::

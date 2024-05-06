@@ -11,13 +11,6 @@ image: risk reporting.png
 
 ...
 
-## Expected value
-
-**Q:** Is the expected value a useful, appropriate measurement for quantitative risk management?
-
-**A:** Yes, the expected value is a commonly used measurement in quantitative risk management. The expected value provides a single "numerical summary" of a probability distribution. However, it is important to note that relying solely on the expected value may have limitations. The probability of the expected value, the confidence interval, and a good understanding of the underlying probability distribution help to better understand the risk profile and make more comprehensive risk management decisions.
-
-
 # Risk aggregation
 
 There are a several methods to aggregate methods:
@@ -31,7 +24,7 @@ There are a several methods to aggregate methods:
 4.  **Bayesian inference:** Bayesian inference can be used when the distributions have different levels of uncertainty.
 
 | Method                 | Description                                                                                                      | Advantages                                                  | Disadvantages                                                         |
-|------------------------|------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------|-----------------------------------------------------------------------|
+|---------------|---------------------------|---------------|----------------|
 | Opinion pooling        | Calculates the average of teach triangular distribution.                                                         | Simple and straightforward                                  | May not be accurate if distributions have different shapes            |
 | Monte Carlo simulation | Simulates random samples from each triangular distribution and combines them to form an aggregated distribution. | Simple method, but requires computer power                  | Computationally intensive                                             |
 | Convolution            | Mathematical operation on two functions ($f$ and $g$) that produces a third function ($f*g$).                    | Complex method which requires higher mathematical knowledge | Computational complexity, sensitivity to assumptions                  |
@@ -39,4 +32,4 @@ There are a several methods to aggregate methods:
 
 *Table 1: Key characteristics of each aggregation method*
 
-In a subsequent post, convolution and Bayesian inference are discussed as methods for aggregating cyber security risks.
+In a subsequent posts, convolution and Bayesian inference are discussed as methods for aggregating cyber security risks.

@@ -13,7 +13,7 @@ In a quantitative risk calculation, a triangle distribution is a probability dis
 
 ![](images/Risk%20Management%20Process.png)
 
-*Figure 1: Risk management process*
+Figure 1: Risk management process
 
 The risk management process has four stages:
 
@@ -28,7 +28,7 @@ Risk is a function of the probability of occurrence of an event and the impact o
 
 ![](images/Risk%20Equation.png)
 
-*Figure 2: Risk Equation*
+Figure 2: Risk Equation
 
 Cyber security risk assessments can be performed using qualitative or quantitative methods. In this post we will discuss how the triangular distribution can be used for simple and straightforward quantitative cyber security risk assessments. In a subsequent post, we will discuss how the Monte Carlo simulation can be used for a more sophisticated approach to quantitative cyber security risk assessments.
 

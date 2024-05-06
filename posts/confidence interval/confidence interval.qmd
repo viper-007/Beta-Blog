@@ -153,6 +153,8 @@ b\) 95.4% of the data are within two standard deviations of the mean ($\mu \pm 2
 c\) 99.7% of the data are within 3 standard deviations of the mean ($\mu \pm 3\sigma$).
 
 ::: callout-note
+## Three-sigma rule
+
 The three-sigma rule applies only to normally distributed data sets. The three sigma rule does not apply to skewed triangular distributions.
 :::
 

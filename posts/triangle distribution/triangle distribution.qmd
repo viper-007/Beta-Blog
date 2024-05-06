@@ -30,6 +30,8 @@ $$\begin{equation} \tag{1.1}
 \end{equation}$$
 
 ::: callout-note
+## PDF (probability density function)
+
 The PDF (probability density function) in the triangular distribution shows how the probability is distributed across different values within a given interval. The triangular distribution is a continuous probability distribution in which the probability first increases linearly, then peaks, and then decreases linearly. The shape of the triangular distribution is determined by three parameters: the left tail value $a$, the right tail value $b$, and the mode $c$ (the value with the highest probability).
 :::
 

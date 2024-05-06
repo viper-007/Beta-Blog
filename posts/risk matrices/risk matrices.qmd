@@ -19,7 +19,7 @@ Risk matrices are used in risk assessments to define the level of risk by consid
 
 Risk is expressed as a combination of the likelihood of an event occurring and the impact on the business expressed in the equation:
 
-![*Figure 1: Risk Equation*](Risk%20equation.png){fig-align="center"}
+![Figure 1: Risk Equation](Risk%20equation.png){fig-align="center"}
 
 # Selective representation of individual risks
 
@@ -29,7 +29,7 @@ Risk matrices, by their nature, are not suitable for risk aggregation or risk po
 
 ![](Aggregation%20scheme.png){fig-align="center"}
 
-*Figure 2: Aggregation scheme for a distribution-based determination of the overall risk*
+Figure 2: Aggregation scheme for a distribution-based determination of the overall risk
 
 # Poor resolution
 
@@ -37,13 +37,13 @@ A 5x5 risk matrix is often used for risk assessment.
 
 ![](Classic%205x5%20risk%20matrix%20with%20linear%20scales.png){fig-align="center"}
 
-*Figure 3: classic 5x5 risk matrix with linear scales*\*
+Figure 3: classic 5x5 risk matrix with linear scales\*
 
 Most security risks do not have a linear risk distribution where five categories (rare, unlikely, possible, likely, certain) or (negligible, minor, moderate, critical, catastrophic) would be appropriate. A logarithmic representation for both likelihood and impact provides a much better resolution with a wider spread. A risk matrix with a double-logarithmic scale allows to illustrate even so-called tail risks with extremely low probability and very high impact to be represented.
 
 ![](Risk%20matrix%20with%20logarithmic%20scales.png){fig-align="center"}
 
-*Figure 4: risk matrix with logarithmic scales*
+Figure 4: risk matrix with logarithmic scales
 
 # Ambiguous inputs and outputs
 
@@ -57,17 +57,17 @@ A correct representation of the semi-quantitative categories defined by NIST SP 
 
 ![](Classic%205x5%20risk%20matrix%20with%20linear%20scales.png){fig-align="center"}
 
-*Figure 5: classic 5x5 risk matrix with equal squares*
+Figure 5: classic 5x5 risk matrix with equal squares
 
 ![](5x5%20risk%20matrix%20with%20NIST%20SP%20800-30r1%20scales.png){fig-align="center"}
 
-*Figure 6: 5x5 matrix with rectangles considering the unequal dimensions of the semi-quantitative categories according to NIST SP 800-30r1*
+Figure 6: 5x5 matrix with rectangles considering the unequal dimensions of the semi-quantitative categories according to NIST SP 800-30r1
 
 A classic risk matrix with equal squares means that risks with the same risk rating (Risk = Likelihood x Impact) lie on a hyperbola. A circumstance most people are hardly aware of.
 
 ![](Risk%20matrix%20with%20linear%20scales%20and%20risk%20isolines.png){fig-align="center"}
 
-*Figure 7: risk matrix with linear scales and risk isolines^1)^*
+Figure 7: risk matrix with linear scales and risk isolines^1)^
 
 In comparison a risk matrix with double-logarithmic scale, where the risk isolines are straight lines.
 
@@ -89,7 +89,7 @@ It is common to visualize risk appetite using a staircase diagram. The picture s
 
 ![](5x5%20risk%20matrix%20with%20risk%20appetite%20line.png){fig-align="center"}
 
-*Figure 9: 5x5 matrix with risk appetite line*
+Figure 9: 5x5 matrix with risk appetite line
 
 Risk acceptance should be a decision-making process at management or board level, not an automatic process triggered by a threshold. Risk acceptance should be a conscious decision based on risk/return, strategic objectives and risk capacity, not based on a baseline approach.
 

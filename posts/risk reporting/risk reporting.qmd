@@ -3,7 +3,7 @@ title: "Risk reporting"
 author: "Johannes Buck"
 date: "2024-02-16"
 categories: [statistics, risk management]
-description: Risk reporting ...
+description: Risk reporting communicates identification, assessment, mitigation, and monitoring of risks and opportunities to stakeholders for informed decision-making and protection the organization and its assets.
 image: risk reporting.png
 ---
 
@@ -16,6 +16,7 @@ image: risk reporting.png
 **Q:** Is the expected value a useful, appropriate measurement for quantitative risk management?
 
 **A:** Yes, the expected value is a commonly used measurement in quantitative risk management. The expected value provides a single "numerical summary" of a probability distribution. However, it is important to note that relying solely on the expected value may have limitations. The probability of the expected value, the confidence interval, and a good understanding of the underlying probability distribution help to better understand the risk profile and make more comprehensive risk management decisions.
+
 
 # Risk aggregation
 

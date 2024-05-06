@@ -146,7 +146,7 @@ The triangle distribution parameters are:
 These two conclusions tell us that the expected value is characterized by a high degree of uncertainty which is typical of a skewed triangular distribution.
 
 ::: callout-note
-Confidence Interval Various methods can be used to calculate a confidence interval for the triangular distribution. It is important to note that these methods are based on assumptions and may not always be accurate, especially if the triangular distribution is highly asymmetric. In such cases, more advanced statistical methods may be required.
+Various methods can be used to calculate a confidence interval for the triangular distribution. It is important to note that these methods are based on assumptions and may not always be accurate, especially if the triangular distribution is highly asymmetric. In such cases, more advanced statistical methods may be required.
 :::
 
 # Opinion Pooling
@@ -203,7 +203,9 @@ Linear opinion pooling and logarithmic opinion pooling are two methods used in c
 
 The choice between linear and logarithmic opinion pooling depends on the context and the specific characteristics of the data. Linear and logarithmic opinion pooling are not the only methods available. Other approaches such as Bayesian aggregation, may also be considered.
 
-> \[!NOTE\] Probabilistic Opinion Pooling Probabilistic Opinion Pooling is a concept developed by Franz Dietrich. It refers to methods for combining the opinions or judgments of multiple individuals and generating a joint probability distribution for a given statement or hypothesis. Dietrich is a researcher in the field of decision theory and formal social choice theory.
+::: callout-note
+Probabilistic Opinion Pooling is a concept developed by Franz Dietrich. It refers to methods for combining the opinions or judgments of multiple individuals and generating a joint probability distribution for a given statement or hypothesis. Dietrich is a researcher in the field of decision theory and formal social choice theory.
+:::
 
 ### LOP Example
 
@@ -248,26 +250,3 @@ $$LogOp(70,180,160)= \text{USD 1k } 130.880$$
 **Overall Assessment**
 
 The overall assessment calculated with logarithmic pooling is USD 130,880. The result of the logarithmic pooling is compared with the linear opinion pooling lower (USD 130,880 \< USD 141,000) because of the effect to correct outliners (risk estimation of expert A which is significantly lower then the risks estimated by the experts B and C).
-
-# Aggregation of triangular distributions
-
-There are a several methods to aggregate triangular distributions,:
-
-1.  **Opinion pooling:** Calculates the weighted average of the individual distributions with linear pooling or logarithmic pooling.
-
-2.  **Monte Carlo simulation:** Generate a large number of random samples from each triangular distribution and combining them to obtain an aggregated result.
-
-3.  **Convolution:** Combines probability density functions (PDF) of individual distributions to obtain a distribution representing the sum of them.
-
-4.  **Bayesian inference:** Bayesian inference can be used when the distributions have different levels of uncertainty.
-
-| Method                 | Description                                                                                                      | Advantages                                                  | Disadvantages                                                         |
-|------------------|------------------|------------------|------------------|
-| Opinion pooling        | Calculates the average of teach triangular distribution.                                                         | Simple and straightforward                                  | May not be accurate if distributions have different shapes            |
-| Monte Carlo simulation | Simulates random samples from each triangular distribution and combines them to form an aggregated distribution. | Simple method, but requires computer power                  | Computationally intensive                                             |
-| Convolution            | Mathematical operation on two functions ($f$ and $g$) that produces a third function ($f*g$).                    | Complex method which requires higher mathematical knowledge | Computational complexity, sensitivity to assumptions                  |
-| Bayesian inference     | Combine the information from multiple triangular distributions into a single posterior distribution.             | Flexibility, can handle small sample sizes                  | In many cases, analytical solutions for Bayesian models may not exist |
-
-*Table 1: Key characteristics of each aggregation method*
-
-In a subsequent post, convolution and Bayesian inference are discussed as methods for aggregating cyber security risks.

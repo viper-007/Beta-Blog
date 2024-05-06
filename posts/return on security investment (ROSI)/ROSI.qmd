@@ -1,0 +1,199 @@
+---
+title: "Return on Security Investment (ROSI)"
+author: "Johannes Buck"
+date: "2024-01-31"
+categories: [statistics, risk management]
+description: Return on Security Investment (ROSI) is used to measure the effectiveness of security investments.
+image: ROSI.png
+---
+
+# Return on Security Investment (ROSI)
+
+Return on Security Investment (ROSI) is used to measure the effectiveness of security investments.
+
+ROSI is the ratio of the monetary benefit of a security investment to its cost. A positive ROSI indicates that the investment has generated a positive net return, while a negative ROSI indicates that the investment has resulted in a net loss.
+
+ROSI can help organizations determine which security investments are worth the cost and which are not and, allocate resources to effective security solutions.
+
+![](images/Balance%20between%20costs,%20agility,%20innovation%20and%20risk.png)
+
+*Figure 1: Balance between costs, agility/innovation and risk*
+
+## ROI vs. ROSI
+
+The return on investment (ROI) equation only works for investments that produce positive results, such as cost savings or increased revenue. Cyber security spending does not increase revenue, nor does it provide a payback. Rather, it is risk management that contributes to loss prevention and risk mitigation. The ROSI therefore aims to calculate how much loss an organization can avoid by investing in its security. The formula for this is therefore different from the ROI calculation.
+
+$$ROI = \frac{Return}{Investment}$$
+
+$$ROSI = \frac{\text{Financial Loss Reduction - Cost of Security Solution}}{\text{Cost of Security Solution}}$$
+
+Implementing a security solution reduces the ALE expressed by the mitigation ratio.
+
+$$ROSI = \frac{\text{ALE * Mitigation Ratio - Cost of Security Solution}}{\text{Cost of Security Solution}}$$
+
+Where:
+
+-   **Single Loss Expectancy (SLE):** expected financial loss when a risk occurs
+
+-   **Annual Rate of Occurrence (ARO):** probability that a risk occurs in a year
+
+-   **Annualized Loss Expectancy (ALE):** total financial loss per year resulting from a specific risks $$ALE = SLE * ARO$$
+
+**Process steps of ROSI calculation**
+
+1.  Determine the cost of security solution
+
+2.  Estimate the single loss expectancy (SLE)
+
+3.  Estimate the annual rate of occurrence (ARO)
+
+4.  Calculate the financial loss reduction based on ALE and mitigation ratio
+
+5.  Calculate the ROSI value
+
+## Limitations of ROSI
+
+-   Estimating both single loss expectancy (SLE) and annual occurrence rate (ARO) is challenging and often subject to bias.
+-   Calculating the cost of a security solution requires a solid understanding of the one-time cost of implementation and the recurring cost of operation.
+-   ROSI does not support multi-year budget view.
+-   ROSI considers only the financial aspects of risk mitigation. In practice, other factors such as reputation damage are also relevant.
+
+## Examples
+
+**Example 1**
+
+A company is considering investing in an anti-malware solution. Each year, the company suffers 5 malware attacks (ARO=5). The CISO estimates that each attacks cost approximately USD 15,000 in loss of data and productivity (SLE=15,000). The anti-malware solution is expected to block 80% of the malware attacks (Mitigation ratio=80%) and costs USD 25,000 per year (license fees USD 15,000 + USD 10,000 for operations). The return on security investment (ROSI) for this solution is then calculated as follow:
+
+$$ROSI = \frac{(5 * 15,000)*0.8-25,000}{25,000}= 1.4$$
+
+Conclusion The investment in the anti-malware solution will save the company USD 35,000 per year, which corresponds to an amortization of 140%. The ROSI calculation shows that the anti-malware solution is a cost-effective solution.
+
+**Example 2**
+
+A company has 500 employees. They all have use notebooks for their daily work. The company protects the notebooks with an end-point security solution.
+
+Assumptions
+
+-   The number of notebooks infected with malware per year is 6%, or 30 notebooks.
+
+-   Financial loss due to malware infection is 30 \* USD 10,000 = USD 300,000
+
+-   The end-point security software prevents from 80% of the malware attacks
+
+-   One-time license cost for end-point security software is 500 \* USD 110 = USD 55,000
+
+-   Annual operating cost is USD 10,000
+
+Where:
+
+-   **Single Loss Expectancy (SLE):** USD 10,000
+
+-   **Annual Rate of Occurrence (ARO):** 6%
+
+-   **Annualized Loss Expectancy (ALE):** $ALE = SLE * ARO = \text{USD 300,000}$
+
+-   **Cost of Security Solution:** USD 55,000 + USD 10,000 = USD 65,000
+
+-   **Mitigation Ratio:** 80%
+
+$$ROSI = \frac{\text{ALE * Mitigation Ratio - Cost of Security Solution}}{\text{Cost of Security Solution}}$$
+
+$$ROSI = \frac{\text{USD 300,000 * 0.8} - \text{USD 65,000}}{\text{USD 65.000}} = 2.69$$
+
+Conclusion
+
+The investment in the end-point security solution will save the company USD 174,850 per year, which corresponds to an amortization of 269%. The ROSI calculation shows that the end-point protection is a cost-effective solution.
+
+## Alternative methods
+
+### Balanced scorecard (BSC)
+
+The balanced scorecard is a method that considers multiple perspectives, such as financial, customer, internal process, and learning and growth for strategic management. The balanced scorecard can help organizations to align their security investments with their overall business strategy.
+
+Key performance indicators (KPI) are can be used to measure the effectiveness of each perspective. ROSI can be used as key performance indicators (KPI) to measure the financial effectiveness (i.e., contribution to the overall business strategy) of security investments.
+
+**Example**
+
+Suppose an organization uses a balanced scorecard to evaluate the effectiveness of its email security investment using the following key performance indicators (KPI):
+
+-   **Financial perspective:** ROSI of email security solution
+
+-   **Customer perspective:** Customer satisfaction with email security measures
+
+-   **Internal process perspective:** Time to detect and respond to email security incidents
+
+-   **Learning and growth perspective:** Employees participation in training and awareness of email security best practices
+
+These KPI provide a comprehensive view of the effectiveness of the email security investment, and can help the organization to identify areas for improvement and optimize its security strategy over time. The balanced scorecard method is a valuable extension of the ROSI calculation, providing a holistic view at the strategic level.
+
+### Net present value (NPV)
+
+The Net Present Value (NPV) calculates the present value of the net benefits of an investment over time. NPV takes into account the time value of money and the changing benefits and costs of a security investment over time. $$NPV = \sum_{t=0}^{T} \frac{CF_t}{(1+r)^t} - C_0$$ Where:
+
+-   $NPV$ is the Net Present Value
+
+-   $T$ is the number of periods (usually years)
+
+-   $CF_t$ is the net cash flow during the period ( t )
+
+-   $r$ is the discount rate (the rate of return required by the investor)
+
+-   $C_0$ is the initial investment cost
+
+If the NPV is positive, it suggests that the investment is expected to generate more cash inflows than outflows, indicating a potentially profitable opportunity. Conversely, if the NPV is negative, it suggests that the investment may not meet the required rate of return and may not be economically viable.
+
+Conclusion
+
+-   NPV provides a time-based analysis of the profitability of an investment.
+
+-   ROSI is a simple ratio and does not consider the timing of cash flows or the cost of capital.
+
+-   Security investments do not generate revenue or losses. They prevent from losses. Therefore, the NPV method cannot be applied to security investments.
+
+### Gordon Loeb's Method
+
+The Gordon-Loeb method is a mathematical economic model used to determine the optimal level of investment in information security.
+
+The basic components of the Gordon-Loeb model are as follows:
+
+1.  Assets that are vulnerable to cyber attacks. This vulnerability $v$ (0 ≤ *v* ≤ 1) corresponds to the probability of a successful cyber attack.
+
+2.  The potential loss is denoted as $L$. Thus, $vL$ is the expected loss prior to an investment in additional cyber security measures.
+
+3.  The cyber security investment $z$, will reduce $v$. $$z(v) ≤ \frac{1}{e} vL$$
+
+Gordon and Loeb were able to show that the optimal level of cyber security investments would not exceed $\frac{vL}{e}$ or approx. 37% of the expected loss from a security attack ($vL$).
+
+![](images/Gordon-Loeb%20Model.png)
+
+*Figure 2: The optimal level of cyber security investment at* $z^*$
+
+**Example**
+
+Suppose an estimated data value of  USD 1,000,000, with a cyber attack probability of 15%, and an 80% chance that an attack would be successful.
+
+In this case, the potential loss is given by the product USD 1,000,000  ×  0.15  ×  0.8 = USD 120,000.
+
+According to Gordon and Loeb, the company's investment in security should not exceed USD 120,000  ×  0.37 = USD 44,000.
+
+**Limitations of the Gordon-Loeb model**
+
+While the Gordon-Loeb model is a valuable contribution to the field of cyber security economics, it is important to understand its limitations.
+
+1.  **Simplifying assumptions:** The model relies on simplifying assumptions, such as the linearity of the relationship between investment and risk reduction. The optimum of security investments is determined by the mathematical derivative of the investment function. In reality, the relationship may be more complex and context-dependent.
+
+2.  **Risk appetite and industry differences:** Organizations vary in their risk appetite, and different industries may have distinct risk profiles. What is an appropriate investment level for one organization or industry may not be suitable for another. Factors such as legal and regulatory requirements and the organization's risk appetite need to be considered.
+
+3.  **Dynamic nature of cyber threats:** Cyber threats evolve rapidly, and the threat landscape is dynamic. The model assumes a static environment, which may not capture the changing nature of cyber risks. Organizations need to adapt their security investments to address emerging threats.
+
+4.  **Incomplete information:** Calculating the expected loss is challenging, as it requires accurate data on potential losses from security incidents. In practice, organizations may face difficulties in obtaining comprehensive and reliable data for such calculations.
+
+5.  **Beyond financial considerations:** The model primarily focuses on financial aspects and may not fully capture non-financial factors, such as reputational damage, and customer trust.
+
+The limitations of points 3, 4, and 5 apply not only to the Gordon-Loeb model, but also to ROSI. The Gordon-Loeb model can be used as a starting point rather than a universal rule.
+
+::: callout-note
+Dependence on mathematical approach
+
+Research showed that even within the initial assumptions of the model, some security incident probability functions should be fixed with no less than $\frac{1}{2}$ the expected loss, contradicting the hypothesis that the $\frac{1}{e}$ factor was universal. Using a different mathematical approach (the second derivative of the loss function need not to be continuous), one can create loss functions whose optimal fixing costs 100% of the estimated loss.
+:::

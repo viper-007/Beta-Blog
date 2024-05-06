@@ -1,0 +1,41 @@
+---
+title: "Risk reporting"
+author: "Johannes Buck"
+date: "2024-02-16"
+categories: [statistics, risk management]
+description: Risk reporting ...
+image: risk reporting.png
+---
+
+# Risk reporting
+
+...
+
+## Expected value
+
+**Q:** Is the expected value a useful, appropriate measurement for quantitative risk management?
+
+**A:** Yes, the expected value is a commonly used measurement in quantitative risk management. The expected value provides a single "numerical summary" of a probability distribution. However, it is important to note that relying solely on the expected value may have limitations. The probability of the expected value, the confidence interval, and a good understanding of the underlying probability distribution help to better understand the risk profile and make more comprehensive risk management decisions.
+
+# Risk aggregation
+
+There are a several methods to aggregate methods:
+
+1.  **Opinion pooling:** Calculates the weighted average of the individual distributions with linear pooling or logarithmic pooling.
+
+2.  **Monte Carlo simulation:** Generate a large number of random samples from each triangular distribution and combining them to obtain an aggregated result.
+
+3.  **Convolution:** Combines probability density functions (PDF) of individual distributions to obtain a distribution representing the sum of them.
+
+4.  **Bayesian inference:** Bayesian inference can be used when the distributions have different levels of uncertainty.
+
+| Method                 | Description                                                                                                      | Advantages                                                  | Disadvantages                                                         |
+|------------------------|------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------|-----------------------------------------------------------------------|
+| Opinion pooling        | Calculates the average of teach triangular distribution.                                                         | Simple and straightforward                                  | May not be accurate if distributions have different shapes            |
+| Monte Carlo simulation | Simulates random samples from each triangular distribution and combines them to form an aggregated distribution. | Simple method, but requires computer power                  | Computationally intensive                                             |
+| Convolution            | Mathematical operation on two functions ($f$ and $g$) that produces a third function ($f*g$).                    | Complex method which requires higher mathematical knowledge | Computational complexity, sensitivity to assumptions                  |
+| Bayesian inference     | Combine the information from multiple triangular distributions into a single posterior distribution.             | Flexibility, can handle small sample sizes                  | In many cases, analytical solutions for Bayesian models may not exist |
+
+*Table 1: Key characteristics of each aggregation method*
+
+In a subsequent post, convolution and Bayesian inference are discussed as methods for aggregating cyber security risks.

@@ -1,0 +1,104 @@
+---
+title: "Cyber security risk assessments with lognormal distributions"
+author: "Johannes Buck"
+date: "2024-01-06"
+categories: [statistics, risk management]
+description: The lognormal distribution is often used for operational risk management. It has several desirable properties that make it well suited for modeling cyber security risks.
+image: CS RA w LND.png
+---
+
+# Cyber security risk assessments with lognormal distributions
+
+The lognormal distribution is a continuous probability distribution that can only take positive values. It describes the distribution of a random variable $X$ if the random variable $Y = ln(X)$ transformed by the logarithm is normally distributed.
+
+```{r, fig.width=7, fig.height=5}
+#| echo: FALSE
+#| warning: FALSE
+
+# Lognormal Distribution
+
+# Create PDF plots
+curve(dlnorm(x, meanlog=0, sdlog=1), from=0, to=10, col='lightblue', main = "Lognormal distribution", xlab = "x", ylab = "f(x)")
+
+# Add legend
+legend("topright", legend = c("PDF(0, 1.00)"), fill = c("lightblue"), border = NA, cex = 0.6, bty = "n")
+```
+
+## Suitability for operational risk management
+
+The lognormal distribution is often used for operational risk management due to its ability to model the right-skewed and heavy-tailed nature of operational risks such as cyber security risks.
+
+Here are some of the reasons why the lognormal distribution is popular in operational risk modeling:
+
+1.  **Skewness:** It captures the fat-tailed nature of operational losses.
+
+2.  **Non-negative values:** Operational risk events are typically associated with losses, and the lognormal distribution ensures that the values generated are always positive.
+
+3.  **Multiplicative nature:** Operational risks are often caused by multiple factors that interact in a multiplicative way. The lognormal distribution is consistent with this multiplicative model of risk, because it is a product of independent random variables.
+
+4.  **Empirical evidence:** The parameters of the lognormal distribution can be estimated from historical operational loss data using standard statistical techniques.
+
+5.  **Well accepted and understood:** The lognormal distribution is an established distribution in statistics and risk management, and it is widely accepted by regulators.
+
+6.  **Proven reliability:** Studies have shown that the lognormal distribution can be used to predict operational losses with reasonable accuracy.
+
+7.  **Percentile Range Estimation:** The lognormal distribution is suitable for estimating the percentile range of the loss distribution, which is essential for risk assessment.
+
+Despite its advantages, the lognormal distribution is not always the best choice for operational risk modeling. In some cases, other distributions, such as the Gamma or Pareto distributions, may be more appropriate.
+
+## Example 1
+
+Consider a cyber risk with a lognormal distribution (parameters see below).
+
+What is the risk that the loss associated with the cyber risk will be greater than the threshold?
+
+```{r, fig.width=7, fig.height=5}
+#| echo: FALSE
+#| warning: FALSE
+
+
+# Function to calculate cybersecurity risk based on lognormal distribution
+calculate_cybersecurity_risk <- function(mu, sigma, threshold) {
+  # Generate a range of values
+  values <- seq(0, 2 * threshold, by = 0.01)
+  
+  # Calculate the probability density function (PDF) of the lognormal distribution
+  pdf_values <- dlnorm(values, meanlog = mu, sdlog = sigma)
+  
+  # Calculate the cumulative distribution function (CDF)
+  cdf_values <- plnorm(values, meanlog = mu, sdlog = sigma)
+  
+  # Calculate the probability of the event exceeding the threshold
+  probability_exceed_threshold <- 1 - cdf_values[which.min(abs(values - threshold))]
+  
+  return(list(values = values, pdf = pdf_values, exceed_probability = probability_exceed_threshold))
+}
+
+# Example usage
+mu <- 0 # Mean of the lognormal distribution
+sigma <- 1 # Standard deviation of the lognormal distribution
+threshold <- 10 # Threshold for cybersecurity risk
+
+# Calculate cybersecurity risk
+result <- calculate_cybersecurity_risk(mu, sigma, threshold)
+
+# Plot the PDF, mean, and confidence interval
+plot(result$values, result$pdf, type = 'l', col = 'lightblue', xlab = 'Values', ylab = 'Probability Density Function (PDF)', main = 'Lognormal Distribution for Cybersecurity Risk')
+abline(v = threshold, col = 'purple', lty = 2)  # Mean line
+abline(v = exp(mu + 1.96 * sigma), col = 'blue', lty = 2)  # Upper confidence interval
+abline(v = exp(mu - 1.96 * sigma), col = 'blue', lty = 2)  # Lower confidence interval
+abline(h = 0, col = 'black', lty = 2)  # Reference line
+
+# Add legend
+legend("topright", legend = c("PDF(0, 1)", "95% CI", "Threshold"), fill = c("lightblue", "blue", "purple"), border = NA, cex = 0.6, bty = "n")
+
+# Print the results
+cat("Lognormal distribution parameters:", "\n")
+cat("Mean:", mu, " \n")
+cat("Sigma:", sigma, " \n")
+cat("Threshold:", threshold, " \n")
+cat("Cyber security risk:", result$exceed_probability, "\n")
+cat("95% confidence interval (lower boundary):", exp(mu - 1.96 * sigma), "\n")
+cat("95% confidence interval (upper boundary):", exp(mu + 1.96 * sigma), "\n")
+
+```

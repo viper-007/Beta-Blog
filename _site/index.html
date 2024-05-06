@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -48,7 +48,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -57,8 +63,10 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script>
@@ -95,6 +103,33 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -102,9 +137,9 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">β Blog</span>
     </a>
@@ -116,28 +151,28 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/j-buck59/" rel="" target=""><i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://www.linkedin.com/in/j-buck59/"> <i class="bi bi-linkedin" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="mailto:johannes.buck59@gmail.com" rel="" target=""><i class="bi bi-envelope" role="img">
+    <a class="nav-link" href="mailto:johannes.buck59@gmail.com"> <i class="bi bi-envelope" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -147,7 +182,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(13)</span></div><div class="category" data-category="cyber security">cyber security <span class="quarto-category-count">(2)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(1)</span></div><div class="category" data-category="risk management">risk management <span class="quarto-category-count">(12)</span></div><div class="category" data-category="statistics">statistics <span class="quarto-category-count">(10)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(16)</span></div><div class="category" data-category="cyber security">cyber security <span class="quarto-category-count">(2)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(1)</span></div><div class="category" data-category="risk management">risk management <span class="quarto-category-count">(15)</span></div><div class="category" data-category="statistics">statistics <span class="quarto-category-count">(13)</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
@@ -158,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-left">
 
     
   
@@ -166,7 +201,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 
 
@@ -174,19 +211,19 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="statistics,risk management" data-listing-date-sort="1704495600000" data-listing-file-modified-sort="1704641128313" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13">
+<div class="quarto-post image-right" data-index="0" data-categories="statistics,risk management" data-listing-date-sort="1708038000000" data-listing-file-modified-sort="1706529802902" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="794">
 <div class="thumbnail">
-<p><a href="./posts/Cyber security risk assessments with triangular distributions/CS RA w TD.html"> <img src="./posts/Cyber security risk assessments with triangular distributions/CS RA w TD.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/risk reporting/risk reporting.html" class="no-external"></a></p><a href="./posts/risk reporting/risk reporting.html" class="no-external">
+<p><img src="./posts/risk reporting/risk reporting.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/risk reporting/risk reporting.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/Cyber security risk assessments with triangular distributions/CS RA w TD.html">
 <h3 class="no-anchor listing-title">
-Cyber security risk assessments with triangular distributions
+<a href="./posts/risk reporting/risk reporting.html" class="no-external">Risk reporting</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/risk reporting/risk reporting.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
 statistics
@@ -195,14 +232,84 @@ statistics
 risk management
 </div>
 </div>
-<a href="./posts/Cyber security risk assessments with triangular distributions/CS RA w TD.html">
 <div class="listing-description">
-<p>Triangular distributions and opinion pooling are a simple and straightforward approach to quantitative cyber security risk management.</p>
+<a href="./posts/risk reporting/risk reporting.html" class="no-external">Risk reporting …</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/risk reporting/risk reporting.html" class="no-external">
+<div class="listing-date">
+Feb 16, 2024
+</div>
+<div class="listing-author">
+Johannes Buck
 </div>
 </a>
 </div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="statistics,risk management" data-listing-date-sort="1706655600000" data-listing-file-modified-sort="1705906472807" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1605">
+<div class="thumbnail">
+<p><a href="./posts/return on security investment (ROSI)/ROSI.html" class="no-external"></a></p><a href="./posts/return on security investment (ROSI)/ROSI.html" class="no-external">
+<p><img src="./posts/return on security investment (ROSI)/ROSI.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/return on security investment (ROSI)/ROSI.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/return on security investment (ROSI)/ROSI.html" class="no-external">Return on Security Investment (ROSI)</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/return on security investment (ROSI)/ROSI.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
+statistics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('risk management'); return false;">
+risk management
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/return on security investment (ROSI)/ROSI.html" class="no-external">Return on Security Investment (ROSI) is used to measure the effectiveness of security investments.</a>
+</div>
+</div>
 <div class="metadata">
-<a href="./posts/Cyber security risk assessments with triangular distributions/CS RA w TD.html">
+<a href="./posts/return on security investment (ROSI)/ROSI.html" class="no-external">
+<div class="listing-date">
+Jan 31, 2024
+</div>
+<div class="listing-author">
+Johannes Buck
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="statistics,risk management" data-listing-date-sort="1704495600000" data-listing-file-modified-sort="1705519007874" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="643">
+<div class="thumbnail">
+<p><a href="./posts/cyber security risk assessments wit lognormal distributions/CS RA w LND.html" class="no-external"></a></p><a href="./posts/cyber security risk assessments wit lognormal distributions/CS RA w LND.html" class="no-external">
+<p><img src="./posts/cyber security risk assessments wit lognormal distributions/CS RA w LND.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/cyber security risk assessments wit lognormal distributions/CS RA w LND.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/cyber security risk assessments wit lognormal distributions/CS RA w LND.html" class="no-external">Cyber security risk assessments with lognormal distributions</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/cyber security risk assessments wit lognormal distributions/CS RA w LND.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
+statistics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('risk management'); return false;">
+risk management
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/cyber security risk assessments wit lognormal distributions/CS RA w LND.html" class="no-external">The lognormal distribution is often used for operational risk management. It has several desirable properties that make it well suited for modeling cyber security risks.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/cyber security risk assessments wit lognormal distributions/CS RA w LND.html" class="no-external">
 <div class="listing-date">
 Jan 6, 2024
 </div>
@@ -212,19 +319,19 @@ Johannes Buck
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="statistics,risk management" data-listing-date-sort="1703545200000" data-listing-file-modified-sort="1704020863991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
+<div class="quarto-post image-right" data-index="3" data-categories="statistics,risk management" data-listing-date-sort="1704495600000" data-listing-file-modified-sort="1714983532810" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1734">
 <div class="thumbnail">
-<p><a href="./posts/lognormal distribution/lognormal distribution.html"> <img src="./posts/lognormal distribution/lognormal distribution.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/cyber security risk assessments with triangular distributions/CS RA w TD.html" class="no-external"></a></p><a href="./posts/cyber security risk assessments with triangular distributions/CS RA w TD.html" class="no-external">
+<p><img src="./posts/cyber security risk assessments with triangular distributions/CS RA w TD.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/cyber security risk assessments with triangular distributions/CS RA w TD.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/lognormal distribution/lognormal distribution.html">
 <h3 class="no-anchor listing-title">
-Lognormal Distribution
+<a href="./posts/cyber security risk assessments with triangular distributions/CS RA w TD.html" class="no-external">Cyber security risk assessments with triangular distributions</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/cyber security risk assessments with triangular distributions/CS RA w TD.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
 statistics
@@ -233,14 +340,48 @@ statistics
 risk management
 </div>
 </div>
-<a href="./posts/lognormal distribution/lognormal distribution.html">
 <div class="listing-description">
-<p>The lognormal distribution is a continuous probability distribution that can only take positive values. It describes the distribution of a random variable X if the random variable Y = ln(X) transformed by the logarithm is normally distributed.</p>
+<a href="./posts/cyber security risk assessments with triangular distributions/CS RA w TD.html" class="no-external">Triangular distributions and opinion pooling are a simple and straightforward approach to quantitative cyber security risk management.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/cyber security risk assessments with triangular distributions/CS RA w TD.html" class="no-external">
+<div class="listing-date">
+Jan 6, 2024
+</div>
+<div class="listing-author">
+Johannes Buck
 </div>
 </a>
 </div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-categories="statistics,risk management" data-listing-date-sort="1703545200000" data-listing-file-modified-sort="1704020863991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1365">
+<div class="thumbnail">
+<p><a href="./posts/lognormal distribution/lognormal distribution.html" class="no-external"></a></p><a href="./posts/lognormal distribution/lognormal distribution.html" class="no-external">
+<p><img src="./posts/lognormal distribution/lognormal distribution.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/lognormal distribution/lognormal distribution.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/lognormal distribution/lognormal distribution.html" class="no-external">Lognormal Distribution</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/lognormal distribution/lognormal distribution.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
+statistics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('risk management'); return false;">
+risk management
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/lognormal distribution/lognormal distribution.html" class="no-external">The lognormal distribution is a continuous probability distribution that can only take positive values. It describes the distribution of a random variable X if the random variable Y = ln(X) transformed by the logarithm is normally distributed.</a>
+</div>
+</div>
 <div class="metadata">
-<a href="./posts/lognormal distribution/lognormal distribution.html">
+<a href="./posts/lognormal distribution/lognormal distribution.html" class="no-external">
 <div class="listing-date">
 Dec 26, 2023
 </div>
@@ -250,19 +391,19 @@ Johannes Buck
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="statistics,risk management" data-listing-date-sort="1702335600000" data-listing-file-modified-sort="1704037857598" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="5" data-categories="statistics,risk management" data-listing-date-sort="1702335600000" data-listing-file-modified-sort="1704037857598" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="858">
 <div class="thumbnail">
-<p><a href="./posts/probability density function (PDF) - cumulative distribution function (CDF)/PDF - CDF.html"> <img src="./posts/probability density function (PDF) - cumulative distribution function (CDF)/pdf-cdf.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/probability density function (PDF) - cumulative distribution function (CDF)/PDF - CDF.html" class="no-external"></a></p><a href="./posts/probability density function (PDF) - cumulative distribution function (CDF)/PDF - CDF.html" class="no-external">
+<p><img src="./posts/probability density function (PDF) - cumulative distribution function (CDF)/pdf-cdf.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/probability density function (PDF) - cumulative distribution function (CDF)/PDF - CDF.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/probability density function (PDF) - cumulative distribution function (CDF)/PDF - CDF.html">
 <h3 class="no-anchor listing-title">
-Probability Density Function (PDF) - Cumulative Distribution function (CDF)
+<a href="./posts/probability density function (PDF) - cumulative distribution function (CDF)/PDF - CDF.html" class="no-external">Probability Density Function (PDF) - Cumulative Distribution function (CDF)</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/probability density function (PDF) - cumulative distribution function (CDF)/PDF - CDF.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
 statistics
@@ -271,14 +412,12 @@ statistics
 risk management
 </div>
 </div>
-<a href="./posts/probability density function (PDF) - cumulative distribution function (CDF)/PDF - CDF.html">
 <div class="listing-description">
-<p>The probability density function (PDF) and the cumulative distribution function (CDF) are both concepts from probability theory and statistics.</p>
+<a href="./posts/probability density function (PDF) - cumulative distribution function (CDF)/PDF - CDF.html" class="no-external">The probability density function (PDF) and the cumulative distribution function (CDF) are both concepts from probability theory and statistics.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/probability density function (PDF) - cumulative distribution function (CDF)/PDF - CDF.html">
+<a href="./posts/probability density function (PDF) - cumulative distribution function (CDF)/PDF - CDF.html" class="no-external">
 <div class="listing-date">
 Dec 12, 2023
 </div>
@@ -288,19 +427,19 @@ Johannes Buck
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="statistics,risk management" data-listing-date-sort="1690927200000" data-listing-file-modified-sort="1691326708683" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="6" data-categories="statistics,risk management" data-listing-date-sort="1690927200000" data-listing-file-modified-sort="1691326708683" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="796">
 <div class="thumbnail">
-<p><a href="./posts/standard deviation - standard error - confidence interval/standard deviation - standard error - confidence interval.html"> <img src="./posts/standard deviation - standard error - confidence interval/s - SE - CI.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/standard deviation - standard error - confidence interval/standard deviation - standard error - confidence interval.html" class="no-external"></a></p><a href="./posts/standard deviation - standard error - confidence interval/standard deviation - standard error - confidence interval.html" class="no-external">
+<p><img src="./posts/standard deviation - standard error - confidence interval/s - SE - CI.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/standard deviation - standard error - confidence interval/standard deviation - standard error - confidence interval.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/standard deviation - standard error - confidence interval/standard deviation - standard error - confidence interval.html">
 <h3 class="no-anchor listing-title">
-Standard Deviation, Standard Error, and Confidence Interval
+<a href="./posts/standard deviation - standard error - confidence interval/standard deviation - standard error - confidence interval.html" class="no-external">Standard Deviation, Standard Error, and Confidence Interval</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/standard deviation - standard error - confidence interval/standard deviation - standard error - confidence interval.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
 statistics
@@ -309,14 +448,12 @@ statistics
 risk management
 </div>
 </div>
-<a href="./posts/standard deviation - standard error - confidence interval/standard deviation - standard error - confidence interval.html">
 <div class="listing-description">
-<p>When to use standard deviation, standard error, and confidence interval?</p>
+<a href="./posts/standard deviation - standard error - confidence interval/standard deviation - standard error - confidence interval.html" class="no-external">When to use standard deviation, standard error, and confidence interval?</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/standard deviation - standard error - confidence interval/standard deviation - standard error - confidence interval.html">
+<a href="./posts/standard deviation - standard error - confidence interval/standard deviation - standard error - confidence interval.html" class="no-external">
 <div class="listing-date">
 Aug 2, 2023
 </div>
@@ -326,19 +463,19 @@ Johannes Buck
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="statistics,risk management" data-listing-date-sort="1690840800000" data-listing-file-modified-sort="1690877347964" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
+<div class="quarto-post image-right" data-index="7" data-categories="statistics,risk management" data-listing-date-sort="1690840800000" data-listing-file-modified-sort="1690877347964" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1249">
 <div class="thumbnail">
-<p><a href="./posts/bootstrapping/bootstrapping.html"> <img src="./posts/bootstrapping/bootstrap.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/bootstrapping/bootstrapping.html" class="no-external"></a></p><a href="./posts/bootstrapping/bootstrapping.html" class="no-external">
+<p><img src="./posts/bootstrapping/bootstrap.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/bootstrapping/bootstrapping.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/bootstrapping/bootstrapping.html">
 <h3 class="no-anchor listing-title">
-Bootstrapping
+<a href="./posts/bootstrapping/bootstrapping.html" class="no-external">Bootstrapping</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/bootstrapping/bootstrapping.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
 statistics
@@ -347,14 +484,12 @@ statistics
 risk management
 </div>
 </div>
-<a href="./posts/bootstrapping/bootstrapping.html">
 <div class="listing-description">
-<p>The bootstrap method is a statistical resampling technique used to estimate the properties of a population by repeatedly sampling with replacement from a given data set.</p>
+<a href="./posts/bootstrapping/bootstrapping.html" class="no-external">The bootstrap method is a statistical resampling technique used to estimate the properties of a population by repeatedly sampling with replacement from a given data set.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/bootstrapping/bootstrapping.html">
+<a href="./posts/bootstrapping/bootstrapping.html" class="no-external">
 <div class="listing-date">
 Aug 1, 2023
 </div>
@@ -364,19 +499,19 @@ Johannes Buck
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="statistics,risk management" data-listing-date-sort="1690668000000" data-listing-file-modified-sort="1691158914946" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8">
+<div class="quarto-post image-right" data-index="8" data-categories="statistics,risk management" data-listing-date-sort="1690668000000" data-listing-file-modified-sort="1705162811129" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1673">
 <div class="thumbnail">
-<p><a href="./posts/confidence interval/confidence interval.html"> <img src="./posts/confidence interval/teaser_image.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/confidence interval/confidence interval.html" class="no-external"></a></p><a href="./posts/confidence interval/confidence interval.html" class="no-external">
+<p><img src="./posts/confidence interval/teaser_image.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/confidence interval/confidence interval.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/confidence interval/confidence interval.html">
 <h3 class="no-anchor listing-title">
-Confidence Intervall
+<a href="./posts/confidence interval/confidence interval.html" class="no-external">Confidence Intervall</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/confidence interval/confidence interval.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
 statistics
@@ -385,14 +520,12 @@ statistics
 risk management
 </div>
 </div>
-<a href="./posts/confidence interval/confidence interval.html">
 <div class="listing-description">
-<p>A confidence interval is a statistical interval that contains the location of a true parameter of a population with a certain probability.</p>
+<a href="./posts/confidence interval/confidence interval.html" class="no-external">A confidence interval is a statistical interval that contains the location of a true parameter of a population with a certain probability.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/confidence interval/confidence interval.html">
+<a href="./posts/confidence interval/confidence interval.html" class="no-external">
 <div class="listing-date">
 Jul 30, 2023
 </div>
@@ -402,19 +535,19 @@ Johannes Buck
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="statistics,risk management" data-listing-date-sort="1689631200000" data-listing-file-modified-sort="1689840166614" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10">
+<div class="quarto-post image-right" data-index="9" data-categories="statistics,risk management" data-listing-date-sort="1689631200000" data-listing-file-modified-sort="1689840166614" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1861">
 <div class="thumbnail">
-<p><a href="./posts/triangle distribution/triangle distribution.html"> <img src="./posts/triangle distribution/triangle distribution.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/triangle distribution/triangle distribution.html" class="no-external"></a></p><a href="./posts/triangle distribution/triangle distribution.html" class="no-external">
+<p><img src="./posts/triangle distribution/triangle distribution.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/triangle distribution/triangle distribution.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/triangle distribution/triangle distribution.html">
 <h3 class="no-anchor listing-title">
-Triangle Distribution
+<a href="./posts/triangle distribution/triangle distribution.html" class="no-external">Triangle Distribution</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/triangle distribution/triangle distribution.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
 statistics
@@ -423,14 +556,12 @@ statistics
 risk management
 </div>
 </div>
-<a href="./posts/triangle distribution/triangle distribution.html">
 <div class="listing-description">
-<p>The triangular distribution (also known as the Simpson distribution) is a continuous probability distribution. The graph of the probability density function looks like a triangle and gives this distribution its name.</p>
+<a href="./posts/triangle distribution/triangle distribution.html" class="no-external">The triangular distribution (also known as the Simpson distribution) is a continuous probability distribution. The graph of the probability density function looks like a triangle and gives this distribution its name.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/triangle distribution/triangle distribution.html">
+<a href="./posts/triangle distribution/triangle distribution.html" class="no-external">
 <div class="listing-date">
 Jul 18, 2023
 </div>
@@ -440,19 +571,19 @@ Johannes Buck
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="statistics,risk management" data-listing-date-sort="1687816800000" data-listing-file-modified-sort="1689772600084" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="10" data-categories="statistics,risk management" data-listing-date-sort="1687816800000" data-listing-file-modified-sort="1689772600084" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="729">
 <div class="thumbnail">
-<p><a href="./posts/monte carlo simulation/monte carlo simulation.html"> <img src="./posts/monte carlo simulation/dice.jpg" class="thumbnail-image"> </a></p>
+<p><a href="./posts/monte carlo simulation/monte carlo simulation.html" class="no-external"></a></p><a href="./posts/monte carlo simulation/monte carlo simulation.html" class="no-external">
+<p><img src="./posts/monte carlo simulation/dice.jpg" class="thumbnail-image"></p>
+</a><p><a href="./posts/monte carlo simulation/monte carlo simulation.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/monte carlo simulation/monte carlo simulation.html">
 <h3 class="no-anchor listing-title">
-Monte Carlo Simulation
+<a href="./posts/monte carlo simulation/monte carlo simulation.html" class="no-external">Monte Carlo Simulation</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/monte carlo simulation/monte carlo simulation.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
 statistics
@@ -461,14 +592,12 @@ statistics
 risk management
 </div>
 </div>
-<a href="./posts/monte carlo simulation/monte carlo simulation.html">
 <div class="listing-description">
-<p>Monte Carlo simulation is a technique for estimating the probability distribution of a system using random sampling techniques.</p>
+<a href="./posts/monte carlo simulation/monte carlo simulation.html" class="no-external">Monte Carlo simulation is a technique for estimating the probability distribution of a system using random sampling techniques.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/monte carlo simulation/monte carlo simulation.html">
+<a href="./posts/monte carlo simulation/monte carlo simulation.html" class="no-external">
 <div class="listing-date">
 Jun 27, 2023
 </div>
@@ -478,19 +607,19 @@ Johannes Buck
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="statistics,risk management" data-listing-date-sort="1686952800000" data-listing-file-modified-sort="1688386826849" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
+<div class="quarto-post image-right" data-index="11" data-categories="statistics,risk management" data-listing-date-sort="1686952800000" data-listing-file-modified-sort="1688386826849" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1227">
 <div class="thumbnail">
-<p><a href="./posts/simulation models/simulation models.html"> <img src="./posts/simulation models/simulation model.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/simulation models/simulation models.html" class="no-external"></a></p><a href="./posts/simulation models/simulation models.html" class="no-external">
+<p><img src="./posts/simulation models/simulation model.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/simulation models/simulation models.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/simulation models/simulation models.html">
 <h3 class="no-anchor listing-title">
-Simulation Models
+<a href="./posts/simulation models/simulation models.html" class="no-external">Simulation Models</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/simulation models/simulation models.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
 statistics
@@ -499,14 +628,12 @@ statistics
 risk management
 </div>
 </div>
-<a href="./posts/simulation models/simulation models.html">
 <div class="listing-description">
-<p>All models are wrong, but some are useful.</p>
+<a href="./posts/simulation models/simulation models.html" class="no-external">All models are wrong, but some are useful.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/simulation models/simulation models.html">
+<a href="./posts/simulation models/simulation models.html" class="no-external">
 <div class="listing-date">
 Jun 17, 2023
 </div>
@@ -516,19 +643,19 @@ Johannes Buck
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="statistics,risk management" data-listing-date-sort="1686866400000" data-listing-file-modified-sort="1689770942408" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="12" data-categories="statistics,risk management" data-listing-date-sort="1686866400000" data-listing-file-modified-sort="1689770942408" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="573">
 <div class="thumbnail">
-<p><a href="./posts/system models/system models.html"> <img src="./posts/system models/system model.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/system models/system models.html" class="no-external"></a></p><a href="./posts/system models/system models.html" class="no-external">
+<p><img src="./posts/system models/system model.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/system models/system models.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/system models/system models.html">
 <h3 class="no-anchor listing-title">
-System Models
+<a href="./posts/system models/system models.html" class="no-external">System Models</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/system models/system models.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
 statistics
@@ -537,14 +664,12 @@ statistics
 risk management
 </div>
 </div>
-<a href="./posts/system models/system models.html">
 <div class="listing-description">
-<p>Quantitative risk assessment relies on models. A model is an abstraction of reality used to gain clarity about a problem and its potential solutions by reducing the complexity.</p>
+<a href="./posts/system models/system models.html" class="no-external">Quantitative risk assessment relies on models. A model is an abstraction of reality used to gain clarity about a problem and its potential solutions by reducing the complexity.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/system models/system models.html">
+<a href="./posts/system models/system models.html" class="no-external">
 <div class="listing-date">
 Jun 16, 2023
 </div>
@@ -554,19 +679,19 @@ Johannes Buck
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="cyber security,risk management" data-listing-date-sort="1686175200000" data-listing-file-modified-sort="1688384411306" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="13" data-categories="cyber security,risk management" data-listing-date-sort="1686175200000" data-listing-file-modified-sort="1688384411306" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="165">
 <div class="thumbnail">
-<p><a href="./posts/risk perception and assessment/risk perception and assessment.html"> <img src="./posts/risk perception and assessment/Cognitive Biases.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/risk perception and assessment/risk perception and assessment.html" class="no-external"></a></p><a href="./posts/risk perception and assessment/risk perception and assessment.html" class="no-external">
+<p><img src="./posts/risk perception and assessment/Cognitive Biases.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/risk perception and assessment/risk perception and assessment.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/risk perception and assessment/risk perception and assessment.html">
 <h3 class="no-anchor listing-title">
-Risk perception and assessment
+<a href="./posts/risk perception and assessment/risk perception and assessment.html" class="no-external">Risk perception and assessment</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/risk perception and assessment/risk perception and assessment.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('cyber security'); return false;">
 cyber security
@@ -575,14 +700,12 @@ cyber security
 risk management
 </div>
 </div>
-<a href="./posts/risk perception and assessment/risk perception and assessment.html">
 <div class="listing-description">
-<p>Cognitive biases are systematic errors in the way individuals view the world based on subjective perceptions of reality.</p>
+<a href="./posts/risk perception and assessment/risk perception and assessment.html" class="no-external">Cognitive biases are systematic errors in the way individuals view the world based on subjective perceptions of reality.</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/risk perception and assessment/risk perception and assessment.html">
+<a href="./posts/risk perception and assessment/risk perception and assessment.html" class="no-external">
 <div class="listing-date">
 Jun 8, 2023
 </div>
@@ -592,19 +715,19 @@ Johannes Buck
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="cyber security,risk management" data-listing-date-sort="1685829600000" data-listing-file-modified-sort="1688384673539" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="14" data-categories="cyber security,risk management" data-listing-date-sort="1685829600000" data-listing-file-modified-sort="1688384673539" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="894">
 <div class="thumbnail">
-<p><a href="./posts/risk matrices/risk matrices.html"> <img src="./posts/risk matrices/Classic 5x5 risk matrix with linear scales.png" class="thumbnail-image"> </a></p>
+<p><a href="./posts/risk matrices/risk matrices.html" class="no-external"></a></p><a href="./posts/risk matrices/risk matrices.html" class="no-external">
+<p><img src="./posts/risk matrices/Classic 5x5 risk matrix with linear scales.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/risk matrices/risk matrices.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/risk matrices/risk matrices.html">
 <h3 class="no-anchor listing-title">
-Risk Matrices – Why they don’t work
+<a href="./posts/risk matrices/risk matrices.html" class="no-external">Risk Matrices – Why they don’t work</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/risk matrices/risk matrices.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('cyber security'); return false;">
 cyber security
@@ -613,14 +736,12 @@ cyber security
 risk management
 </div>
 </div>
-<a href="./posts/risk matrices/risk matrices.html">
 <div class="listing-description">
-<p>Do we use risk matrices even though we know the limitations and shortcomings of this popular risk assessment tool?</p>
+<a href="./posts/risk matrices/risk matrices.html" class="no-external">Do we use risk matrices even though we know the limitations and shortcomings of this popular risk assessment tool?</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/risk matrices/risk matrices.html">
+<a href="./posts/risk matrices/risk matrices.html" class="no-external">
 <div class="listing-date">
 Jun 4, 2023
 </div>
@@ -630,32 +751,30 @@ Johannes Buck
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-categories="news" data-listing-date-sort="1685656800000" data-listing-file-modified-sort="1686924839169" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="15" data-categories="news" data-listing-date-sort="1685656800000" data-listing-file-modified-sort="1686924839169" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="121">
 <div class="thumbnail">
-<p><a href="./posts/welcome/index.html"> <p class="card-img-top"><img src="posts\welcome\typewriter-2653187_640.jpg"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="./posts/welcome/index.html" class="no-external"></a></p><a href="./posts/welcome/index.html" class="no-external">
+<p class="card-img-top"><img src="posts\welcome\typewriter-2653187_640.jpg"  class="thumbnail-image card-img"/></p>
+</a><p><a href="./posts/welcome/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="./posts/welcome/index.html">
 <h3 class="no-anchor listing-title">
-Welcome To My Blog
+<a href="./posts/welcome/index.html" class="no-external">Welcome To My Blog</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/welcome/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
 news
 </div>
 </div>
-<a href="./posts/welcome/index.html">
 <div class="listing-description">
-This is my first post in the <code>β Blog</code>. Welcome!
+<a href="./posts/welcome/index.html" class="no-external">This is my first post in the <code>β Blog</code>. Welcome!</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/welcome/index.html">
+<a href="./posts/welcome/index.html" class="no-external">
 <div class="listing-date">
 Jun 2, 2023
 </div>
@@ -749,10 +868,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -762,8 +880,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -776,6 +903,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -819,6 +1065,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -844,6 +1091,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -905,10 +1178,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <script src="https://giscus.app/client.js" data-repo="viper-007/Beta-Blog" data-repo-id="R_kgDOJqefag" data-category="General" data-category-id="DIC_kwDOJqefas4CW6NB" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">Made with <a href="https://quarto.org/">Quarto</a> by Johannes Buck. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.</div>   
+    <div class="nav-footer-left">
+<p>Made with <a href="https://quarto.org/">Quarto</a> by Johannes Buck. License: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
@@ -917,6 +1194,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
 
 
 

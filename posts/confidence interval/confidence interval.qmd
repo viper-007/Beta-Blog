@@ -7,6 +7,14 @@ description: A confidence interval is a statistical interval that contains the l
 image: teaser_image.png
 ---
 
+A confidence interval is a statistical concept used to provide an estimate for an unknown parameter in a population. It indicates how certain or trustworthy that estimate is. Confidence intervals are often used in the context of hypothesis testing and estimation in statistics.
+
+In statistics, a confidence interval is usually defined as a range of values within which the true value of a parameter lies with a certain probability. For example, a 95% confidence interval indicates that there is a 95% probability that the true value of the parameter lies within that interval.
+
+The calculation of a confidence interval depends on the underlying statistical model and the distribution of the data. Typically, the standard normal distribution or the t-distribution is used, depending on the size of the sample.
+
+Confidence intervals are useful to account for uncertainty in estimates and to better interpret the results of studies or surveys.
+
 ## Parameter estimation
 
 There are two estimation methods in inferential statistics:
@@ -33,7 +41,7 @@ You can compare a point estimate to trying to hit a fly (the true parameter valu
 
 ## Confidence Interval Definition
 
-A confidence interval is a statistical interval that contains the location of a true parameter of a population with a certain probability. A confidence level of 95% contains the true value with 95% probability.
+A confidence interval is a statistical interval that contains the location of a true parameter of a population with a certain probability. A confidence level of 95% contains the true value with 95% probability. However, a confidence level of 95% does not mean that 95% of the data lies within this interval.
 
 ![](/posts/confidence%20interval/Konfidenzintervall.png)
 

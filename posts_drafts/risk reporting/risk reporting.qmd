@@ -1,0 +1,200 @@
+---
+title: "Risk reporting"
+author: "Johannes Buck"
+date: "2024-02-16"
+categories: [statistics, risk management]
+description: Risk reporting communicates identification, assessment, mitigation, and monitoring of risks and opportunities to stakeholders for informed decision-making and protection the organization and its assets.
+image: risk reporting.png
+---
+
+# Risk reporting
+
+Risk reporting serves different purposes. Here we are talking about cyber security risk reporting to the management.
+
+## Objectives
+
+Cyber security risk reporting to management is important for maintaining the security posture of an organization and includes several objectives:
+
+1.  **Informed Decision-Making**
+    -   Providing management with comprehensive, accurate, and timely information about cyber risks to enable informed decision-making regarding security policies, investments, and strategies.
+2.  **Risk Awareness**
+    -   Raising awareness among senior management and the board about the current cyber risk landscape, emerging threats, and the organization's vulnerability to these threats.
+3.  **Risk Prioritization**
+    -   Assisting management in understanding the relative severity and potential impact of different cyber risks, helping prioritize resources and efforts towards the most critical areas.
+4.  **Resource Allocation**
+    -   Guiding the allocation of resources, including budget, personnel, and technology, towards mitigating identified cyber risks effectively.
+5.  **Compliance with Laws and Regulations**
+    -   Ensuring that the organization meets regulatory and compliance requirements related to cyber security, and that management is aware of any gaps or potential non-compliance issues.
+6.  **Performance Measurement**
+    -   Measuring and reporting on the effectiveness of existing cyber security controls and initiatives, providing management with insights into areas that require improvement.
+7.  **Benchmarking**
+    -   Showing where the organization stands compared to competitors, industry leaders, and regulatory standards in terms of cyber security posture.
+8.  **Strategic Alignment**
+    -   Ensuring that cyber security initiatives are aligned with the organization’s overall business objectives and risk appetite.
+9.  **Accountability and Governance**
+    -   Establishing clear accountability and governance structures for managing cyber risks, including defining roles and responsibilities across the organization.
+10. **Stakeholder Communication**
+    -   Facilitating communication between technical teams and non-technical stakeholders, ensuring that the implications of cyber risks are understood across different levels of the organization.
+11. **Continuous Improvement**
+    -   Promoting a culture of continuous improvement in cyber security practices by regularly reviewing and updating risk assessments and mitigation plans based on evolving threats and lessons learned from past incidents.
+
+These objectives helps to build a resilient and proactive approach to managing cyber risks, thereby protecting the organization’s assets, reputation, and overall business continuity.
+
+## Challenges of quantitative risk reporting
+
+While quantitative risk management offers many benefits, it also presents challenges. In particular, how to present the results of quantitative risk assessments in a way that senior management can understand without in-depth knowledge of mathematics and statistics.
+
+The following solutions are often suggested to overcome this communication challenge:
+
+-   **Data visualization:** Use heat maps, graphs, and dashboards to illustrate risk levels, trends, and business impact.
+
+-   **Storytelling:** Provide contextual explanations to help audience to understand the meaning and implications of the quantitative data.
+
+-   **Hybrid approach:** Combine quantitative and qualitative risk assessments to leverage the strengths of both methods. Use qualitative insights to inform and validate quantitative models.
+
+Data visualization and storytelling are of limited help because they do not reduce the complexity of quantitative risk management, or in other words, they do not eliminate the need for some basic mathematical and statistical knowledge to understand the results of quantitative risk management.
+
+The following example illustrates how a hybrid approach can help make quantitative risk management results easier to understand.
+
+## Example
+
+**Scenario**
+
+Distributed Denial of Service (DDoS) attack on the organization, where three experts estimate the probability of occurrence and potential impact.
+
+**Estimations**
+
+-   Expert A: probability = 0.7; impact = USD 100,000 =\> risk = USD 70,000
+
+-   Expert B: probability = 0.6; impact = USD 300,000 =\> risk = USD 180,000
+
+-   Expert C: probability = 0.8; impact = USD 200,000 =\> risk = USD 160,000
+
+There is no weighting, i.e. all three risks are treated the same.
+
+-   Minimum financial impact: a = USD 40,000
+
+-   Most likely financial impact (mode): c = USD 150,000
+
+-   Maximum financial impact: b = USD 60,000
+
+```{r, fig.width=7, fig.height=5}
+
+#| echo: FALSE
+#| warning: FALSE
+
+# Triangular Distribution (PDF, CDF and CI)
+
+library(EnvStats)
+
+# Assign parameters (min = a, max = b, mode = c)
+a <- 45
+b <- 150
+c <- 60
+inc <- 0.1
+
+# adjust range and increment
+x <- seq(a, b, by = inc)
+
+# Probability Density Function (PDF)
+pdf <- ifelse(x < c, 2 * (x - a) / ((c - a) * (b - a)), 2 * (b - x) / ((b - c) * (b - a)))
+
+# Cumulative Distribution Function (CDF)
+cdf <- ifelse(x < c, (x - a)^2 / ((c - a) * (b - a)), 1 - (b - x)^2 / ((b - c) * (b - a)))
+
+# Calculate expected value
+expected_value <- (a+b+c) / 3
+
+# Calculate probability of the expected value
+probability_expected_value <- ptri(q = 85, min = a, max = b, mode = c) 
+  
+# Calculate the 95% confidence interval
+lower_bound <- qtri(0.025, a, b, c)
+upper_bound <- qtri(0.975, a, b, c)
+confidence_interval <- c(lower_bound, upper_bound)
+lb <- round(lower_bound, digits = 0)
+ub <- round(upper_bound, digits = 0)
+
+# divide window into a 1x2 grid
+# par(mfrow=c(1,2))
+
+# Plot PDF
+plot(x, pdf, col = 'blue', type = 'l', main = "PDF", xlab ='$1k', ylab = "f(x)", ylim = c(0, 0.02), axes = FALSE)
+# X-axis
+axis(1, at = c(45, 60, 85, 150), cex.axis = 0.7)
+# Y-axis
+axis(2, at = c(0, 0.02), cex.axis = 0.7)
+# PDF labeling
+abline(v = a, col = 'grey', lwd = 1, lty = 2)
+abline(v = c, col = 'grey', lwd = 1, lty = 2)
+abline(v = b, col = 'grey', lwd = 1, lty = 2)
+abline(v = 85, col = 'lightblue', lwd = 1, lty = 2)
+abline(h = 0.019, col = 'grey', lwd = 1, lty = 2)
+abline(v = lower_bound, col = 'purple', lwd = 1, lty = 2)
+abline(v = upper_bound, col = 'purple', lwd = 1, lty = 2)
+axis(1, at = c(lb, ub), col='purple', cex.axis = 0.7)
+
+# Plot CDF
+plot(x, cdf, col = 'blue', type = 'l', main = "CDF", xlab ='$1k', ylab = "F(x)", ylim = c(0, 1), axes = FALSE)
+# X-axis
+axis(1, at = c(45, 60, 85, 150), cex.axis = 0.7)
+axis(1, at = c(lb, ub), col='purple', cex.axis = 0.7)
+# Y-axis
+axis(2, at = c(0, 0.14, 0.55, 1.0), cex.axis = 0.5)
+# CDF labeling
+abline(v = a, col = 'grey', lwd = 1, lty = 2)
+abline(v = c, col = 'grey', lwd = 1, lty = 2)
+abline(v = 85, col = 'lightblue', lwd = 1, lty = 2)
+abline(v = b, col = 'grey', lwd = 1, lty = 2)
+abline(h = 0.14, col = 'grey', lwd = 1, lty = 2)
+abline(h = 0.55, col = 'lightblue', lwd = 1, lty = 2)
+abline(h = 1.0, col = 'grey', lwd = 1, lty = 2)
+abline(v = lower_bound, col = 'purple', lwd = 1, lty = 2)
+abline(v = upper_bound, col = 'purple', lwd = 1, lty = 2)
+
+# Print results
+# cat("Min:", a, "\n") 
+# cat("Max:", b, "\n")
+# cat("Mode:", c, "\n")
+# cat("Expected value:", expected_value, "\n")
+# cat("Probability of the expected value:", probability_expected_value, "\n")
+# cat("Confidence Interval [lower bound]:", lb, "\n")
+# cat("Confidence Interval [upper band]:", ub, "\n")
+```
+
+**Results**
+
+The triangle distribution parameters are:
+
+-   Expected value: USD 85,000
+
+-   Probability of the expected value: 0.553 (55%)
+
+-   Confidence Interval \[lower bound\]: USD 51,000
+
+-   Confidence Interval \[upper band\]: USD 135,000
+
+## Risk aggregation
+
+Management is usually not interested in individual risks, but in the business impact of the sum of all risks, and whether the overall residual risk is within the organization's risk appetite, i.e., whether it is covered by economic risk capital. Risk aggregation therefore plays an important role.
+
+There are a several methods to aggregate methods:
+
+1.  **Opinion pooling:** Calculates the weighted average of the individual distributions with linear pooling or logarithmic pooling.
+
+2.  **Monte Carlo simulation:** Generate a large number of random samples from each triangular distribution and combining them to obtain an aggregated result.
+
+3.  **Convolution:** Combines probability density functions (PDF) of individual distributions to obtain a distribution representing the sum of them.
+
+4.  **Bayesian inference:** Bayesian inference can be used when the distributions have different levels of uncertainty.
+
+| Method                 | Description                                                                                                      | Advantages                                                  | Disadvantages                                                         |
+|------------------------|------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------|-----------------------------------------------------------------------|
+| Opinion pooling        | Calculates the average of teach triangular distribution.                                                         | Simple and straightforward                                  | May not be accurate if distributions have different shapes            |
+| Monte Carlo simulation | Simulates random samples from each triangular distribution and combines them to form an aggregated distribution. | Simple method, but requires computer power                  | Computationally intensive                                             |
+| Convolution            | Mathematical operation on two functions ($f$ and $g$) that produces a third function ($f*g$).                    | Complex method which requires higher mathematical knowledge | Computational complexity, sensitivity to assumptions                  |
+| Bayesian inference     | Combine the information from multiple triangular distributions into a single posterior distribution.             | Flexibility, can handle small sample sizes                  | In many cases, analytical solutions for Bayesian models may not exist |
+
+Table 1: Key characteristics of each aggregation method
+
+In a subsequent posts, convolution and Bayesian inference are discussed as methods for aggregating cyber security risks.

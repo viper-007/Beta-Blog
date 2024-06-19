@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Johannes Buck">
-<meta name="dcterms.date" content="2023-08-01">
-<meta name="description" content="The bootstrap method is a statistical resampling technique used to estimate the properties of a population by repeatedly sampling with replacement from a given data set.">
+<meta name="dcterms.date" content="2024-06-18">
+<meta name="description" content="Discretization of continuous distributions refers to the process of converting a continuous probability distribution into a discrete probability distribution.">
 
-<title>β Blog - Bootstrapping</title>
+<title>β Blog - Discretization of Continuous Distributions</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -186,10 +152,10 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Bootstrapping</h1>
+      <h1 class="title">Discretization of Continuous Distributions</h1>
                   <div>
         <div class="description">
-          The bootstrap method is a statistical resampling technique used to estimate the properties of a population by repeatedly sampling with replacement from a given data set.
+          Discretization of continuous distributions refers to the process of converting a continuous probability distribution into a discrete probability distribution.
         </div>
       </div>
                           <div class="quarto-categories">
@@ -212,7 +178,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">August 1, 2023</p>
+        <p class="date">June 18, 2024</p>
       </div>
     </div>
     
@@ -228,20 +194,23 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#bootstrapping-method" id="toc-bootstrapping-method" class="nav-link active" data-scroll-target="#bootstrapping-method">Bootstrapping Method</a></li>
-  <li><a href="#types-of-bootstrapping" id="toc-types-of-bootstrapping" class="nav-link" data-scroll-target="#types-of-bootstrapping">Types of bootstrapping</a>
+  <li><a href="#discretization-of-continuous-distributions" id="toc-discretization-of-continuous-distributions" class="nav-link active" data-scroll-target="#discretization-of-continuous-distributions">Discretization of continuous distributions</a>
   <ul class="collapse">
-  <li><a href="#parametric-bootstrapping" id="toc-parametric-bootstrapping" class="nav-link" data-scroll-target="#parametric-bootstrapping">Parametric Bootstrapping</a></li>
-  <li><a href="#nonparametric-bootstraps" id="toc-nonparametric-bootstraps" class="nav-link" data-scroll-target="#nonparametric-bootstraps">Nonparametric Bootstraps</a></li>
+  <li><a href="#transform-quantitative-risk-management-into-qualitative" id="toc-transform-quantitative-risk-management-into-qualitative" class="nav-link" data-scroll-target="#transform-quantitative-risk-management-into-qualitative">Transform quantitative risk management into qualitative</a>
+  <ul class="collapse">
+  <li><a href="#examples-of-discretization" id="toc-examples-of-discretization" class="nav-link" data-scroll-target="#examples-of-discretization">Examples of discretization</a></li>
   </ul></li>
-  <li><a href="#bootstrapping-vs.-monte-carlo-simulation" id="toc-bootstrapping-vs.-monte-carlo-simulation" class="nav-link" data-scroll-target="#bootstrapping-vs.-monte-carlo-simulation">Bootstrapping vs.&nbsp;Monte Carlo Simulation</a>
+  <li><a href="#discretization-process" id="toc-discretization-process" class="nav-link" data-scroll-target="#discretization-process">Discretization process</a></li>
+  <li><a href="#trade-off" id="toc-trade-off" class="nav-link" data-scroll-target="#trade-off">Trade-off</a>
   <ul class="collapse">
-  <li><a href="#about-bootstrapping" id="toc-about-bootstrapping" class="nav-link" data-scroll-target="#about-bootstrapping">About Bootstrapping</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
   </ul></li>
-  <li><a href="#monte-carlo-simulation" id="toc-monte-carlo-simulation" class="nav-link" data-scroll-target="#monte-carlo-simulation">Monte Carlo Simulation</a></li>
-  <li><a href="#r-code" id="toc-r-code" class="nav-link" data-scroll-target="#r-code">R code</a>
+  <li><a href="#alternative-calculation-method" id="toc-alternative-calculation-method" class="nav-link" data-scroll-target="#alternative-calculation-method">Alternative calculation method</a></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a>
   <ul class="collapse">
-  <li><a href="#example-1-multivariate-statistic-median" id="toc-example-1-multivariate-statistic-median" class="nav-link" data-scroll-target="#example-1-multivariate-statistic-median">Example 1 <strong>–</strong> Multivariate Statistic (Median)</a></li>
+  <li><a href="#can-the-expected-value-and-the-probability-of-the-expected-value-at-least-be-used-as-an-approximation" id="toc-can-the-expected-value-and-the-probability-of-the-expected-value-at-least-be-used-as-an-approximation" class="nav-link" data-scroll-target="#can-the-expected-value-and-the-probability-of-the-expected-value-at-least-be-used-as-an-approximation">Can the expected value and the probability of the expected value at least be used as an approximation?</a></li>
+  <li><a href="#therefore-the-answer-is-not-really" id="toc-therefore-the-answer-is-not-really" class="nav-link" data-scroll-target="#therefore-the-answer-is-not-really">Therefore, the answer is: Not really!</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -253,198 +222,140 @@ window.Quarto = {
 
 
 
-<section id="bootstrapping-method" class="level2">
-<h2 class="anchored" data-anchor-id="bootstrapping-method">Bootstrapping Method</h2>
-<p>Bootstrapping is a statistical method that resamples a single data set to create many samples. This process allows to calculate standard errors, construct confidence intervals, and perform hypothesis testing for numerous types of sample statistics.</p>
-<p>The basic idea of bootstrapping is that inference about a population from sample data (sample → population) can be modeled by resampling the sample data and performing inference about a sample from resampled data (resampled → sample).</p>
-<p><img src="../..\posts/bootstrapping/Traditional statistics method.png" class="img-fluid"></p>
-<p>Figure 1: Traditional statistical method</p>
-<p><img src="../..\posts/bootstrapping/Bootstrapping method.png" class="img-fluid"></p>
-<p>Figure 2: Bootstrapping method</p>
-<p><strong>Simple Random Samples (SRS)</strong></p>
-<p>A simple random sample (SRS) of size <span class="math inline">\(n\)</span> consists of <span class="math inline">\(n\)</span> individuals from the population, selected so that each set of <span class="math inline">\(n\)</span> individuals has an equal chance of being the sample actually selected.</p>
-<p><strong>Populations vs.&nbsp;Samples</strong></p>
-<p>Parameters describe populations, statistics describe samples.</p>
+<section id="discretization-of-continuous-distributions" class="level1">
+<h1>Discretization of continuous distributions</h1>
+<p>Discretization of continuous distributions refers to the process of converting a continuous probability distribution into a discrete probability distribution. This involves dividing the range of possible values into a finite number of intervals and approximating the probability of each interval.</p>
+<section id="transform-quantitative-risk-management-into-qualitative" class="level2">
+<h2 class="anchored" data-anchor-id="transform-quantitative-risk-management-into-qualitative">Transform quantitative risk management into qualitative</h2>
+<p>Discretization can be used to transform quantitative risk management into qualitative risk management by categorizing continuous risk measures into discrete classes. This allows for a simpler approach to risk assessment. <strong>However, this process can result in a loss of information and precision.</strong></p>
+<section id="examples-of-discretization" class="level3">
+<h3 class="anchored" data-anchor-id="examples-of-discretization">Examples of discretization</h3>
+<p>In <strong>credit risk management</strong>, a continuous variable like probability of default (PD) can be discretized into categories such as low, medium, and high risk. Instead of dealing with precise PD values (e.g., 0.13), a bank might categorize borrowers into these risk bands to simplify decision-making processes for loan approvals or pricing.</p>
+<p>In <strong>cyber security risk management</strong>, discretization could be the classification of risks based on their level of impact, such as low, medium, high, and critical. This qualitative assessment helps prioritize risk mitigation actions without requiring precise quantitative measures of each risk’s potential impact.</p>
+</section>
+</section>
+<section id="discretization-process" class="level2">
+<h2 class="anchored" data-anchor-id="discretization-process">Discretization process</h2>
+<p>Discretization is typically done in the following steps:</p>
+<p>1. <strong>Define intervals</strong>: Decide on the number of intervals to divide the range of the continuous variable into.</p>
+<p>2. <strong>Interval assignment</strong>: Assign each continuous value to an interval based on its value.</p>
+<p>3. <strong>Probability approximation</strong>: Calculate the probability for each interval, which can be done by integrating the continuous probability density function over each interval or by using other approximation methods. This process results in a set of discrete outcomes with associated probabilities. It is important to choose the number and size of intervals carefully.</p>
+<p>Some common methods for discretization include:</p>
 <ul>
-<li><p>The mean (<span class="math inline">\(\mu\)</span>) and standard deviation (<span class="math inline">\(\sigma\)</span>) of a population are parameters.</p></li>
-<li><p>The mean (<span class="math inline">\(\bar{x}\)</span>) and standard deviation (<span class="math inline">\(s\)</span>) of a sample are statistics.</p></li>
+<li><p><strong>Equal-width binning</strong>: Divides the range of values into intervals of equal size.</p></li>
+<li><p><strong>Equal-frequency binning</strong>: Divides the data such that each bin has approximately the same number of data points.</p></li>
+<li><p><strong>Clustering-based discretization</strong>: Uses clustering algorithms to group values, where each cluster forms a bin.</p></li>
+<li><p><strong>Entropy-based discretization</strong>: Uses information gain to find optimal bin boundaries.</p></li>
+<li><p><strong>K-means discretization</strong>: A variation of clustering-based discretization using the k-means algorithm. Each method has its own advantages and is chosen based on the specific requirements of the data and analysis.</p></li>
+</ul>
+<p>Choosing the right discretization method depends on several factors:</p>
+<ul>
+<li><p><strong>Data distribution</strong>: Understand the underlying data distribution. Some methods may work better for uniform distributions, while others are better for skewed distributions.</p></li>
+<li><p><strong>Purpose of analysis</strong>: Consider what you want to accomplish. E.g., if preserving the distribution of data is important, equal-frequency binning might be suitable.</p></li>
+<li><p><strong>Data size</strong>: Large datasets may require efficient methods to reduce computational load.</p></li>
+<li><p><strong>Model requirements</strong>: Some machine learning models may have specific requirements for how the data should be discretized.</p></li>
+<li><p><strong>Interpretability</strong>: Methods like equal-width or equal-frequency binning are straightforward and easy to interpret.</p></li>
 </ul>
 </section>
-<section id="types-of-bootstrapping" class="level2">
-<h2 class="anchored" data-anchor-id="types-of-bootstrapping">Types of bootstrapping</h2>
-<section id="parametric-bootstrapping" class="level3">
-<h3 class="anchored" data-anchor-id="parametric-bootstrapping">Parametric Bootstrapping</h3>
-<p>Parametric bootstraps resample a known distribution function $F$ (e.g., normal) whose parameters (e.g., mean, variance) are estimated from the sample data.</p>
+<section id="trade-off" class="level2">
+<h2 class="anchored" data-anchor-id="trade-off">Trade-off</h2>
+<p>It is important to evaluate the effect of the discretization.</p>
+<p>Discretization of continuous distributions can present several challenges, such as:</p>
+<ul>
+<li><p><strong>Loss of detail</strong>: Simplifying data into categories may overlook important nuances.</p></li>
+<li><p><strong>Subjectivity</strong>: The process of categorizing can be subjective and inconsistent.</p></li>
+<li><p><strong>Over-simplification</strong>: Critical decisions might be made based on overly simplified data.</p></li>
+<li><p><strong>Dynamic nature</strong>: Cyber threats evolve rapidly, and static categories may become outdated quickly. These challenges require careful consideration to ensure effective risk management.</p></li>
+</ul>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">Example</h3>
+<p>Given the triangular distribution with a minimum value of <span class="math inline">\(a = 1\)</span>, a maximum value of <span class="math inline">\(b = 5\)</span>, and a mode <span class="math inline">\(c = 4\)</span>, we need to calculate the probability mass for each interval <span class="math inline">\([1, 2)\)</span>, <span class="math inline">\([2, 3)\)</span>, <span class="math inline">\([3, 4)\)</span>, and <span class="math inline">\([4, 5)\)</span>.</p>
+<p>The probability density function (PDF) <span class="math inline">\(f(x)\)</span> of a triangular distribution is defined as: <span class="math display">\[f(x) =
+\begin{cases}
+\frac{2(x-a)}{(b-a)(c-a)} &amp; \text{for } a \leq x \leq c \\
+\frac{2(b-x)}{(b-a)(b-c)} &amp; \text{for } c &lt; x \leq b
+\end{cases}\]</span></p>
+<p>For our specific case: <span class="math display">\[f(x) =
+\begin{cases}
+\frac{2(x-1)}{(5-1)(4-1)} = \frac{2(x-1)}{12} = \frac{x-1}{6} &amp; \text{for } 1 \leq x \leq 4 \\
+\frac{2(5-x)}{(5-1)(5-4)} = \frac{2(5-x)}{4} = \frac{5-x}{2} &amp; \text{for } 4 &lt; x \leq 5
+\end{cases}\]</span></p>
+<p>Now, we calculate the area under the curve for each interval:</p>
+<p><strong>1. Interval</strong> <span class="math inline">\([1, 2)\)</span>:</p>
+<p><span class="math inline">\(\int_{1}^{2} \frac{x-1}{6} \, dx = \frac{1}{6} \int_{1}^{2} (x-1) \, dx\)</span> <span class="math inline">\(= \frac{1}{6} \left[ \frac{(x-1)^2}{2} \right]_{1}^{2}\)</span> <span class="math inline">\(= \frac{1}{6} \left( \frac{(2-1)^2}{2} - \frac{(1-1)^2}{2} \right)\)</span> <span class="math inline">\(= \frac{1}{6} \left( \frac{1}{2} - 0 \right)\)</span> <span class="math inline">\(= \frac{1}{6} \cdot \frac{1}{2}\)</span> <span class="math inline">\(= \frac{1}{12}\)</span></p>
+<p><strong>2. Interval</strong> <span class="math inline">\([2, 3)\)</span>:</p>
+<p><span class="math inline">\(\int_{2}^{3} \frac{x-1}{6} \, dx = \frac{1}{6} \int_{2}^{3} (x-1) \, dx\)</span> <span class="math inline">\(= \frac{1}{6} \left[ \frac{(x-1)^2}{2} \right]_{2}^{3}\)</span> <span class="math inline">\(= \frac{1}{6} \left( \frac{(3-1)^2}{2} - \frac{(2-1)^2}{2} \right)\)</span> <span class="math inline">\(= \frac{1}{6} \left( \frac{4}{2} - \frac{1}{2} \right)\)</span> <span class="math inline">\(= \frac{1}{6} \left( 2 - 0.5 \right)\)</span> <span class="math inline">\(= \frac{1}{6} \cdot 1.5\)</span> <span class="math inline">\(= \frac{3}{12} = \frac{1}{4}\)</span></p>
+<p><strong>3. Interval</strong> <span class="math inline">\([3, 4)\)</span>:</p>
+<p><span class="math inline">\(\int_{3}^{4} \frac{x-1}{6} \, dx = \frac{1}{6} \int_{3}^{4} (x-1) \, dx\)</span> <span class="math inline">\(= \frac{1}{6} \left[ \frac{(x-1)^2}{2} \right]_{3}^{4}\)</span> <span class="math inline">\(= \frac{1}{6} \left( \frac{(4-1)^2}{2} - \frac{(3-1)^2}{2} \right)\)</span> <span class="math inline">\(= \frac{1}{6} \left( \frac{9}{2} - \frac{4}{2} \right)\)</span> <span class="math inline">\(= \frac{1}{6} \left( 4.5 - 2 \right)\)</span> <span class="math inline">\(= \frac{1}{6} \cdot 2.5\)</span> <span class="math inline">\(= \frac{5}{12}\)</span></p>
+<p><strong>4. Interval</strong> <span class="math inline">\([4, 5)\)</span>:</p>
+<p><span class="math inline">\(\int_{4}^{5} \frac{5-x}{2} \, dx = \frac{1}{2} \int_{4}^{5} (5-x) \, dx\)</span> <span class="math inline">\(= \frac{1}{2} \left[ 5x - \frac{x^2}{2} \right]_{4}^{5}\)</span> <span class="math inline">\(= \frac{1}{2} \left( (5 \cdot 5 - \frac{5^2}{2}) - (5 \cdot 4 - \frac{4^2}{2}) \right)\)</span> <span class="math inline">\(= \frac{1}{2} \left( (25 - 12.5) - (20 - 8) \right)\)</span> <span class="math inline">\(= \frac{1}{2} \left( 12.5 - 12 \right)\)</span> <span class="math inline">\(= \frac{1}{2} \cdot 0.5\)</span> <span class="math inline">\(= \frac{1}{4}\)</span></p>
+<p>Thus, the probabilities for each interval are:</p>
+<ul>
+<li><p><span class="math inline">\([1, 2): \frac{1}{12}\)</span></p></li>
+<li><p><span class="math inline">\([2, 3): \frac{1}{4}\)</span></p></li>
+<li><p><span class="math inline">\([3, 4): \frac{5}{12}\)</span></p></li>
+<li><p><span class="math inline">\([4, 5): \frac{1}{4}\)</span></p></li>
+</ul>
+<p>Summing these probabilities, we get: <span class="math display">\[\frac{1}{12} + \frac{1}{4} + \frac{5}{12} + \frac{1}{4} = \frac{1}{12} + \frac{3}{12} + \frac{5}{12} + \frac{3}{12} = \frac{12}{12} = 1\]</span> This confirms that the total probability is 1, as expected.</p>
 </section>
-<section id="nonparametric-bootstraps" class="level3">
-<h3 class="anchored" data-anchor-id="nonparametric-bootstraps">Nonparametric Bootstraps</h3>
-<p>Nonparametric bootstraps make no assumptions <span class="math inline">\(\hat{F}\)</span> about the underlying data distribution <span class="math inline">\(F\)</span>.</p>
-<p>Process steps:</p>
-<ol type="1">
-<li><p>Estimate the parameters of the hypothesized parametric model (parametric bootstrapping only).</p></li>
-<li><p>Take a random sample from the original data by sampling with replacement, with the same number of items as in the original data set.</p></li>
-<li><p>Compute the statistic of interest (e.g., mean, median, standard deviation) from the bootstrapped sample.</p></li>
-<li><p>Repeat steps <span class="math inline">\((2)\)</span> and <span class="math inline">\((3)\)</span> a large number of times.</p></li>
-<li><p>Analyze the distribution of the bootstrap statistics or statistics of interest (e.g., mean, standard deviation, confidence intervals).</p></li>
-</ol>
+</section>
+<section id="alternative-calculation-method" class="level2">
+<h2 class="anchored" data-anchor-id="alternative-calculation-method">Alternative calculation method</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Types of bootstrapping
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Parametric bootstrapping</strong> can be efficient when the underlying data distribution is well known. However, it can lead to biased results if the assumed model is incorrect.</p>
-<p><strong>Nonparametric bootstrapping</strong> is more flexible because it does not rely on specific distribution assumptions. It can be particularly useful when the underlying data distribution is unknown or complex. However, it may require a larger number of bootstrap samples to obtain accurate estimates compared to parametric bootstrapping.</p>
-<p><span class="math inline">\(\rightarrow\)</span> Parametric bootstrapping assumes a specific distribution and estimates parameters from the data, while nonparametric bootstrapping makes no assumption about the distribution and estimates the sampling distribution directly through resampling.</p>
+<blockquote class="blockquote">
+<p>Instead of calculating with integrals, the interval areas can be calculated from the geometric shapes.</p>
+</blockquote>
 </div>
 </div>
-</section>
-</section>
-<section id="bootstrapping-vs.-monte-carlo-simulation" class="level2">
-<h2 class="anchored" data-anchor-id="bootstrapping-vs.-monte-carlo-simulation">Bootstrapping vs.&nbsp;Monte Carlo Simulation</h2>
-<p>Bootstrapping and Monte Carlo simulation are two different statistical techniques that are used for different purposes. Bootstrapping can be seen as a specific application of Monte Carlo methods, where random resampling is used to estimate sampling distributions and perform statistical inference.</p>
-<section id="about-bootstrapping" class="level3">
-<h3 class="anchored" data-anchor-id="about-bootstrapping">About Bootstrapping</h3>
-<p>Bootstrapping is a resampling technique used to estimate the sampling distribution of a statistic by repeatedly sampling with replacement from the original data.</p>
-<p><strong>Advantages</strong></p>
-<ol type="1">
-<li><p><strong>Nonparametric:</strong> Bootstrapping does not assume a specific underlying distribution, making it useful when the distribution of the data is unknown or non-standard.</p></li>
-<li><p><strong>Easy to implement:</strong> Bootstrapping is conceptually simple and easy to implement.</p></li>
-<li><p><strong>Useful with small sample sizes:</strong> It works with limited data where traditional statistical tests may be less reliable.</p></li>
-</ol>
-<p><strong>Disadvantages</strong></p>
-<ol type="1">
-<li><p><strong>Computationally intensive:</strong> Bootstrapping involves many resampling iterations, which can be computationally expensive for large datasets or complex models.</p></li>
-<li><p><strong>Data quality dependence:</strong> Bootstrapping results are highly dependent on the quality and representativeness of the original data.</p></li>
-<li><p><strong>Not suitable for all scenarios:</strong> While powerful, bootstrapping may not be the best approach for certain statistical problems, especially those involving complex models or non-standard scenarios.</p></li>
-</ol>
-</section>
-</section>
-<section id="monte-carlo-simulation" class="level2">
-<h2 class="anchored" data-anchor-id="monte-carlo-simulation">Monte Carlo Simulation</h2>
-<p>Monte Carlo simulation is a technique used to model and analyze the probability of different outcomes in a process that involves uncertainty and randomness. It relies on random sampling to estimate complex mathematical functions or to simulate different scenarios.</p>
-<p><strong>Advantages</strong></p>
-<ol type="1">
-<li><p><strong>Flexibility:</strong> Monte Carlo simulation is applicable to a wide range of problems, including optimization, probability estimation, and risk analysis, making it a versatile tool.</p></li>
-<li><p><strong>Provides a range of outcomes:</strong> It provides a distribution of possible outcomes, giving insight into the likelihood of different scenarios occurring.</p></li>
-<li><p><strong>Works well with optimization problems:</strong> Monte Carlo simulation can be integrated with optimization algorithms to find optimal solutions in complex systems.</p></li>
-</ol>
-<p><strong>Disadvantages</strong></p>
-<ol type="1">
-<li><p><strong>Resource intensive:</strong> Monte Carlo simulation requires a large number of iterations to produce reliable results, which can be computationally expensive and time consuming.</p></li>
-<li><p><strong>Convergence issues:</strong> In some cases, Monte Carlo simulation may converge slowly or require special techniques to ensure accurate results.</p></li>
-</ol>
-<p>Key Differences Between Monte Carlo Simulation and Bootstrapping</p>
-<table class="table">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 34%">
-<col style="width: 45%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Feature</th>
-<th>Mote Carlo simulation</th>
-<th>Bootstrapping method</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Generality</td>
-<td>Can be used to estimate the uncertainty of any statistic</td>
-<td>Only used to estimate the uncertainty of statistics from a sample of data</td>
-</tr>
-<tr class="even">
-<td>Efficiency</td>
-<td>Less efficient than bootstrapping</td>
-<td>More efficient than Monte Carlo simulation</td>
-</tr>
-<tr class="odd">
-<td>Ease of use</td>
-<td>More difficult to use than bootstrapping</td>
-<td>Easier to use than Monte Carlo simulation</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="r-code" class="level2">
-<h2 class="anchored" data-anchor-id="r-code">R code</h2>
-<p>There are several R packages that can be used for bootstrapping calculations with R:</p>
-<ul>
-<li><p>boot</p></li>
-<li><p>bootstrap</p></li>
-<li><p>nptest</p></li>
-</ul>
-<section id="example-1-multivariate-statistic-median" class="level3">
-<h3 class="anchored" data-anchor-id="example-1-multivariate-statistic-median">Example 1 <strong>–</strong> Multivariate Statistic (Median)</h3>
-<p>For this example, we will generate <span class="math inline">\(n = 100\)</span> observations from a standard normal distribution, and use the quartiles as the parameters/statistics of interest. Note that the true (population) quartiles are <span class="math inline">\(Q1 = qnorm(0.25) = -0.6744898\)</span>, <span class="math inline">\(Q2 = qnorm(0.5) = 0\)</span>, and <span class="math inline">\(Q3 = qnorm(0.75) = 0.6744898\)</span>. Since the quartiles are a multivariate statistic, the bootstrap distribution will be a matrix of dimension <span class="math inline">\(R + 1 × 3\)</span>, where each column contains the bootstrap replicates of the corresponding quartile.</p>
+<p><img src="Discretization of triangular distribution.png" class="img-fluid"></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Multivariate Statistic (Quartiles)</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nptest)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Package 'nptest' version 1.1
-Type 'citation("nptest")' to cite this package.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generate 100 standard normal observations</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># nonparametric bootstrap (using ... to enter 'probs' argument)</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>npbs <span class="ot">&lt;-</span> <span class="fu">np.boot</span>(<span class="at">x =</span> x,</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">statistic =</span> quantile,</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>                <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>))</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>npbs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Nonparametric Bootstrap of Multivariate Statistic
-using R = 9999 bootstrap replicates
-
-          25%    50%     75%
-  t0: -0.4942 0.1139  0.6915
-  SE:  0.1172 0.1394  0.0933
-Bias:  0.0058 0.0185 -0.0170
-
-95% BCa Confidence Intervals:
-          25%     50%    75%
-lower -0.6941 -0.0811 0.5047
-upper -0.2534  0.3673 0.8811</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># bootstrap distribution</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) {</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hist</span>(</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    npbs<span class="sc">$</span>boot.dist[, j],</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">"t*"</span>,</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylab =</span> <span class="st">"Density"</span>,</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">main =</span> <span class="fu">paste0</span>(<span class="st">"Bootstrap Distribution"</span>, <span class="st">": Q"</span>, j)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abline</span>(<span class="at">v =</span> npbs<span class="sc">$</span>t0[j],</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">lty =</span> <span class="dv">2</span>,</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">col =</span> <span class="st">"red"</span>)</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">legend</span>(</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"topright"</span>,</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">paste0</span>(<span class="st">"t0["</span>, j, <span class="st">"]"</span>),</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">lty =</span> <span class="dv">2</span>,</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="st">"red"</span>,</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">bty =</span> <span class="st">"n"</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="bootstrapping_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="discretization-of-continuous-distributions_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
+<p>Expected value: <span class="math display">\[E(x) = \frac{a+b+c}3 = \frac{1+5+4}3 = 3.33\]</span></p>
+<p>The probability of the expected value is: <span class="math display">\[F(x=E) = \frac{2(b - x)}{(b - a)(b - c)}\]</span>​ Substituting ( a = 1 ), ( b = 5 ), ( c = 4 ), and ( x ) with the expected value of approximately 3.33, we get:</p>
+<p><span class="math display">\[F(3.33) = \frac{2(5 - 3.33)}{(5 - 1)(5 - 4)} = 0.83\]</span></p>
+</section>
+<section id="conclusions" class="level2">
+<h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>
+<p>In most cases, not much is gained from a discretization process that results in a set of discrete outcomes with associated probabilities. The discretization of a continuous probability distribution to a single value is often desired. For example, if a risk is to be entered as a point in a two-dimensional risk matrix.</p>
+<p>This illustrates the dilemma of reducing a risk described by a probability distribution function to a single data point. Neither a continuous distribution nor a discrete distribution can be reduced to a single point.</p>
+<p>The mathematical explanation is that the triangular distribution, like all continuous probability distributions, assigns zero probability to any single point. This is a general property of continuous distributions because the probability of any single exact value is zero.</p>
+<section id="can-the-expected-value-and-the-probability-of-the-expected-value-at-least-be-used-as-an-approximation" class="level3">
+<h3 class="anchored" data-anchor-id="can-the-expected-value-and-the-probability-of-the-expected-value-at-least-be-used-as-an-approximation">Can the expected value and the probability of the expected value at least be used as an approximation?</h3>
+<p>A triangular distribution is defined by three parameters: the minimum value <span class="math inline">\(a\)</span>, the maximum value <span class="math inline">\(b\)</span>, and the mode <span class="math inline">\(c\)</span>, where <span class="math inline">\(a \leq c \leq b\)</span>.</p>
+<p>The probability density function of the triangular distribution in the interval&nbsp;<span class="math inline">\(𝑥∈[𝑎,𝑏]\)</span>&nbsp;is defined by <span class="math display">\[ \begin{equation}
+    f(x) = \begin{cases}
+        \dfrac{2(x-a)}{(b-a)(c-a)} &amp; \text{for } x \in [a, c] \\
+        \dfrac{2(b-x)}{(b-a)(b-c)} &amp; \text{for } x \in (c, b] \\
+        {0} &amp; \text{else}
+    \end{cases}
+\end{equation}\]</span> The expected value (mean) of a triangular distribution is given by the formula: <span class="math display">\[\mu = \frac{a + b + c}{3}\]</span></p>
+<ul>
+<li>The probability that <span class="math inline">\(X = \mu\)</span> is zero.</li>
+<li>The expected value <span class="math inline">\(\mu\)</span> of the triangular distribution is influenced by all three parameters <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span>.</li>
+<li>The density <span class="math inline">\(f(\mu)\)</span> can be analyzed to understand how probable it is to get values close to the mean, but the exact probability at <span class="math inline">\(\mu\)</span> is zero.</li>
+</ul>
+</section>
+<section id="therefore-the-answer-is-not-really" class="level3">
+<h3 class="anchored" data-anchor-id="therefore-the-answer-is-not-really">Therefore, the answer is: Not really!</h3>
 
 
+</section>
 </section>
 </section>
 

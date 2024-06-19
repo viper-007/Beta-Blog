@@ -255,7 +255,7 @@ The logarithmic opinion pooling formula is: $$LogOp(r_1,r_2,r_3)= \exp⁡(w_1 \t
 
 $$LogOp(70,180,160)= \exp⁡(0.3 \times ln⁡(70)+0.4 \times ln⁡(180)+ 0.3 \times ln⁡(160))$$
 
-$$LogOp(70,180,160)= \text{USD 1k } 130.880$$
+$$LogOp(70,180,160)= \text{USD } 130.880$$
 
 **Overall Assessment**
 

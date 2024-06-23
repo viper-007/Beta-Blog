@@ -1,0 +1,188 @@
+---
+title: "Aggregation of Triangular Distributions"
+author: "Johannes Buck"
+date: "2024-06-23"
+categories: [statistics, risk management]
+description: Aggregation of triangular distributions with Monte Carlo simulation and convulutionn.
+image: aggregation of triangular distributions.png
+---
+
+# Aggregation of triangular distributions
+
+Aggregating multiple triangular distributions can be challenging because the resulting distribution is not necessarily triangular.
+
+## Approach with Monte Carlo simulation
+
+1.  **Define Individual Triangular Distributions:** Each triangular distribution is defined by its minimum (a), most likely (b), and maximum (c) values. Let's assume we have $n$ triangular distributions $(a_i, b_i, c_i)$ where $i$ ranges from 1 to $n$.
+
+2.  **Sampling from each distribution:** Since the sum of triangular distributions is not necessarily triangular, one common approach is to use Monte Carlo simulation. This involves:
+
+    -   Generating a large number of random samples from each triangular distribution.
+    -   Summing these samples to create an empirical distribution of the aggregate.
+
+3.  **Monte Carlo Simulation:**
+
+    -   For each triangular distribution, generate $m$ random samples using the inverse transform sampling method or built-in functions from statistical libraries.
+    -   Sum the corresponding samples from each distribution to get an aggregated sample.
+    -   Repeat the process to create a large number of aggregated samples.
+
+4.  **Analyzing the aggregate distribution:**
+
+    -   Use the aggregated samples to create a histogram or kernel density estimate to visualize the aggregate distribution.
+    -   Calculate summary statistics (mean, median, variance, etc.) to understand the central tendency and spread of the aggregate distribution.
+
+### Example
+
+```{r, fig.width=7, fig.height=5}
+#| echo: FALSE
+
+# Aggregation of triangular distributions with Monte Carlo simulation
+
+# Load necessary library
+library(triangle)
+
+# Define the triangular distributions
+distributions <- list(
+  c(1, 3, 5),
+  c(2, 4, 6),
+  c(0, 2, 4)
+)
+
+# Number of samples
+num_samples <- 10000
+
+# Generate samples from each triangular distribution
+samples <- lapply(distributions, function(params) {
+  rtriangle(num_samples, a = params[1], b = params[3], c = params[2])
+})
+
+# Sum the samples to get the aggregated samples
+aggregated_samples <- Reduce(`+`, samples)
+
+# Plot the histogram of the aggregated samples
+hist(aggregated_samples, col="skyblue", breaks = 50, probability = TRUE,
+     main = "Aggregated Distribution", xlab = "Value", ylab = "Density")
+
+# Calculate and print summary statistics
+mean_value <- mean(aggregated_samples)
+median_value <- median(aggregated_samples)
+std_dev <- sd(aggregated_samples)
+
+cat("Mean:", mean_value, "\n")
+cat("Median:", median_value, "\n")
+cat("Standard Deviation:", std_dev, "\n")
+```
+
+### Considerations for interpretation
+
+1.  **Non-triangular shape:** The aggregate distribution will likely not be triangular. It might resemble a normal distribution (Central Limit Theorem) if the number of distributions is large and they are independent.
+
+2.  **Central tendency:** The mean of the aggregate distribution will be the sum of the means of the individual distributions.
+
+3.  **Variance:** The variance of the aggregate distribution is the sum of the variances of the individual distributions if they are independent.
+
+4.  **Dependence:** If the triangular distributions are not independent, the aggregate distribution can be skewed or have other characteristics that reflect the dependencies.
+
+5.  **Sample size:** The accuracy of the Monte Carlo simulation depends on the number of samples. More samples provide a better approximation of the true aggregate distribution.
+
+By considering these factors, you can aggregate multiple triangular distributions and interpret the results effectively.
+
+::: callout-note
+## Central limit theorem
+
+The central limit theorem is a fundamental result in probability theory that states that the distribution of the sample mean of independent random variables will approach a normal distribution as the sample size increases. This holds regardless of the shape of the population distribution. The theorem implies that the sample mean is a good estimator of the population mean, and that it becomes more accurate as the sample size grows.
+:::
+
+## Analytical approach
+
+There is an analytical approach to aggregating triangular distributions, although it is generally more complex and less straightforward than Monte Carlo simulation.
+
+1.  **Understand the sum of two triangular distributions:** The sum of two triangular distributions is not necessarily triangular. Instead, it forms a piecewise linear distribution that can be described in terms of convolution. The convolution of two triangular distributions results in a distribution that is piecewise quadratic.
+
+2.  **Convolution of two triangular distributions:** The probability density function (PDF) of the sum of two independent triangular distributions can be obtained by convolving their individual PDF. If $X \sim \text{Triangular}(a_1, b_1, c_1)$ and $Y \sim \text{Triangular}(a_2, b_2, c_2)$, the PDF of $Z = X + Y$ can be derived from the convolution of the PDF of $X$ and $Y$.
+
+3.  **Iterative convolution for multiple distributions:** For more than two distributions, you would iteratively convolve the resulting distribution with the next triangular distribution in the series. This process can be very complex analytically, especially for a large number of distributions.
+
+### Practical consideration
+
+While the analytical approach can be worked out for small numbers of distributions and can be insightful for understanding the behavior of the sum of distributions, it becomes highly complex and unwieldy for larger numbers of distributions.
+
+### Conclusion
+
+For practical purposes, especially with more than two distributions, the Monte Carlo simulation approach is generally preferred due to its simplicity and ease of implementation. It provides a good approximation of the aggregate distribution without the need for complex analytical derivations.
+
+If you need to proceed with an analytical solution for specific cases or for a small number of distributions, you might need to consult more detailed statistical or mathematical texts on the convolution of probability distributions, or use specialized mathematical software to handle the convolutions.
+
+### Example
+
+```{r, fig.width=7, fig.height=5}
+#| echo: FALSE
+
+# Convolution of two triangular distributions
+
+# Define the triangular PDF function
+triangular_pdf <- function(x, a, b, c) {
+  ifelse(x < a | x > c, 0, 
+         ifelse(x < b, (2 * (x - a)) / ((b - a) * (c - a)), 
+                (2 * (c - x)) / ((c - b) * (c - a))))
+}
+
+# Convolution of two triangular PDFs
+convolution_pdf <- function(z, a1, b1, c1, a2, b2, c2) {
+  # Integration limits
+  lower <- max(a1, z - c2)
+  upper <- min(c1, z - a2)
+  
+  # Handle cases where integration is not possible
+  if (lower > upper) {
+    return(0)
+  }
+  
+  # Integrate using the integrate function
+  result <- integrate(function(x) {
+    sapply(x, function(xi) triangular_pdf(xi, a1, b1, c1) * triangular_pdf(z - xi, a2, b2, c2))
+  }, lower, upper)
+  
+  return(result$value)
+}
+
+# Create a sequence of x values for plotting
+x_values <- seq(0, 7, length.out = 1000)
+
+# Define the parameters of the two triangular distributions
+a1 <- 1; b1 <- 3; c1 <- 5
+a2 <- 2; b2 <- 4; c2 <- 6
+
+# Calculate the PDFs for both distributions
+pdf1 <- sapply(x_values, triangular_pdf, a1, b1, c1)
+pdf2 <- sapply(x_values, triangular_pdf, a2, b2, c2)
+
+# Plot the first distribution
+plot(x_values, pdf1, xlim=c(0,12), ylim=c(0,0.6), type = "l", col = "blue", lwd = 1, 
+     xlab = "x", ylab = "Density", main = "Convolution of two triangular distributions")
+
+# Add the second distribution to the plot
+lines(x_values, pdf2, col = "purple", lwd = 1)
+
+# Add a legend
+legend("topright", legend = c("Triangular PDF(1, 3, 5)", "Triangular PDF(2, 4, 6)", "PDF of convolution"), 
+       col = c("blue", "purple", "lightblue"), lwd = 1)
+
+
+# Generate a range of z values for plotting
+z_values <- seq(a1 + a2, c1 + c2, length.out = 1000)
+
+# Calculate the convolution PDF values for each z
+convolution_values <- sapply(z_values, function(z) convolution_pdf(z, a1, b1, c1, a2, b2, c2))
+
+# Plot the resulting convolution PDF
+lines(z_values, convolution_values, xlim=c(0,12), ylim=c(0,0.6), type = 'l', col = 'lightblue', lwd = 1,
+      main = 'Convolution of two triangular distributions',
+      xlab = 'Value', ylab = 'Density')
+```
+
+::: callout-note
+## Convolution
+
+Convolution is a mathematical operation on two functions (𝑓 and 𝑔) that produces a third function (𝑓∗𝑔). Convolution is defined as the integral of the product of the two functions after one is reflected about the y-axis and shifted. The integral is evaluated for all values of shift, producing the convolution function. The choice of which function is reflected and shifted before the integral does not change the integral result. Graphically, it expresses how the "shape" of one function is modified by the other.
+:::

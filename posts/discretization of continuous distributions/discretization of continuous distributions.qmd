@@ -15,7 +15,7 @@ Discretization of continuous distributions refers to the process of converting a
 
 Discretization can be used to transform quantitative risk management into qualitative risk management by categorizing continuous risk measures into discrete classes. This allows for a simpler approach to risk assessment. **However, this process can result in a loss of information and precision.**
 
-### Examples of discretization 
+### Examples of discretization
 
 In **credit risk management**, a continuous variable like probability of default (PD) can be discretized into categories such as low, medium, and high risk. Instead of dealing with precise PD values (e.g., 0.13), a bank might categorize borrowers into these risk bands to simplify decision-making processes for loan approvals or pricing.
 
@@ -105,13 +105,13 @@ $\int_{4}^{5} \frac{5-x}{2} \, dx = \frac{1}{2} \int_{4}^{5} (5-x) \, dx$ $= \fr
 
 Thus, the probabilities for each interval are:
 
--    $[1, 2): \frac{1}{12}$
+-   $[1, 2): \frac{1}{12}$
 
--    $[2, 3): \frac{1}{4}$
+-   $[2, 3): \frac{1}{4}$
 
--    $[3, 4): \frac{5}{12}$
+-   $[3, 4): \frac{5}{12}$
 
--    $[4, 5): \frac{1}{4}$
+-   $[4, 5): \frac{1}{4}$
 
 Summing these probabilities, we get: $$\frac{1}{12} + \frac{1}{4} + \frac{5}{12} + \frac{1}{4} = \frac{1}{12} + \frac{3}{12} + \frac{5}{12} + \frac{3}{12} = \frac{12}{12} = 1$$ This confirms that the total probability is 1, as expected.
 
@@ -121,7 +121,7 @@ Summing these probabilities, we get: $$\frac{1}{12} + \frac{1}{4} + \frac{5}{12}
 > Instead of calculating with integrals, the interval areas can be calculated from the geometric shapes.
 :::
 
-![](Discretization of triangular distribution.png)
+![](Discretization%20of%20triangular%20distribution.png)
 
 ```{r, fig.width=7, fig.height=5}
 #| echo: FALSE

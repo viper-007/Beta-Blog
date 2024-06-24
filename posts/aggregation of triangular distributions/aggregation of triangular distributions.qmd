@@ -34,7 +34,6 @@ Aggregating multiple triangular distributions can be challenging because the res
 ### Example
 
 ```{r, fig.width=7, fig.height=5}
-#| echo: FALSE
 
 # Aggregation of triangular distributions with Monte Carlo simulation
 
@@ -116,7 +115,6 @@ If you need to proceed with an analytical solution for specific cases or for a s
 ### Example
 
 ```{r, fig.width=7, fig.height=5}
-#| echo: FALSE
 
 # Convolution of two triangular distributions
 
